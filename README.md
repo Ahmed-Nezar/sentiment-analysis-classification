@@ -1,3 +1,3 @@
 # sentiment-analysis-classification
 
-- Data Used: https://www.kaggle.com/datasets/jp797498e/twitter-entity-sentiment-analysis
+- Data Used: https://huggingface.co/datasets/Sp1786/multiclass-sentiment-analysis-dataset

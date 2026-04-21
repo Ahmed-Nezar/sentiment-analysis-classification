@@ -1,0 +1,54 @@
+[build-system]
+requires = ["hatchling>=1.25.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sentiment-analysis-classification"
+version = "0.1.0"
+description = "Sentiment analysis and text classification experiments."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+	"pandas==3.0.2",
+	"scikit-learn==1.8.0",
+    "numpy==2.4.4",
+]
+
+[project.optional-dependencies]
+notebook = [
+	"jupyter>=1.1",
+	"ipykernel>=6.29",
+	"matplotlib>=3.9",
+	"seaborn>=0.13",
+]
+dev = [
+	"pytest>=8.3",
+	"ruff>=0.6",
+]
+
+# pip examples:
+# - pip install .
+# - pip install -e .
+# - pip install -e .[notebook]
+# - pip install -e .[dev,notebook]
+
+[dependency-groups]
+notebook = [
+	"jupyter>=1.1",
+	"ipykernel>=6.29",
+	"matplotlib>=3.9",
+	"seaborn>=0.13",
+]
+dev = [
+	"pytest>=8.3",
+	"ruff>=0.6",
+]
+
+[tool.uv]
+default-groups = ["dev", "notebook"]
+
+# uv examples:
+# - uv sync
+# - uv sync --group dev
+# - uv sync --group notebook
+# - uv sync --no-default-groups
