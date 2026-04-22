@@ -22,6 +22,7 @@ def run_preprocessing():
     dataset_path = CONFIG.get("DATASET_PATH")
     output_path = CONFIG.get("CLEANED_DATASET_PATH")
     preprocess_and_save(dataset_path, output_path)
+    print(f"Preprocessing completed. Cleaned dataset saved to: {output_path}")
 
 if __name__ == "__main__":
     run_preprocessing()
