@@ -1,0 +1,51 @@
+# ML Pipeline
+#ML_EMBEDDING_RUN_PATH=models/embeddings/dd5c60e10afe7b51
+ML_EMBEDDING_RUN_PATH=models/embeddings/7e59a2c67cab1cde
+ML_OUTPUT_DIR=models/ml_models
+ML_RANDOM_STATE=42
+ML_FORCE_RERUN=false
+ML_HYPERPARAMETER_OPTIMIZATION=false,10 # true enables Optuna and 10 is the number of trials
+#ML_EMBEDDING_TYPES=bow_unigram,bow_bigram,bow_unigram_bigram,tfidf_unigram,tfidf_bigram,tfidf_unigram_bigram,word2vec_skipgram,word2vec_cbow,glove_300d,fasttext_skipgram,fasttext_cbow
+ML_EMBEDDING_TYPES=bert_base_uncased,bert_large_uncased,qwen3_embedding_0_6b,bge_base_en_v1_5,bge_small_en_v1_5,all_minilm_l6_v2,bge_m3,all_minilm_l12_v2,gte_base,gte_small,gte_large
+
+# Classifiers to execute
+ML_TYPES=logistic_regression,svm,random_forest,xgboost,decision_tree
+
+# ML_TYPES=random_forest
+
+# Logistic Regression
+ML__LOGISTIC_REGRESSION__TYPE=logistic_regression
+ML__LOGISTIC_REGRESSION__MAX_ITER=1000
+ML__LOGISTIC_REGRESSION__C=1.0
+ML__LOGISTIC_REGRESSION__SOLVER=lbfgs
+ML__LOGISTIC_REGRESSION__MULTI_CLASS=auto
+
+# Support Vector Machine (SVC)
+ML__SVM__TYPE=svm
+ML__SVM__KERNEL=rbf
+ML__SVM__C=1.0
+ML__SVM__GAMMA=scale
+ML__SVM__PROBABILITY=false
+
+# Random Forest
+ML__RANDOM_FOREST__TYPE=random_forest
+ML__RANDOM_FOREST__N_ESTIMATORS=300
+ML__RANDOM_FOREST__MAX_DEPTH=null
+ML__RANDOM_FOREST__MIN_SAMPLES_SPLIT=2
+ML__RANDOM_FOREST__MIN_SAMPLES_LEAF=1
+
+# XGBoost
+ML__XGBOOST__TYPE=xgboost
+ML__XGBOOST__N_ESTIMATORS=300
+ML__XGBOOST__MAX_DEPTH=6
+ML__XGBOOST__LEARNING_RATE=0.1
+ML__XGBOOST__SUBSAMPLE=1.0
+ML__XGBOOST__COLSAMPLE_BYTREE=1.0
+ML__XGBOOST__REG_ALPHA=0.0
+ML__XGBOOST__REG_LAMBDA=1.0
+
+# Decision Tree
+ML__DECISION_TREE__TYPE=decision_tree
+ML__DECISION_TREE__MAX_DEPTH=null
+ML__DECISION_TREE__MIN_SAMPLES_SPLIT=2
+ML__DECISION_TREE__MIN_SAMPLES_LEAF=1

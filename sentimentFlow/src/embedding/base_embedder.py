@@ -13,3 +13,6 @@ class BaseEmbedder:
 
     def get_params(self) -> dict[str, Any]:
         raise NotImplementedError
+
+    def cleanup(self) -> None:
+        return None

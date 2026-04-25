@@ -12,7 +12,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from tqdm import tqdm
 
-from ...utils import PROJECT_ROOT, load_config
+from ..utils import PROJECT_ROOT, load_config
 from .embedders import build_embedder
 
 
@@ -293,54 +293,57 @@ class EmbeddingPipeline:
         run_dir.mkdir(parents=True, exist_ok=True)
 
         embedder = build_embedder(run_config, PROJECT_ROOT)
-        configured_parameters = _json_compatible(run_config)
-        effective_parameters = _json_compatible(embedder.get_params())
+        try:
+            configured_parameters = _json_compatible(run_config)
+            effective_parameters = _json_compatible(embedder.get_params())
 
-        x_train_features = embedder.fit_transform(split_data.x_train_texts.tolist())
-        x_test_features = embedder.transform(split_data.x_test_texts.tolist())
+            x_train_features = embedder.fit_transform(split_data.x_train_texts.tolist())
+            x_test_features = embedder.transform(split_data.x_test_texts.tolist())
 
-        x_train_path = run_dir / "X_train.joblib"
-        x_test_path = run_dir / "X_test.joblib"
-        y_train_path = run_dir / "y_train.joblib"
-        y_test_path = run_dir / "y_test.joblib"
+            x_train_path = run_dir / "X_train.joblib"
+            x_test_path = run_dir / "X_test.joblib"
+            y_train_path = run_dir / "y_train.joblib"
+            y_test_path = run_dir / "y_test.joblib"
 
-        joblib.dump(x_train_features, x_train_path)
-        joblib.dump(x_test_features, x_test_path)
-        joblib.dump(split_data.y_train.to_numpy(), y_train_path)
-        joblib.dump(split_data.y_test.to_numpy(), y_test_path)
+            joblib.dump(x_train_features, x_train_path)
+            joblib.dump(x_test_features, x_test_path)
+            joblib.dump(split_data.y_train.to_numpy(), y_train_path)
+            joblib.dump(split_data.y_test.to_numpy(), y_test_path)
 
-        embedding_object_path = embedder.save(run_dir)
-        train_split_path, test_split_path = self._save_splits(run_dir, split_data)
+            embedding_object_path = embedder.save(run_dir)
+            train_split_path, test_split_path = self._save_splits(run_dir, split_data)
 
-        run_summary = {
-            "name": run_name,
-            "type": str(run_config.get("type", "")).lower(),
-            "configuration_hash": self.configuration_hash,
-            "run_hash": self.configuration_hash,
-            "status": "generated",
-            "output_dir": str(run_dir),
-            "embedding_object_path": str(embedding_object_path),
-            "x_train_path": str(x_train_path),
-            "x_test_path": str(x_test_path),
-            "y_train_path": str(y_train_path),
-            "y_test_path": str(y_test_path),
-            "train_split_path": str(train_split_path),
-            "test_split_path": str(test_split_path),
-            "parameters": effective_parameters,
-            "configured_parameters": configured_parameters,
-            "configuration_hash_payload": _json_compatible(
-                self.configuration_hash_payload
-            ),
-            "train_shape": _shape_of(x_train_features),
-            "test_shape": _shape_of(x_test_features),
-            "metadata_path": str(metadata_path),
-        }
+            run_summary = {
+                "name": run_name,
+                "type": str(run_config.get("type", "")).lower(),
+                "configuration_hash": self.configuration_hash,
+                "run_hash": self.configuration_hash,
+                "status": "generated",
+                "output_dir": str(run_dir),
+                "embedding_object_path": str(embedding_object_path),
+                "x_train_path": str(x_train_path),
+                "x_test_path": str(x_test_path),
+                "y_train_path": str(y_train_path),
+                "y_test_path": str(y_test_path),
+                "train_split_path": str(train_split_path),
+                "test_split_path": str(test_split_path),
+                "parameters": effective_parameters,
+                "configured_parameters": configured_parameters,
+                "configuration_hash_payload": _json_compatible(
+                    self.configuration_hash_payload
+                ),
+                "train_shape": _shape_of(x_train_features),
+                "test_shape": _shape_of(x_test_features),
+                "metadata_path": str(metadata_path),
+            }
 
-        metadata_path.write_text(
-            json.dumps(run_summary, indent=2),
-            encoding="utf-8",
-        )
-        return run_summary
+            metadata_path.write_text(
+                json.dumps(run_summary, indent=2),
+                encoding="utf-8",
+            )
+            return run_summary
+        finally:
+            embedder.cleanup()
 
     def run(self) -> dict[str, Any]:
         if not self.embedding_runs:

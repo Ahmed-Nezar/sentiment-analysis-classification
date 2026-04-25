@@ -6,6 +6,7 @@ from typing import Any
 from .base_embedder import BaseEmbedder
 from .glove_embedder import GloveAveragingEmbedder
 from .sklearn_embedder import SklearnEmbedder
+from .transformer_embedder import SUPPORTED_TRANSFORMER_MODELS, TransformerEmbedder
 from .word2vec_embedder import WordModelAveragingEmbedder
 from .utils import to_float_or_int, to_int, to_ngram_range, to_optional_int
 
@@ -23,7 +24,8 @@ def _resolve_path(value: Any, project_root: Path) -> Path:
 
 
 def build_embedder(run_config: dict[str, Any], project_root: Path) -> BaseEmbedder:
-    embedder_type = str(run_config.get("type", "")).strip().lower()
+    raw_embedder_type = str(run_config.get("type", "")).strip()
+    embedder_type = raw_embedder_type.lower()
 
     if embedder_type in {"bow", "tfidf"}:
         return SklearnEmbedder(
@@ -57,4 +59,14 @@ def build_embedder(run_config: dict[str, Any], project_root: Path) -> BaseEmbedd
             vector_size=to_int(run_config.get("vector_size"), 300),
         )
 
-    raise ValueError(f"Unsupported embedding type: {embedder_type}")
+    if raw_embedder_type in SUPPORTED_TRANSFORMER_MODELS:
+        return TransformerEmbedder(
+            model_name=raw_embedder_type,
+            batch_size=to_int(run_config.get("batch_size"), 32),
+            max_length=to_int(run_config.get("max_length"), 128),
+            device=str(run_config.get("device")).strip()
+            if run_config.get("device") is not None
+            else None,
+        )
+
+    raise ValueError(f"Unsupported embedding type: {raw_embedder_type}")
