@@ -7,9 +7,10 @@ from pathlib import Path
 from typing import Any, Iterable
 
 import numpy as np
+from tqdm import tqdm
 
 from .base_embedder import BaseEmbedder
-from .utils import to_text_list
+from .utils import adjust_vector_dimension, to_text_list
 
 
 SUPPORTED_TRANSFORMER_MODELS: set[str] = {
@@ -39,6 +40,7 @@ class TransformerEmbedder(BaseEmbedder):
         *,
         batch_size: int = 32,
         max_length: int = 128,
+        vector_dimension: int | None = None,
         device: str | None = None,
     ) -> None:
         normalized_model_name = str(model_name).strip()
@@ -56,6 +58,7 @@ class TransformerEmbedder(BaseEmbedder):
         self.model_name = normalized_model_name
         self.batch_size = int(batch_size)
         self.max_length = int(max_length)
+        self.vector_dimension = vector_dimension
         self.torch = torch_module
         self.device = device or (
             "cuda" if self.torch.cuda.is_available() else "cpu"
@@ -91,7 +94,12 @@ class TransformerEmbedder(BaseEmbedder):
     def _encode_with_transformers(self, texts: list[str]) -> np.ndarray:
         all_embeddings: list[np.ndarray] = []
 
-        for start_index in range(0, len(texts), self.batch_size):
+        batch_starts = range(0, len(texts), self.batch_size)
+        for start_index in tqdm(
+            batch_starts,
+            desc=f"Encoding {self.model_name}",
+            unit="batch",
+        ):
             batch = texts[start_index : start_index + self.batch_size]
             encoded_inputs = self.tokenizer(
                 batch,
@@ -117,7 +125,7 @@ class TransformerEmbedder(BaseEmbedder):
         embeddings = self.model.encode(
             texts,
             batch_size=self.batch_size,
-            show_progress_bar=False,
+            show_progress_bar=True,
             convert_to_numpy=True,
         )
         return np.asarray(embeddings)
@@ -128,9 +136,11 @@ class TransformerEmbedder(BaseEmbedder):
             return np.empty((0, 0), dtype=np.float32)
 
         if self.uses_sentence_transformer:
-            return self._encode_with_sentence_transformer(normalized_texts)
+            embeddings = self._encode_with_sentence_transformer(normalized_texts)
+            return adjust_vector_dimension(embeddings, self.vector_dimension)
 
-        return self._encode_with_transformers(normalized_texts)
+        embeddings = self._encode_with_transformers(normalized_texts)
+        return adjust_vector_dimension(embeddings, self.vector_dimension)
 
     def fit_transform(self, texts: Iterable[str]) -> Any:
         return self._encode(texts)
@@ -152,6 +162,7 @@ class TransformerEmbedder(BaseEmbedder):
             "model_name": self.model_name,
             "batch_size": self.batch_size,
             "max_length": self.max_length,
+            "vector_dimension": self.vector_dimension,
             "device": self.device,
             "uses_sentence_transformer": self.uses_sentence_transformer,
             "persists_model_weights": False,
@@ -167,4 +178,3 @@ class TransformerEmbedder(BaseEmbedder):
         gc.collect()
         if self.device.startswith("cuda") and self.torch.cuda.is_available():
             self.torch.cuda.empty_cache()
-

@@ -325,46 +325,61 @@ class MLPipeline:
 
         run_dir.mkdir(parents=True, exist_ok=True)
 
-        x_train, x_test, y_train, y_test = self._load_embedding_features(embedding_run)
-
-        configured_parameters = {
-            key: value
-            for key, value in model_run_config.items()
-            if key not in {"name", "type"}
-        }
-        optimization_summary: dict[str, Any] = {
-            "enabled": False,
-            "framework": None,
-            "direction": None,
-            "metric": None,
-            "n_trials": 0,
-        }
-
-        if self.hyperparameter_optimization_enabled:
-            classifier_run_config, optimization_summary = self._optimize_hyperparameters(
-                embedding_run,
-                model_run_config,
-                x_train=x_train,
-                x_test=x_test,
-                y_train=y_train,
-                y_test=y_test,
+        with tqdm(
+            total=5,
+            desc=f"ML {embedding_name}/{model_name} stages",
+            unit="stage",
+        ) as progress:
+            x_train, x_test, y_train, y_test = self._load_embedding_features(
+                embedding_run
             )
-        else:
-            classifier_run_config = model_run_config
+            progress.update()
 
-        classifier, effective_parameters = build_classifier(
-            classifier_run_config,
-            random_state=self.random_state,
-        )
+            configured_parameters = {
+                key: value
+                for key, value in model_run_config.items()
+                if key not in {"name", "type"}
+            }
+            optimization_summary: dict[str, Any] = {
+                "enabled": False,
+                "framework": None,
+                "direction": None,
+                "metric": None,
+                "n_trials": 0,
+            }
 
-        classifier.fit(x_train, y_train)
-        y_pred = classifier.predict(x_test)
+            if self.hyperparameter_optimization_enabled:
+                classifier_run_config, optimization_summary = (
+                    self._optimize_hyperparameters(
+                        embedding_run,
+                        model_run_config,
+                        x_train=x_train,
+                        x_test=x_test,
+                        y_train=y_train,
+                        y_test=y_test,
+                    )
+                )
+            else:
+                classifier_run_config = model_run_config
+            progress.update()
 
-        model_path = run_dir / "model.joblib"
-        predictions_path = run_dir / "y_pred.joblib"
+            classifier, effective_parameters = build_classifier(
+                classifier_run_config,
+                random_state=self.random_state,
+            )
 
-        joblib.dump(classifier, model_path)
-        joblib.dump(y_pred, predictions_path)
+            classifier.fit(x_train, y_train)
+            progress.update()
+
+            y_pred = classifier.predict(x_test)
+            progress.update()
+
+            model_path = run_dir / "model.joblib"
+            predictions_path = run_dir / "y_pred.joblib"
+
+            joblib.dump(classifier, model_path)
+            joblib.dump(y_pred, predictions_path)
+            progress.update()
 
         metrics = compute_metrics(y_test, y_pred)
 
@@ -402,7 +417,8 @@ class MLPipeline:
     def run(self) -> dict[str, Any]:
         if not self.ml_runs:
             raise ValueError(
-                "No ML runs found in config. Set ML_TYPES and ML__<NAME>__* keys in .config"
+                "No ML runs found in config. Set ml.types and ml.classifiers "
+                "in ml_config.yaml"
             )
 
         selected_embedding_runs = self._selected_embedding_runs()
@@ -416,10 +432,7 @@ class MLPipeline:
         self.configuration_output_dir.mkdir(parents=True, exist_ok=True)
 
         runs: list[dict[str, Any]] = []
-        for embedding_run in tqdm(
-            selected_embedding_runs,
-            desc="Training Models by Embedding",
-        ):
+        for embedding_run in selected_embedding_runs:
             for model_run in self.ml_runs:
                 if not isinstance(model_run, dict):
                     continue

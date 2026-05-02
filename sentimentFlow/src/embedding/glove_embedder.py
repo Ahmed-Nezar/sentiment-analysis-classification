@@ -2,6 +2,7 @@ import numpy as np
 import joblib
 from pathlib import Path
 from typing import Any, Iterable
+from tqdm import tqdm
 
 from .base_embedder import BaseEmbedder
 from .utils import to_text_list, tokenize_text
@@ -18,7 +19,11 @@ class GloveAveragingEmbedder(BaseEmbedder):
 
         filtered: dict[str, np.ndarray] = {}
         with self.glove_file_path.open("r", encoding="utf-8") as glove_file:
-            for line in glove_file:
+            for line in tqdm(
+                glove_file,
+                desc="Loading GloVe vectors",
+                unit="line",
+            ):
                 values = line.split()
                 if len(values) < 2:
                     continue
@@ -46,17 +51,42 @@ class GloveAveragingEmbedder(BaseEmbedder):
     def _texts_to_matrix(self, tokenized_texts: list[list[str]]) -> np.ndarray:
         if not tokenized_texts:
             return np.zeros((0, self.vector_size), dtype=np.float32)
-        matrix = np.vstack([self._sentence_to_vector(tokens) for tokens in tokenized_texts])
+        matrix = np.vstack(
+            [
+                self._sentence_to_vector(tokens)
+                for tokens in tqdm(
+                    tokenized_texts,
+                    desc="Vectorizing GloVe sentences",
+                    unit="sentence",
+                )
+            ]
+        )
         return matrix.astype(np.float32)
 
     def fit_transform(self, texts: Iterable[str]) -> Any:
-        tokenized_texts = [tokenize_text(text) for text in to_text_list(texts)]
+        text_list = to_text_list(texts)
+        tokenized_texts = [
+            tokenize_text(text)
+            for text in tqdm(
+                text_list,
+                desc="Tokenizing GloVe train text",
+                unit="text",
+            )
+        ]
         vocabulary = {token for tokens in tokenized_texts for token in tokens}
         self.embeddings = self._load_filtered_embeddings(vocabulary)
         return self._texts_to_matrix(tokenized_texts)
 
     def transform(self, texts: Iterable[str]) -> Any:
-        tokenized_texts = [tokenize_text(text) for text in to_text_list(texts)]
+        text_list = to_text_list(texts)
+        tokenized_texts = [
+            tokenize_text(text)
+            for text in tqdm(
+                text_list,
+                desc="Tokenizing GloVe test text",
+                unit="text",
+            )
+        ]
         return self._texts_to_matrix(tokenized_texts)
 
     def save(self, output_dir: Path) -> Path:
@@ -74,6 +104,7 @@ class GloveAveragingEmbedder(BaseEmbedder):
     def get_params(self) -> dict[str, Any]:
         return {
             "kind": "glove",
+            "vector_dimension": self.vector_size,
             "vector_size": self.vector_size,
             "glove_file_path": str(self.glove_file_path),
             "loaded_vocabulary_size": len(self.embeddings),

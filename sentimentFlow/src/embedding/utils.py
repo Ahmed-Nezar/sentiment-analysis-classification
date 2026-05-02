@@ -1,5 +1,7 @@
 from typing import Any, Iterable
 
+import numpy as np
+
 def to_text_list(texts: Iterable[str]) -> list[str]:
     return [str(text) for text in texts]
 
@@ -54,3 +56,28 @@ def to_ngram_range(value: Any, default: tuple[int, int]) -> tuple[int, int]:
             return (to_int(parts[0], default[0]), to_int(parts[1], default[1]))
 
     return default
+
+
+def adjust_vector_dimension(
+    features: np.ndarray,
+    vector_dimension: int | None,
+) -> np.ndarray:
+    if vector_dimension is None:
+        return features
+
+    target_dimension = int(vector_dimension)
+    if target_dimension <= 0:
+        return features
+
+    current_dimension = int(features.shape[1])
+    if current_dimension == target_dimension:
+        return features
+
+    if current_dimension > target_dimension:
+        return features[:, :target_dimension]
+
+    padding = np.zeros(
+        (features.shape[0], target_dimension - current_dimension),
+        dtype=features.dtype,
+    )
+    return np.hstack([features, padding])

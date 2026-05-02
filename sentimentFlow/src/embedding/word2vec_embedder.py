@@ -2,6 +2,7 @@ import numpy as np
 from gensim.models import Word2Vec, FastText
 from typing import Any, Iterable
 from pathlib import Path
+from tqdm import tqdm
 
 from .base_embedder import BaseEmbedder
 from .utils import to_text_list, tokenize_text
@@ -54,16 +55,41 @@ class WordModelAveragingEmbedder(BaseEmbedder):
     def _texts_to_matrix(self, tokenized_texts: list[list[str]]) -> np.ndarray:
         if not tokenized_texts:
             return np.zeros((0, self.vector_size), dtype=np.float32)
-        matrix = np.vstack([self._sentence_to_vector(tokens) for tokens in tokenized_texts])
+        matrix = np.vstack(
+            [
+                self._sentence_to_vector(tokens)
+                for tokens in tqdm(
+                    tokenized_texts,
+                    desc=f"Vectorizing {self.kind} sentences",
+                    unit="sentence",
+                )
+            ]
+        )
         return matrix.astype(np.float32)
 
     def fit_transform(self, texts: Iterable[str]) -> Any:
-        tokenized_texts = [tokenize_text(text) for text in to_text_list(texts)]
+        text_list = to_text_list(texts)
+        tokenized_texts = [
+            tokenize_text(text)
+            for text in tqdm(
+                text_list,
+                desc=f"Tokenizing {self.kind} train text",
+                unit="text",
+            )
+        ]
         self._build_model(tokenized_texts)
         return self._texts_to_matrix(tokenized_texts)
 
     def transform(self, texts: Iterable[str]) -> Any:
-        tokenized_texts = [tokenize_text(text) for text in to_text_list(texts)]
+        text_list = to_text_list(texts)
+        tokenized_texts = [
+            tokenize_text(text)
+            for text in tqdm(
+                text_list,
+                desc=f"Tokenizing {self.kind} test text",
+                unit="text",
+            )
+        ]
         return self._texts_to_matrix(tokenized_texts)
 
     def save(self, output_dir: Path) -> Path:
@@ -77,6 +103,7 @@ class WordModelAveragingEmbedder(BaseEmbedder):
     def get_params(self) -> dict[str, Any]:
         return {
             "kind": self.kind,
+            "vector_dimension": self.vector_size,
             "vector_size": self.vector_size,
             "window": self.window,
             "min_count": self.min_count,

@@ -297,21 +297,36 @@ class EmbeddingPipeline:
             configured_parameters = _json_compatible(run_config)
             effective_parameters = _json_compatible(embedder.get_params())
 
-            x_train_features = embedder.fit_transform(split_data.x_train_texts.tolist())
-            x_test_features = embedder.transform(split_data.x_test_texts.tolist())
+            with tqdm(
+                total=4,
+                desc=f"Embedding {run_name} stages",
+                unit="stage",
+            ) as progress:
+                x_train_features = embedder.fit_transform(
+                    split_data.x_train_texts.tolist()
+                )
+                progress.update()
 
-            x_train_path = run_dir / "X_train.joblib"
-            x_test_path = run_dir / "X_test.joblib"
-            y_train_path = run_dir / "y_train.joblib"
-            y_test_path = run_dir / "y_test.joblib"
+                x_test_features = embedder.transform(split_data.x_test_texts.tolist())
+                progress.update()
 
-            joblib.dump(x_train_features, x_train_path)
-            joblib.dump(x_test_features, x_test_path)
-            joblib.dump(split_data.y_train.to_numpy(), y_train_path)
-            joblib.dump(split_data.y_test.to_numpy(), y_test_path)
+                x_train_path = run_dir / "X_train.joblib"
+                x_test_path = run_dir / "X_test.joblib"
+                y_train_path = run_dir / "y_train.joblib"
+                y_test_path = run_dir / "y_test.joblib"
 
-            embedding_object_path = embedder.save(run_dir)
-            train_split_path, test_split_path = self._save_splits(run_dir, split_data)
+                joblib.dump(x_train_features, x_train_path)
+                joblib.dump(x_test_features, x_test_path)
+                joblib.dump(split_data.y_train.to_numpy(), y_train_path)
+                joblib.dump(split_data.y_test.to_numpy(), y_test_path)
+                progress.update()
+
+                embedding_object_path = embedder.save(run_dir)
+                train_split_path, test_split_path = self._save_splits(
+                    run_dir,
+                    split_data,
+                )
+                progress.update()
 
             run_summary = {
                 "name": run_name,
@@ -348,7 +363,8 @@ class EmbeddingPipeline:
     def run(self) -> dict[str, Any]:
         if not self.embedding_runs:
             raise ValueError(
-                "No embedding runs found in config. Set EMBEDDING_TYPES and EMBEDDING__<NAME>__* keys in .config"
+                "No embedding runs found in config. Set embedding.types and "
+                "embedding.runs in embedding_config.yaml"
             )
 
         self.output_root.mkdir(parents=True, exist_ok=True)
@@ -357,7 +373,7 @@ class EmbeddingPipeline:
         split_data = self._split_dataset(dataset_df)
 
         runs: list[dict[str, Any]] = []
-        for run_config in tqdm(self.embedding_runs, desc="Running Embeddings"):
+        for run_config in self.embedding_runs:
             if not isinstance(run_config, dict):
                 continue
             runs.append(self._run_single_embedding(run_config, split_data))

@@ -1,0 +1,172 @@
+embedding:
+  output_dir: models/embeddings
+
+  text_column: text
+  label_column: label
+  test_size: 0.2
+  random_state: 42
+  stratify: true
+  force_rerun: false
+
+  # Add any run names from `runs` to this list to execute them.
+  types:
+    - bert_base_uncased
+    - bert_large_uncased
+    - qwen3_embedding_0_6b
+    - bge_base_en_v1_5
+    - bge_small_en_v1_5
+    - all_minilm_l6_v2
+    - bge_m3
+    - all_minilm_l12_v2
+    - gte_base
+    - gte_small
+    - gte_large
+
+  runs:
+    bow_unigram:
+      type: bow
+      ngram_range: [1, 1]
+      max_features: null
+      min_df: 1
+      max_df: 1.0
+
+    bow_bigram:
+      type: bow
+      ngram_range: [2, 2]
+      max_features: null
+      min_df: 1
+      max_df: 1.0
+
+    bow_unigram_bigram:
+      type: bow
+      ngram_range: [1, 2]
+      max_features: null
+      min_df: 1
+      max_df: 1.0
+
+    tfidf_unigram:
+      type: tfidf
+      ngram_range: [1, 1]
+      max_features: null
+      min_df: 1
+      max_df: 1.0
+
+    tfidf_bigram:
+      type: tfidf
+      ngram_range: [2, 2]
+      max_features: null
+      min_df: 1
+      max_df: 1.0
+
+    tfidf_unigram_bigram:
+      type: tfidf
+      ngram_range: [1, 2]
+      max_features: null
+      min_df: 1
+      max_df: 1.0
+
+    word2vec_skipgram:
+      type: word2vec
+      # Optional. If null, Word2Vec uses its default vector dimension.
+      vector_dimension: 100
+      window: 5
+      min_count: 1
+      workers: 4
+      sg: 1
+      epochs: 5
+
+    word2vec_cbow:
+      type: word2vec
+      # Optional. If null, Word2Vec uses its default vector dimension.
+      vector_dimension: 100
+      window: 5
+      min_count: 1
+      workers: 4
+      sg: 0
+      epochs: 5
+
+    glove_300d:
+      type: glove
+      glove_file_path: embeddings/glove/glove.6B.300d.txt
+      # Optional. If null, GloVe uses the file/model default dimension.
+      # For glove.6B.300d.txt, the compatible dimension is 300.
+      vector_dimension: 100
+
+    fasttext_skipgram:
+      type: fasttext
+      # Optional. If null, FastText uses its default vector dimension.
+      vector_dimension: 100
+      window: 5
+      min_count: 1
+      workers: 4
+      sg: 1
+      epochs: 5
+
+    fasttext_cbow:
+      type: fasttext
+      # Optional. If null, FastText uses its default vector dimension.
+      vector_dimension: 100
+      window: 5
+      min_count: 1
+      workers: 4
+      sg: 0
+      epochs: 5
+
+    bert_base_uncased:
+      type: bert-base-uncased
+      batch_size: 64
+      max_length: 128
+      # Optional. If null, the transformer model's native embedding dimension is used.
+      # If smaller/larger, embeddings are truncated/zero-padded after encoding.
+      vector_dimension: 100
+
+    bert_large_uncased:
+      type: bert-large-uncased
+      batch_size: 64
+      max_length: 128
+      vector_dimension: 100
+
+    qwen3_embedding_0_6b:
+      type: Qwen/Qwen3-Embedding-0.6B
+      batch_size: 64
+      vector_dimension: 100
+
+    bge_base_en_v1_5:
+      type: BAAI/bge-base-en-v1.5
+      batch_size: 64
+      vector_dimension: 100
+
+    bge_small_en_v1_5:
+      type: BAAI/bge-small-en-v1.5
+      batch_size: 64
+      vector_dimension: 100
+
+    all_minilm_l6_v2:
+      type: sentence-transformers/all-MiniLM-L6-v2
+      batch_size: 64
+      vector_dimension: 100
+
+    bge_m3:
+      type: BAAI/bge-m3
+      batch_size: 64
+      vector_dimension: 100
+
+    all_minilm_l12_v2:
+      type: sentence-transformers/all-MiniLM-L12-v2
+      batch_size: 64
+      vector_dimension: 100
+
+    gte_base:
+      type: thenlper/gte-base
+      batch_size: 64
+      vector_dimension: 100
+
+    gte_small:
+      type: thenlper/gte-small
+      batch_size: 64
+      vector_dimension: 100
+
+    gte_large:
+      type: thenlper/gte-large
+      batch_size: 64
+      vector_dimension: 100

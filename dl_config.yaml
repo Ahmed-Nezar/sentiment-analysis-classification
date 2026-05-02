@@ -1,0 +1,254 @@
+dl:
+  # embedding_run_path: models/embeddings/c63028fbbd858f3c
+  output_dir: models/dl_models
+  random_state: 42
+  force_rerun: false
+  require_cuda: true
+  text_column: text
+  label_column: label
+
+
+  # Deep learning models to execute.
+  model_type:
+    - nn
+    - rnn
+    - lstm
+    - hmm
+    - gru
+
+  models:
+    nn:
+      type: nn
+      # predefined - classical embeddings
+      config1:
+        embedding_mode: predefined
+        embedding_run_path: models/embeddings/dd5c60e10afe7b51
+        hidden_dims: [512, 256]
+        activation_functions: [relu, relu]
+        epochs: 20
+        learning_rate: 0.01
+        weight_decay: 1e-5
+        dropout: 0.2
+      
+      # predefined - Transformer-based embeddings - large vector dimensions
+      config2:
+        embedding_mode: predefined
+        embedding_run_path: models/embeddings/7e59a2c67cab1cde
+        hidden_dims: [128, 64, 32]
+        activation_functions: [relu, relu, relu]
+        epochs: 20
+        learning_rate: 0.01
+        weight_decay: 1e-5
+        dropout: 0.2
+
+      # predefined - Transformer-based embeddings - 100 vector dimensions
+      config3:
+        embedding_mode: predefined
+        embedding_run_path: models/embeddings/c63028fbbd858f3c
+        hidden_dims: [50, 25]
+        activation_functions: [relu, relu]
+        epochs: 20
+        learning_rate: 0.01
+        weight_decay: 1e-5
+        dropout: 0.2
+
+    rnn:
+      type: rnn
+      config1:
+        embedding_mode: network
+        hidden_dims: [128, 64]
+        bidirectional: true
+        token_embedding_dim: 100
+        max_sequence_length: 64
+        max_vocab_size: 30000
+        epochs: 20
+        batch_size: 64
+        learning_rate: 0.001
+        dropout: 0.3
+        weight_decay: 0.0001
+
+      config2:
+        embedding_mode: predefined
+        embedding_run_path: models/embeddings/7e59a2c67cab1cde
+        hidden_dims: [512, 256]
+        bidirectional: true
+        max_sequence_length: 64
+        max_vocab_size: 30000
+        epochs: 20
+        batch_size: 64
+        learning_rate: 0.001
+        dropout: 0.3
+        weight_decay: 0.0001      
+
+      config3:
+        embedding_mode: predefined
+        embedding_run_path: models/embeddings/c63028fbbd858f3c
+        hidden_dims: [50]
+        bidirectional: true
+        max_sequence_length: 64
+        max_vocab_size: 30000
+        epochs: 20
+        batch_size: 64
+        learning_rate: 0.001
+        dropout: 0.3
+        weight_decay: 0.0001
+
+    lstm:
+      type: lstm
+      config1:
+        embedding_mode: network
+        hidden_dims: [128, 64]
+        bidirectional: true
+        token_embedding_dim: 100
+        max_sequence_length: 64
+        max_vocab_size: 30000
+        epochs: 20
+        batch_size: 64
+        learning_rate: 0.001
+        dropout: 0.3
+        weight_decay: 0.0001
+
+      config2:
+        embedding_mode: predefined
+        embedding_run_path: models/embeddings/7e59a2c67cab1cde
+        hidden_dims: [512, 256]
+        bidirectional: true
+        max_sequence_length: 64
+        max_vocab_size: 30000
+        epochs: 20
+        batch_size: 64
+        learning_rate: 0.001
+        dropout: 0.3
+        weight_decay: 0.0001
+
+      config3:
+        embedding_mode: predefined
+        embedding_run_path: models/embeddings/c63028fbbd858f3c
+        hidden_dims: [50]
+        bidirectional: true
+        max_sequence_length: 64
+        max_vocab_size: 30000
+        epochs: 20
+        batch_size: 64
+        learning_rate: 0.001
+        dropout: 0.3
+        weight_decay: 0.0001
+
+    hmm:
+      type: hmm
+      config1:
+        embedding_mode: network
+        num_hidden_states: 128
+        token_embedding_dim: 100
+        max_sequence_length: 64
+        max_vocab_size: 30000
+        epochs: 20
+        batch_size: 64
+        learning_rate: 0.001
+        dropout: 0.3
+        weight_decay: 0.0001
+
+      config2:
+        embedding_mode: predefined
+        embedding_run_path: models/embeddings/7e59a2c67cab1cde
+        num_hidden_states: 256
+        max_sequence_length: 64
+        max_vocab_size: 30000
+        epochs: 20
+        batch_size: 64
+        learning_rate: 0.001
+        dropout: 0.3
+        weight_decay: 0.0001
+
+      config3:
+        embedding_mode: predefined
+        embedding_run_path: models/embeddings/c63028fbbd858f3c
+        num_hidden_states: 50
+        max_sequence_length: 64
+        max_vocab_size: 30000
+        epochs: 20
+        batch_size: 64
+        learning_rate: 0.001
+        dropout: 0.3
+        weight_decay: 0.0001
+
+
+    gru:
+      type: gru
+      config1:
+        embedding_mode: network
+        hidden_dims: [128, 64]
+        bidirectional: true
+        token_embedding_dim: 100
+        max_sequence_length: 64
+        max_vocab_size: 30000
+        epochs: 20
+        batch_size: 64
+        learning_rate: 0.001
+        dropout: 0.3
+        weight_decay: 0.0001
+
+      config2:
+        embedding_mode: predefined
+        embedding_run_path: models/embeddings/7e59a2c67cab1cde
+        hidden_dims: [512, 256]
+        bidirectional: true
+        max_sequence_length: 64
+        max_vocab_size: 30000
+        epochs: 20
+        batch_size: 64
+        learning_rate: 0.001
+        dropout: 0.3
+        weight_decay: 0.0001
+
+      config3:
+        embedding_mode: predefined
+        embedding_run_path: models/embeddings/c63028fbbd858f3c
+        hidden_dims: [50]
+        bidirectional: true
+        max_sequence_length: 64
+        max_vocab_size: 30000
+        epochs: 20
+        batch_size: 64
+        learning_rate: 0.001
+        dropout: 0.3
+        weight_decay: 0.0001
+
+
+  # Filter embedding runs used by predefined-input models.
+  # Leave empty/commented to run against every embedding in embedding_run_path.
+  # embedding_types:
+  #   - qwen3_embedding_0_6b
+
+  defaults:
+    # embedding_mode: network
+    # epochs: 200
+    # batch_size: 64
+    # learning_rate: 0.05
+    # weight_decay: 0.0
+    # dropout: 0.0
+
+    # Used by nn hidden layers only. The output layer returns raw logits;
+    # do not add softmax here because CrossEntropyLoss applies it internally.
+    # If there are fewer activations than hidden layers, the last activation is reused.
+    # Supported: relu, gelu, tanh, sigmoid, leaky_relu, elu, selu, identity.
+    # activation_functions: [relu]
+
+    # Used by nn/rnn/lstm/gru to control each hidden/recurrent layer individually.
+    # Ignored by hmm; use num_hidden_states for hmm instead.
+    # hidden_dim and hidden_layers are still supported as shorthand for nn/rnn/lstm/gru.
+    # hidden_dims: [128]
+
+    # Used by hmm only. This is the single fixed number of HMM hidden states.
+    # HMM transitions stay in the same state space: num_hidden_states -> num_hidden_states.
+    # num_hidden_states: 128
+
+    # Used by rnn/lstm/gru/hmm only when embedding_mode is network.
+    # Ignored by nn, and ignored by sequence/hmm models when embedding_mode is predefined.
+    # token_embedding_dim: 128
+    # max_sequence_length: 128
+    # max_vocab_size: 30000
+
+    # Used only by rnn/lstm/gru. Ignored by nn and hmm.
+    # bidirectional: false
+

@@ -39,7 +39,10 @@ def build_embedder(run_config: dict[str, Any], project_root: Path) -> BaseEmbedd
     if embedder_type in {"word2vec", "fasttext"}:
         return WordModelAveragingEmbedder(
             kind=embedder_type,
-            vector_size=to_int(run_config.get("vector_size"), 300),
+            vector_size=to_int(
+                run_config.get("vector_dimension") or run_config.get("vector_size"),
+                300,
+            ),
             window=to_int(run_config.get("window"), 5),
             min_count=to_int(run_config.get("min_count"), 1),
             workers=to_int(run_config.get("workers"), 4),
@@ -56,7 +59,10 @@ def build_embedder(run_config: dict[str, Any], project_root: Path) -> BaseEmbedd
 
         return GloveAveragingEmbedder(
             glove_file_path=_resolve_path(glove_file_path, project_root),
-            vector_size=to_int(run_config.get("vector_size"), 300),
+            vector_size=to_int(
+                run_config.get("vector_dimension") or run_config.get("vector_size"),
+                300,
+            ),
         )
 
     if raw_embedder_type in SUPPORTED_TRANSFORMER_MODELS:
@@ -64,6 +70,10 @@ def build_embedder(run_config: dict[str, Any], project_root: Path) -> BaseEmbedd
             model_name=raw_embedder_type,
             batch_size=to_int(run_config.get("batch_size"), 32),
             max_length=to_int(run_config.get("max_length"), 128),
+            vector_dimension=to_optional_int(
+                run_config.get("vector_dimension"),
+                None,
+            ),
             device=str(run_config.get("device")).strip()
             if run_config.get("device") is not None
             else None,
