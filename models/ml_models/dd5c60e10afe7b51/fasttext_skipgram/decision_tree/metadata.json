@@ -1,0 +1,37 @@
+{
+  "embedding_name": "fasttext_skipgram",
+  "embedding_type": "fasttext",
+  "model_name": "decision_tree",
+  "model_type": "decision_tree",
+  "embedding_run_id": "dd5c60e10afe7b51",
+  "status": "generated",
+  "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\fasttext_skipgram\\decision_tree",
+  "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\fasttext_skipgram\\decision_tree\\model.joblib",
+  "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\fasttext_skipgram\\decision_tree\\y_pred.joblib",
+  "metrics": {
+    "accuracy": 0.4652649285113541,
+    "f1_macro": 0.4646118748517383,
+    "precision_macro": 0.46499284934593366,
+    "recall_macro": 0.46427541725140054
+  },
+  "parameters": {
+    "max_depth": null,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "random_state": 42
+  },
+  "configured_parameters": {
+    "max_depth": null,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2
+  },
+  "train_shape": [
+    23780,
+    300
+  ],
+  "test_shape": [
+    5945,
+    300
+  ],
+  "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\fasttext_skipgram\\decision_tree\\metadata.json"
+}

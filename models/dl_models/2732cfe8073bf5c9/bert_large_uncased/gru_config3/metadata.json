@@ -1,0 +1,237 @@
+{
+  "embedding_name": "bert_large_uncased",
+  "embedding_type": "bert-large-uncased",
+  "model_name": "gru_config3",
+  "model_type": "gru",
+  "embedding_mode": "predefined",
+  "embedding_run_id": null,
+  "dataset_path": null,
+  "dl_run_id": "2732cfe8073bf5c9",
+  "dl_configuration_hash": "2004bf7dcd35430a",
+  "status": "generated",
+  "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\dl_models\\2732cfe8073bf5c9\\bert_large_uncased\\gru_config3",
+  "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\dl_models\\2732cfe8073bf5c9\\bert_large_uncased\\gru_config3\\model.pt",
+  "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\dl_models\\2732cfe8073bf5c9\\bert_large_uncased\\gru_config3\\y_pred.joblib",
+  "metrics": {
+    "accuracy": 0.5989907485281749,
+    "f1_macro": 0.6017565555628166,
+    "precision_macro": 0.6026882336046128,
+    "recall_macro": 0.6018239166951315
+  },
+  "history": [
+    {
+      "accuracy": 0.5836837678721615,
+      "early_stopped": false,
+      "early_stopping_reason": null,
+      "epoch": 1.0,
+      "f1_macro": 0.5864310884260713,
+      "overfitting_streak": 0,
+      "precision_macro": 0.5875426799381067,
+      "recall_macro": 0.5861514914421284,
+      "train_loss": 0.9382227067790981,
+      "validation_higher_than_training": false,
+      "validation_loss": 0.8764860439841942
+    },
+    {
+      "accuracy": 0.5843566021867115,
+      "early_stopped": false,
+      "early_stopping_reason": null,
+      "epoch": 2.0,
+      "f1_macro": 0.583245750689407,
+      "overfitting_streak": 0,
+      "precision_macro": 0.584682625128233,
+      "recall_macro": 0.5837101119993567,
+      "train_loss": 0.8882282794273832,
+      "validation_higher_than_training": false,
+      "validation_loss": 0.867177562346671
+    },
+    {
+      "accuracy": 0.5841883936080741,
+      "early_stopped": false,
+      "early_stopping_reason": null,
+      "epoch": 3.0,
+      "f1_macro": 0.5797890759954499,
+      "overfitting_streak": 0,
+      "precision_macro": 0.5858510870229182,
+      "recall_macro": 0.5824457864137641,
+      "train_loss": 0.8789374998881097,
+      "validation_higher_than_training": false,
+      "validation_loss": 0.8685033211696037
+    },
+    {
+      "accuracy": 0.5877207737594617,
+      "early_stopped": false,
+      "early_stopping_reason": null,
+      "epoch": 4.0,
+      "f1_macro": 0.5877234209523265,
+      "overfitting_streak": 0,
+      "precision_macro": 0.5884188996159517,
+      "recall_macro": 0.5952878788329538,
+      "train_loss": 0.8707952040398793,
+      "validation_higher_than_training": false,
+      "validation_loss": 0.8620236513893378
+    },
+    {
+      "accuracy": 0.5900756938603868,
+      "early_stopped": false,
+      "early_stopping_reason": null,
+      "epoch": 5.0,
+      "f1_macro": 0.5901276656161671,
+      "overfitting_streak": 0,
+      "precision_macro": 0.5882587922315496,
+      "recall_macro": 0.5957447037241677,
+      "train_loss": 0.866493722377854,
+      "validation_higher_than_training": false,
+      "validation_loss": 0.854142777372349
+    },
+    {
+      "accuracy": 0.5922624053826745,
+      "early_stopped": false,
+      "early_stopping_reason": null,
+      "epoch": 6.0,
+      "f1_macro": 0.5935278879556452,
+      "overfitting_streak": 0,
+      "precision_macro": 0.5943876302224137,
+      "recall_macro": 0.5989342495433689,
+      "train_loss": 0.8603266477484579,
+      "validation_higher_than_training": false,
+      "validation_loss": 0.8530079199547924
+    },
+    {
+      "accuracy": 0.5942809083263246,
+      "early_stopped": false,
+      "early_stopping_reason": null,
+      "epoch": 7.0,
+      "f1_macro": 0.5960427992100521,
+      "overfitting_streak": 0,
+      "precision_macro": 0.5953151009014099,
+      "recall_macro": 0.5978227909049351,
+      "train_loss": 0.8547763885421047,
+      "validation_higher_than_training": false,
+      "validation_loss": 0.8493298810003583
+    },
+    {
+      "accuracy": 0.5894028595458368,
+      "early_stopped": false,
+      "early_stopping_reason": null,
+      "epoch": 8.0,
+      "f1_macro": 0.5868473539181674,
+      "overfitting_streak": 1,
+      "precision_macro": 0.5920150361642821,
+      "recall_macro": 0.6001422495592353,
+      "train_loss": 0.8518568846234963,
+      "validation_higher_than_training": true,
+      "validation_loss": 0.852995743713427
+    },
+    {
+      "accuracy": 0.5956265769554248,
+      "early_stopped": false,
+      "early_stopping_reason": null,
+      "epoch": 9.0,
+      "f1_macro": 0.5971218374660787,
+      "overfitting_streak": 0,
+      "precision_macro": 0.5958410569895707,
+      "recall_macro": 0.5994534355307067,
+      "train_loss": 0.8471597893785487,
+      "validation_higher_than_training": false,
+      "validation_loss": 0.8442338911197684
+    },
+    {
+      "accuracy": 0.5978132884777123,
+      "early_stopped": false,
+      "early_stopping_reason": null,
+      "epoch": 10.0,
+      "f1_macro": 0.6005400405250182,
+      "overfitting_streak": 1,
+      "precision_macro": 0.6023340057835348,
+      "recall_macro": 0.6001870584971872,
+      "train_loss": 0.8416481943266847,
+      "validation_higher_than_training": true,
+      "validation_loss": 0.8435169657205112
+    },
+    {
+      "accuracy": 0.5984861227922624,
+      "early_stopped": false,
+      "early_stopping_reason": null,
+      "epoch": 11.0,
+      "f1_macro": 0.6022964213745825,
+      "overfitting_streak": 2,
+      "precision_macro": 0.6069129476826015,
+      "recall_macro": 0.6022913905266846,
+      "train_loss": 0.8398639097947649,
+      "validation_higher_than_training": true,
+      "validation_loss": 0.8431252547830368
+    },
+    {
+      "accuracy": 0.5989907485281749,
+      "early_stopped": true,
+      "early_stopping_reason": "validation_loss_higher_than_train_loss",
+      "epoch": 12.0,
+      "f1_macro": 0.6017565555628166,
+      "overfitting_streak": 3,
+      "precision_macro": 0.6026882336046128,
+      "recall_macro": 0.6018239166951315,
+      "train_loss": 0.834984805495725,
+      "validation_higher_than_training": true,
+      "validation_loss": 0.8399998997218274
+    }
+  ],
+  "parameters": {
+    "activation_functions": [
+      "relu"
+    ],
+    "batch_size": 64,
+    "bidirectional": true,
+    "dropout": 0.3,
+    "early_stopping_patience": 3,
+    "embedding_mode": "predefined",
+    "epochs": 20,
+    "hidden_dim": 50,
+    "hidden_dims": [
+      50
+    ],
+    "hidden_layers": 1,
+    "learning_rate": 0.001,
+    "max_sequence_length": 64,
+    "max_vocab_size": 30000,
+    "model_type": "gru",
+    "num_hidden_states": 128,
+    "token_embedding_dim": 128,
+    "weight_decay": 0.0001
+  },
+  "configured_parameters": {
+    "batch_size": 64,
+    "bidirectional": true,
+    "config_name": "config3",
+    "dropout": 0.3,
+    "early_stopping_patience": 3,
+    "embedding_mode": "predefined",
+    "embedding_run_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\c63028fbbd858f3c",
+    "epochs": 20,
+    "hidden_dims": [
+      50
+    ],
+    "learning_rate": 0.001,
+    "max_sequence_length": 64,
+    "max_vocab_size": 30000,
+    "name": "gru_config3",
+    "type": "gru",
+    "weight_decay": 0.0001
+  },
+  "device": "cuda",
+  "cuda_device_name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "train_shape": [
+    23780,
+    100
+  ],
+  "test_shape": [
+    5945,
+    100
+  ],
+  "classes": [
+    "0",
+    "1",
+    "2"
+  ],
+  "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\dl_models\\2732cfe8073bf5c9\\bert_large_uncased\\gru_config3\\metadata.json"
+}

@@ -1,0 +1,70 @@
+{
+  "embedding_name": "bow_unigram",
+  "embedding_type": "bow",
+  "model_name": "random_forest",
+  "model_type": "random_forest",
+  "embedding_run_id": "dd5c60e10afe7b51",
+  "ml_run_id": "dd5c60e10afe7b51_1_hype",
+  "status": "generated",
+  "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51_1_hype\\bow_unigram\\random_forest",
+  "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51_1_hype\\bow_unigram\\random_forest\\model.joblib",
+  "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51_1_hype\\bow_unigram\\random_forest\\y_pred.joblib",
+  "metrics": {
+    "accuracy": 0.6566862910008411,
+    "f1_macro": 0.6543233673052544,
+    "precision_macro": 0.6761733359344771,
+    "recall_macro": 0.6503877273543127
+  },
+  "parameters": {
+    "bootstrap": false,
+    "max_depth": null,
+    "max_features": "sqrt",
+    "min_samples_leaf": 5,
+    "min_samples_split": 20,
+    "n_estimators": 500,
+    "random_state": 42
+  },
+  "configured_parameters": {
+    "max_depth": null,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "n_estimators": 300
+  },
+  "parameter_source": "optuna",
+  "hyperparameter_optimization": {
+    "best_accuracy": 0.6566862910008411,
+    "best_effective_parameters": {
+      "bootstrap": false,
+      "max_depth": null,
+      "max_features": "sqrt",
+      "min_samples_leaf": 5,
+      "min_samples_split": 20,
+      "n_estimators": 500,
+      "random_state": 42
+    },
+    "best_params": {
+      "bootstrap": false,
+      "max_depth": null,
+      "max_features": "sqrt",
+      "min_samples_leaf": 5,
+      "min_samples_split": 20,
+      "n_estimators": 500
+    },
+    "best_trial_number": 17,
+    "direction": "maximize",
+    "enabled": true,
+    "framework": "optuna",
+    "metric": "accuracy",
+    "n_trials": 20,
+    "study_name": "bow_unigram_random_forest"
+  },
+  "train_shape": [
+    23780,
+    25853
+  ],
+  "test_shape": [
+    5945,
+    25853
+  ],
+  "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51_1_hype\\bow_unigram\\random_forest\\metadata.json"
+}

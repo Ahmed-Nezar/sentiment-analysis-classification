@@ -1,0 +1,48 @@
+{
+  "embedding_name": "gte_small",
+  "embedding_type": "thenlper/gte-small",
+  "model_name": "svm",
+  "model_type": "svm",
+  "embedding_run_id": "7e59a2c67cab1cde",
+  "ml_run_id": "7e59a2c67cab1cde",
+  "status": "generated",
+  "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\7e59a2c67cab1cde\\gte_small\\svm",
+  "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\7e59a2c67cab1cde\\gte_small\\svm\\model.joblib",
+  "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\7e59a2c67cab1cde\\gte_small\\svm\\y_pred.joblib",
+  "metrics": {
+    "accuracy": 0.7115222876366695,
+    "f1_macro": 0.7157853416534774,
+    "precision_macro": 0.7197283578676356,
+    "recall_macro": 0.7131868498906438
+  },
+  "parameters": {
+    "C": 1.0,
+    "gamma": "scale",
+    "kernel": "rbf",
+    "probability": false,
+    "random_state": 42
+  },
+  "configured_parameters": {
+    "c": 1.0,
+    "gamma": "scale",
+    "kernel": "rbf",
+    "probability": false
+  },
+  "parameter_source": "config",
+  "hyperparameter_optimization": {
+    "direction": null,
+    "enabled": false,
+    "framework": null,
+    "metric": null,
+    "n_trials": 0
+  },
+  "train_shape": [
+    23780,
+    384
+  ],
+  "test_shape": [
+    5945,
+    384
+  ],
+  "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\7e59a2c67cab1cde\\gte_small\\svm\\metadata.json"
+}

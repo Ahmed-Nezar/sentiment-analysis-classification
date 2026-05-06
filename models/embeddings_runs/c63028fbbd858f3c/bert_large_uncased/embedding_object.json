@@ -1,0 +1,10 @@
+{
+  "kind": "transformer",
+  "model_name": "bert-large-uncased",
+  "batch_size": 64,
+  "max_length": 128,
+  "vector_dimension": 100,
+  "device": "cuda",
+  "uses_sentence_transformer": false,
+  "persists_model_weights": false
+}

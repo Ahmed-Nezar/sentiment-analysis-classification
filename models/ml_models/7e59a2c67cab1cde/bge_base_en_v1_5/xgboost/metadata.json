@@ -1,0 +1,54 @@
+{
+  "embedding_name": "bge_base_en_v1_5",
+  "embedding_type": "baai/bge-base-en-v1.5",
+  "model_name": "xgboost",
+  "model_type": "xgboost",
+  "embedding_run_id": "7e59a2c67cab1cde",
+  "ml_run_id": "7e59a2c67cab1cde",
+  "status": "generated",
+  "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\7e59a2c67cab1cde\\bge_base_en_v1_5\\xgboost",
+  "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\7e59a2c67cab1cde\\bge_base_en_v1_5\\xgboost\\model.joblib",
+  "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\7e59a2c67cab1cde\\bge_base_en_v1_5\\xgboost\\y_pred.joblib",
+  "metrics": {
+    "accuracy": 0.712363330529857,
+    "f1_macro": 0.7158770277473252,
+    "precision_macro": 0.7172262200538796,
+    "recall_macro": 0.7151116960027507
+  },
+  "parameters": {
+    "colsample_bytree": 1.0,
+    "learning_rate": 0.1,
+    "max_depth": 6,
+    "n_estimators": 300,
+    "random_state": 42,
+    "reg_alpha": 0.0,
+    "reg_lambda": 1.0,
+    "subsample": 1.0
+  },
+  "configured_parameters": {
+    "colsample_bytree": 1.0,
+    "learning_rate": 0.1,
+    "max_depth": 6,
+    "n_estimators": 300,
+    "reg_alpha": 0.0,
+    "reg_lambda": 1.0,
+    "subsample": 1.0
+  },
+  "parameter_source": "config",
+  "hyperparameter_optimization": {
+    "direction": null,
+    "enabled": false,
+    "framework": null,
+    "metric": null,
+    "n_trials": 0
+  },
+  "train_shape": [
+    23780,
+    768
+  ],
+  "test_shape": [
+    5945,
+    768
+  ],
+  "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\7e59a2c67cab1cde\\bge_base_en_v1_5\\xgboost\\metadata.json"
+}

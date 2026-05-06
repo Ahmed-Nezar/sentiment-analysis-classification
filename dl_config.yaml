@@ -21,7 +21,7 @@ dl:
       # predefined - classical embeddings
       config1:
         embedding_mode: predefined
-        embedding_run_path: models/embeddings/dd5c60e10afe7b51
+        embedding_run_path: models/embeddings_runs/dd5c60e10afe7b51
         hidden_dims: [512, 256]
         activation_functions: [relu, relu]
         epochs: 20
@@ -34,7 +34,7 @@ dl:
       # predefined - Transformer-based embeddings - large vector dimensions
       config2:
         embedding_mode: predefined
-        embedding_run_path: models/embeddings/7e59a2c67cab1cde
+        embedding_run_path: models/embeddings_runs/7e59a2c67cab1cde
         hidden_dims: [128, 64, 32]
         activation_functions: [relu, relu, relu]
         epochs: 20
@@ -47,7 +47,7 @@ dl:
       # predefined - Transformer-based embeddings - 100 vector dimensions
       config3:
         embedding_mode: predefined
-        embedding_run_path: models/embeddings/c63028fbbd858f3c
+        embedding_run_path: models/embeddings_runs/c63028fbbd858f3c
         hidden_dims: [50, 25]
         activation_functions: [relu, relu]
         epochs: 20
@@ -76,7 +76,7 @@ dl:
 
       config2:
         embedding_mode: predefined
-        embedding_run_path: models/embeddings/7e59a2c67cab1cde
+        embedding_run_path: models/embeddings_runs/7e59a2c67cab1cde
         hidden_dims: [512, 256]
         bidirectional: true
         max_sequence_length: 64
@@ -91,7 +91,7 @@ dl:
 
       config3:
         embedding_mode: predefined
-        embedding_run_path: models/embeddings/c63028fbbd858f3c
+        embedding_run_path: models/embeddings_runs/c63028fbbd858f3c
         hidden_dims: [50]
         bidirectional: true
         max_sequence_length: 64
@@ -123,7 +123,7 @@ dl:
 
       config2:
         embedding_mode: predefined
-        embedding_run_path: models/embeddings/7e59a2c67cab1cde
+        embedding_run_path: models/embeddings_runs/7e59a2c67cab1cde
         hidden_dims: [512, 256]
         bidirectional: true
         max_sequence_length: 64
@@ -138,7 +138,7 @@ dl:
 
       config3:
         embedding_mode: predefined
-        embedding_run_path: models/embeddings/c63028fbbd858f3c
+        embedding_run_path: models/embeddings_runs/c63028fbbd858f3c
         hidden_dims: [50]
         bidirectional: true
         max_sequence_length: 64
@@ -169,7 +169,7 @@ dl:
 
       config2:
         embedding_mode: predefined
-        embedding_run_path: models/embeddings/7e59a2c67cab1cde
+        embedding_run_path: models/embeddings_runs/7e59a2c67cab1cde
         num_hidden_states: 256
         max_sequence_length: 64
         max_vocab_size: 30000
@@ -183,7 +183,7 @@ dl:
 
       config3:
         embedding_mode: predefined
-        embedding_run_path: models/embeddings/c63028fbbd858f3c
+        embedding_run_path: models/embeddings_runs/c63028fbbd858f3c
         num_hidden_states: 50
         max_sequence_length: 64
         max_vocab_size: 30000
@@ -215,7 +215,7 @@ dl:
 
       config2:
         embedding_mode: predefined
-        embedding_run_path: models/embeddings/7e59a2c67cab1cde
+        embedding_run_path: models/embeddings_runs/7e59a2c67cab1cde
         hidden_dims: [512, 256]
         bidirectional: true
         max_sequence_length: 64
@@ -230,7 +230,7 @@ dl:
 
       config3:
         embedding_mode: predefined
-        embedding_run_path: models/embeddings/c63028fbbd858f3c
+        embedding_run_path: models/embeddings_runs/c63028fbbd858f3c
         hidden_dims: [50]
         bidirectional: true
         max_sequence_length: 64

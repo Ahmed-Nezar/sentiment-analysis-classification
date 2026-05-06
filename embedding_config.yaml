@@ -1,5 +1,5 @@
 embedding:
-  output_dir: models/embeddings
+  output_dir: models/embeddings_runs
 
   text_column: text
   label_column: label

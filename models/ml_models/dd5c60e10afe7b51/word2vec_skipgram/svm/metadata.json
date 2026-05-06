@@ -1,0 +1,39 @@
+{
+  "embedding_name": "word2vec_skipgram",
+  "embedding_type": "word2vec",
+  "model_name": "svm",
+  "model_type": "svm",
+  "embedding_run_id": "dd5c60e10afe7b51",
+  "status": "generated",
+  "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\word2vec_skipgram\\svm",
+  "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\word2vec_skipgram\\svm\\model.joblib",
+  "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\word2vec_skipgram\\svm\\y_pred.joblib",
+  "metrics": {
+    "accuracy": 0.6075693860386879,
+    "f1_macro": 0.6068959159365531,
+    "precision_macro": 0.617406837468148,
+    "recall_macro": 0.6027391418446065
+  },
+  "parameters": {
+    "C": 1.0,
+    "gamma": "scale",
+    "kernel": "rbf",
+    "probability": false,
+    "random_state": 42
+  },
+  "configured_parameters": {
+    "c": 1.0,
+    "gamma": "scale",
+    "kernel": "rbf",
+    "probability": false
+  },
+  "train_shape": [
+    23780,
+    300
+  ],
+  "test_shape": [
+    5945,
+    300
+  ],
+  "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\word2vec_skipgram\\svm\\metadata.json"
+}

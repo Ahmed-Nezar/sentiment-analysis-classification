@@ -1,0 +1,54 @@
+{
+  "embedding_name": "qwen3_embedding_0_6b",
+  "embedding_type": "qwen/qwen3-embedding-0.6b",
+  "model_name": "xgboost",
+  "model_type": "xgboost",
+  "embedding_run_id": "c63028fbbd858f3c",
+  "ml_run_id": "c63028fbbd858f3c",
+  "status": "generated",
+  "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\qwen3_embedding_0_6b\\xgboost",
+  "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\qwen3_embedding_0_6b\\xgboost\\model.joblib",
+  "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\qwen3_embedding_0_6b\\xgboost\\y_pred.joblib",
+  "metrics": {
+    "accuracy": 0.663919259882254,
+    "f1_macro": 0.6671854013885419,
+    "precision_macro": 0.6692591815006965,
+    "recall_macro": 0.6656189889830683
+  },
+  "parameters": {
+    "colsample_bytree": 1.0,
+    "learning_rate": 0.1,
+    "max_depth": 6,
+    "n_estimators": 300,
+    "random_state": 42,
+    "reg_alpha": 0.0,
+    "reg_lambda": 1.0,
+    "subsample": 1.0
+  },
+  "configured_parameters": {
+    "colsample_bytree": 1.0,
+    "learning_rate": 0.1,
+    "max_depth": 6,
+    "n_estimators": 300,
+    "reg_alpha": 0.0,
+    "reg_lambda": 1.0,
+    "subsample": 1.0
+  },
+  "parameter_source": "config",
+  "hyperparameter_optimization": {
+    "direction": null,
+    "enabled": false,
+    "framework": null,
+    "metric": null,
+    "n_trials": 0
+  },
+  "train_shape": [
+    23780,
+    100
+  ],
+  "test_shape": [
+    5945,
+    100
+  ],
+  "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\qwen3_embedding_0_6b\\xgboost\\metadata.json"
+}

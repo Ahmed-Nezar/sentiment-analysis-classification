@@ -1,0 +1,38 @@
+{
+  "embedding_name": "fasttext_cbow",
+  "embedding_type": "fasttext",
+  "model_name": "logistic_regression",
+  "model_type": "logistic_regression",
+  "embedding_run_id": "dd5c60e10afe7b51",
+  "status": "generated",
+  "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\fasttext_cbow\\logistic_regression",
+  "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\fasttext_cbow\\logistic_regression\\model.joblib",
+  "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\fasttext_cbow\\logistic_regression\\y_pred.joblib",
+  "metrics": {
+    "accuracy": 0.5269974768713205,
+    "f1_macro": 0.5142599863682595,
+    "precision_macro": 0.5328907399883938,
+    "recall_macro": 0.5162834129941682
+  },
+  "parameters": {
+    "C": 1.0,
+    "max_iter": 1000,
+    "random_state": 42,
+    "solver": "lbfgs"
+  },
+  "configured_parameters": {
+    "c": 1.0,
+    "max_iter": 1000,
+    "multi_class": "auto",
+    "solver": "lbfgs"
+  },
+  "train_shape": [
+    23780,
+    300
+  ],
+  "test_shape": [
+    5945,
+    300
+  ],
+  "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\fasttext_cbow\\logistic_regression\\metadata.json"
+}

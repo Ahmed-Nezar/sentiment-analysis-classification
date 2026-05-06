@@ -1,0 +1,9 @@
+{
+  "kind": "transformer",
+  "model_name": "thenlper/gte-base",
+  "batch_size": 64,
+  "max_length": 128,
+  "device": "cuda",
+  "uses_sentence_transformer": true,
+  "persists_model_weights": false
+}

@@ -1,0 +1,37 @@
+{
+  "embedding_name": "bow_unigram",
+  "embedding_type": "bow",
+  "model_name": "decision_tree",
+  "model_type": "decision_tree",
+  "embedding_run_id": "dd5c60e10afe7b51",
+  "status": "generated",
+  "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\bow_unigram\\decision_tree",
+  "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\bow_unigram\\decision_tree\\model.joblib",
+  "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\bow_unigram\\decision_tree\\y_pred.joblib",
+  "metrics": {
+    "accuracy": 0.5783010933557612,
+    "f1_macro": 0.5795605264611271,
+    "precision_macro": 0.5812758001706585,
+    "recall_macro": 0.5782501963236387
+  },
+  "parameters": {
+    "max_depth": null,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "random_state": 42
+  },
+  "configured_parameters": {
+    "max_depth": null,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2
+  },
+  "train_shape": [
+    23780,
+    25853
+  ],
+  "test_shape": [
+    5945,
+    25853
+  ],
+  "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\bow_unigram\\decision_tree\\metadata.json"
+}

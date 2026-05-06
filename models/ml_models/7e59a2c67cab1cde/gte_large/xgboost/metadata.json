@@ -1,0 +1,54 @@
+{
+  "embedding_name": "gte_large",
+  "embedding_type": "thenlper/gte-large",
+  "model_name": "xgboost",
+  "model_type": "xgboost",
+  "embedding_run_id": "7e59a2c67cab1cde",
+  "ml_run_id": "7e59a2c67cab1cde",
+  "status": "generated",
+  "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\7e59a2c67cab1cde\\gte_large\\xgboost",
+  "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\7e59a2c67cab1cde\\gte_large\\xgboost\\model.joblib",
+  "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\7e59a2c67cab1cde\\gte_large\\xgboost\\y_pred.joblib",
+  "metrics": {
+    "accuracy": 0.7005887300252313,
+    "f1_macro": 0.704742800578957,
+    "precision_macro": 0.7089412130632146,
+    "recall_macro": 0.7018570444779981
+  },
+  "parameters": {
+    "colsample_bytree": 1.0,
+    "learning_rate": 0.1,
+    "max_depth": 6,
+    "n_estimators": 300,
+    "random_state": 42,
+    "reg_alpha": 0.0,
+    "reg_lambda": 1.0,
+    "subsample": 1.0
+  },
+  "configured_parameters": {
+    "colsample_bytree": 1.0,
+    "learning_rate": 0.1,
+    "max_depth": 6,
+    "n_estimators": 300,
+    "reg_alpha": 0.0,
+    "reg_lambda": 1.0,
+    "subsample": 1.0
+  },
+  "parameter_source": "config",
+  "hyperparameter_optimization": {
+    "direction": null,
+    "enabled": false,
+    "framework": null,
+    "metric": null,
+    "n_trials": 0
+  },
+  "train_shape": [
+    23780,
+    1024
+  ],
+  "test_shape": [
+    5945,
+    1024
+  ],
+  "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\7e59a2c67cab1cde\\gte_large\\xgboost\\metadata.json"
+}

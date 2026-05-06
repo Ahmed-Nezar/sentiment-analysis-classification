@@ -1,0 +1,135 @@
+{
+  "embedding_name": "network_embedding",
+  "embedding_type": "network",
+  "model_name": "gru_config1",
+  "model_type": "gru",
+  "embedding_mode": "network",
+  "embedding_run_id": null,
+  "dataset_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\datasets\\cleaned_dataset.csv",
+  "dl_run_id": "2732cfe8073bf5c9",
+  "dl_configuration_hash": "ec5c371c32227687",
+  "status": "generated",
+  "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\dl_models\\2732cfe8073bf5c9\\network_embedding\\gru_config1",
+  "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\dl_models\\2732cfe8073bf5c9\\network_embedding\\gru_config1\\model.pt",
+  "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\dl_models\\2732cfe8073bf5c9\\network_embedding\\gru_config1\\y_pred.joblib",
+  "metrics": {
+    "accuracy": 0.3724137931034483,
+    "f1_macro": 0.29667601599638777,
+    "precision_macro": 0.3983696344445676,
+    "recall_macro": 0.3577178358504498
+  },
+  "history": [
+    {
+      "accuracy": 0.3712363330529857,
+      "early_stopped": false,
+      "early_stopping_reason": null,
+      "epoch": 1.0,
+      "f1_macro": 0.20262665807437186,
+      "overfitting_streak": 0,
+      "precision_macro": 0.36219017047852153,
+      "recall_macro": 0.3363268349780706,
+      "train_loss": 1.0965385311887081,
+      "validation_higher_than_training": false,
+      "validation_loss": 1.094878545380922
+    },
+    {
+      "accuracy": 0.375609756097561,
+      "early_stopped": false,
+      "early_stopping_reason": null,
+      "epoch": 2.0,
+      "f1_macro": 0.21212970823625754,
+      "overfitting_streak": 1,
+      "precision_macro": 0.4063348824828375,
+      "recall_macro": 0.3412394717476514,
+      "train_loss": 1.0926121982433297,
+      "validation_higher_than_training": true,
+      "validation_loss": 1.0958894138681077
+    },
+    {
+      "accuracy": 0.37510513036164844,
+      "early_stopped": false,
+      "early_stopping_reason": null,
+      "epoch": 3.0,
+      "f1_macro": 0.21090324590962262,
+      "overfitting_streak": 2,
+      "precision_macro": 0.3996731434912135,
+      "recall_macro": 0.34063348731813753,
+      "train_loss": 1.0868468477306896,
+      "validation_higher_than_training": true,
+      "validation_loss": 1.099002406314404
+    },
+    {
+      "accuracy": 0.3724137931034483,
+      "early_stopped": true,
+      "early_stopping_reason": "validation_loss_higher_than_train_loss",
+      "epoch": 4.0,
+      "f1_macro": 0.29667601599638777,
+      "overfitting_streak": 3,
+      "precision_macro": 0.3983696344445676,
+      "recall_macro": 0.3577178358504498,
+      "train_loss": 1.0743312919911865,
+      "validation_higher_than_training": true,
+      "validation_loss": 1.10419334083971
+    }
+  ],
+  "parameters": {
+    "activation_functions": [
+      "relu"
+    ],
+    "batch_size": 64,
+    "bidirectional": true,
+    "dropout": 0.3,
+    "early_stopping_patience": 3,
+    "embedding_mode": "network",
+    "epochs": 20,
+    "hidden_dim": 128,
+    "hidden_dims": [
+      128,
+      64
+    ],
+    "hidden_layers": 2,
+    "learning_rate": 0.001,
+    "max_sequence_length": 64,
+    "max_vocab_size": 30000,
+    "model_type": "gru",
+    "num_hidden_states": 128,
+    "token_embedding_dim": 100,
+    "weight_decay": 0.0001
+  },
+  "configured_parameters": {
+    "batch_size": 64,
+    "bidirectional": true,
+    "config_name": "config1",
+    "dropout": 0.3,
+    "early_stopping_patience": 3,
+    "embedding_mode": "network",
+    "epochs": 20,
+    "hidden_dims": [
+      128,
+      64
+    ],
+    "learning_rate": 0.001,
+    "max_sequence_length": 64,
+    "max_vocab_size": 30000,
+    "name": "gru_config1",
+    "token_embedding_dim": 100,
+    "type": "gru",
+    "weight_decay": 0.0001
+  },
+  "device": "cuda",
+  "cuda_device_name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "train_shape": [
+    23780,
+    64
+  ],
+  "test_shape": [
+    5945,
+    64
+  ],
+  "classes": [
+    "0",
+    "1",
+    "2"
+  ],
+  "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\dl_models\\2732cfe8073bf5c9\\network_embedding\\gru_config1\\metadata.json"
+}

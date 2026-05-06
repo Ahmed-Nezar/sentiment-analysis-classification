@@ -1,0 +1,47 @@
+{
+  "embedding_name": "qwen3_embedding_0_6b",
+  "embedding_type": "qwen/qwen3-embedding-0.6b",
+  "model_name": "logistic_regression",
+  "model_type": "logistic_regression",
+  "embedding_run_id": "7e59a2c67cab1cde",
+  "ml_run_id": "7e59a2c67cab1cde",
+  "status": "generated",
+  "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\7e59a2c67cab1cde\\qwen3_embedding_0_6b\\logistic_regression",
+  "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\7e59a2c67cab1cde\\qwen3_embedding_0_6b\\logistic_regression\\model.joblib",
+  "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\7e59a2c67cab1cde\\qwen3_embedding_0_6b\\logistic_regression\\y_pred.joblib",
+  "metrics": {
+    "accuracy": 0.7098402018502944,
+    "f1_macro": 0.7128469591452355,
+    "precision_macro": 0.714199335499425,
+    "recall_macro": 0.7117171834366406
+  },
+  "parameters": {
+    "C": 1.0,
+    "max_iter": 1000,
+    "random_state": 42,
+    "solver": "lbfgs"
+  },
+  "configured_parameters": {
+    "c": 1.0,
+    "max_iter": 1000,
+    "multi_class": "auto",
+    "solver": "lbfgs"
+  },
+  "parameter_source": "config",
+  "hyperparameter_optimization": {
+    "direction": null,
+    "enabled": false,
+    "framework": null,
+    "metric": null,
+    "n_trials": 0
+  },
+  "train_shape": [
+    23780,
+    1024
+  ],
+  "test_shape": [
+    5945,
+    1024
+  ],
+  "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\7e59a2c67cab1cde\\qwen3_embedding_0_6b\\logistic_regression\\metadata.json"
+}

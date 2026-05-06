@@ -132,7 +132,7 @@ class EmbeddingPipeline:
             "datasets/cleaned_dataset.csv",
         )
         self.output_root = _resolve_path(
-            self.config.get("EMBEDDINGS_OUTPUT_DIR"), "models/embeddings"
+            self.config.get("EMBEDDINGS_OUTPUT_DIR"), "models/embeddings_runs"
         )
 
         raw_runs = self.config.get("EMBEDDING_RUNS", [])

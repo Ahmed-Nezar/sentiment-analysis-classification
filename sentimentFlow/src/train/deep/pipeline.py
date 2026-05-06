@@ -115,7 +115,7 @@ class DLPipeline:
         self.output_root = resolve_path(self.config.get("DL_OUTPUT_DIR"), "models/dl_models")
         self.embedding_run_path = resolve_path(
             self.config.get("DL_EMBEDDING_RUN_PATH"),
-            "models/embeddings",
+            "models/embeddings_runs",
         )
         self.dataset_path = resolve_path(
             self.config.get("CLEANED_DATASET_PATH") or self.config.get("DATASET_PATH"),
@@ -315,7 +315,7 @@ class DLPipeline:
         )
         if embedding_path is None:
             return self._selected_embedding_runs(embedding_filter=embedding_filter)
-        model_embedding_path = resolve_path(embedding_path, "models/embeddings")
+        model_embedding_path = resolve_path(embedding_path, "models/embeddings_runs")
         return self._selected_embedding_runs(
             self._discover_embedding_runs(model_embedding_path),
             embedding_filter=embedding_filter,

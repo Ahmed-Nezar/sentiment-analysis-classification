@@ -1,0 +1,46 @@
+{
+  "embedding_name": "gte_small",
+  "embedding_type": "thenlper/gte-small",
+  "model_name": "decision_tree",
+  "model_type": "decision_tree",
+  "embedding_run_id": "c63028fbbd858f3c",
+  "ml_run_id": "c63028fbbd858f3c",
+  "status": "generated",
+  "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_small\\decision_tree",
+  "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_small\\decision_tree\\model.joblib",
+  "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_small\\decision_tree\\y_pred.joblib",
+  "metrics": {
+    "accuracy": 0.46980656013456684,
+    "f1_macro": 0.4699962908915117,
+    "precision_macro": 0.47020672592921436,
+    "recall_macro": 0.4701237544345793
+  },
+  "parameters": {
+    "max_depth": null,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "random_state": 42
+  },
+  "configured_parameters": {
+    "max_depth": null,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2
+  },
+  "parameter_source": "config",
+  "hyperparameter_optimization": {
+    "direction": null,
+    "enabled": false,
+    "framework": null,
+    "metric": null,
+    "n_trials": 0
+  },
+  "train_shape": [
+    23780,
+    100
+  ],
+  "test_shape": [
+    5945,
+    100
+  ],
+  "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_small\\decision_tree\\metadata.json"
+}

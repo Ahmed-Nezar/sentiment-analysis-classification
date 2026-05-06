@@ -21,7 +21,7 @@ class MLPipeline:
         self.output_root = resolve_path(self.config.get("ML_OUTPUT_DIR"), "models/ml_models")
         self.embedding_run_path  = resolve_path(
             self.config.get("ML_EMBEDDING_RUN_PATH"),
-            "models/embeddings",
+            "models/embeddings_runs",
         )
         self.random_state = to_int(self.config.get("ML_RANDOM_STATE"), 42)
         self.force_rerun = to_bool(self.config.get("ML_FORCE_RERUN"), False)

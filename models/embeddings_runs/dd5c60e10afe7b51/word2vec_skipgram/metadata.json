@@ -1,0 +1,171 @@
+{
+  "name": "word2vec_skipgram",
+  "type": "word2vec",
+  "configuration_hash": "dd5c60e10afe7b51",
+  "run_hash": "dd5c60e10afe7b51",
+  "status": "generated",
+  "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\dd5c60e10afe7b51\\word2vec_skipgram",
+  "embedding_object_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\dd5c60e10afe7b51\\word2vec_skipgram\\embedding_object.model",
+  "x_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\dd5c60e10afe7b51\\word2vec_skipgram\\X_train.joblib",
+  "x_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\dd5c60e10afe7b51\\word2vec_skipgram\\X_test.joblib",
+  "y_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\dd5c60e10afe7b51\\word2vec_skipgram\\y_train.joblib",
+  "y_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\dd5c60e10afe7b51\\word2vec_skipgram\\y_test.joblib",
+  "train_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\dd5c60e10afe7b51\\word2vec_skipgram\\train_split.csv",
+  "test_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\dd5c60e10afe7b51\\word2vec_skipgram\\test_split.csv",
+  "parameters": {
+    "epochs": 5,
+    "kind": "word2vec",
+    "min_count": 1,
+    "sg": 1,
+    "vector_size": 300,
+    "window": 5,
+    "workers": 4
+  },
+  "configured_parameters": {
+    "epochs": 5,
+    "min_count": 1,
+    "name": "word2vec_skipgram",
+    "sg": 1,
+    "type": "word2vec",
+    "vector_size": 300,
+    "window": 5,
+    "workers": 4
+  },
+  "configuration_hash_payload": {
+    "dataset": {
+      "dataset_mtime_ns": 1776887729554272500,
+      "dataset_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\datasets\\cleaned_dataset.csv",
+      "dataset_size_bytes": 7619817
+    },
+    "embedding_runs": [
+      {
+        "max_df": 1.0,
+        "max_features": null,
+        "min_df": 1,
+        "name": "bow_bigram",
+        "ngram_range": [
+          2,
+          2
+        ],
+        "type": "bow"
+      },
+      {
+        "max_df": 1.0,
+        "max_features": null,
+        "min_df": 1,
+        "name": "bow_unigram",
+        "ngram_range": [
+          1,
+          1
+        ],
+        "type": "bow"
+      },
+      {
+        "max_df": 1.0,
+        "max_features": null,
+        "min_df": 1,
+        "name": "bow_unigram_bigram",
+        "ngram_range": [
+          1,
+          2
+        ],
+        "type": "bow"
+      },
+      {
+        "epochs": 5,
+        "min_count": 1,
+        "name": "fasttext_cbow",
+        "sg": 0,
+        "type": "fasttext",
+        "vector_size": 300,
+        "window": 5,
+        "workers": 4
+      },
+      {
+        "epochs": 5,
+        "min_count": 1,
+        "name": "fasttext_skipgram",
+        "sg": 1,
+        "type": "fasttext",
+        "vector_size": 300,
+        "window": 5,
+        "workers": 4
+      },
+      {
+        "glove_file_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\embeddings\\glove\\glove.6B.300d.txt",
+        "name": "glove_300d",
+        "type": "glove",
+        "vector_size": 300
+      },
+      {
+        "max_df": 1.0,
+        "max_features": null,
+        "min_df": 1,
+        "name": "tfidf_bigram",
+        "ngram_range": [
+          2,
+          2
+        ],
+        "type": "tfidf"
+      },
+      {
+        "max_df": 1.0,
+        "max_features": null,
+        "min_df": 1,
+        "name": "tfidf_unigram",
+        "ngram_range": [
+          1,
+          1
+        ],
+        "type": "tfidf"
+      },
+      {
+        "max_df": 1.0,
+        "max_features": null,
+        "min_df": 1,
+        "name": "tfidf_unigram_bigram",
+        "ngram_range": [
+          1,
+          2
+        ],
+        "type": "tfidf"
+      },
+      {
+        "epochs": 5,
+        "min_count": 1,
+        "name": "word2vec_cbow",
+        "sg": 0,
+        "type": "word2vec",
+        "vector_size": 300,
+        "window": 5,
+        "workers": 4
+      },
+      {
+        "epochs": 5,
+        "min_count": 1,
+        "name": "word2vec_skipgram",
+        "sg": 1,
+        "type": "word2vec",
+        "vector_size": 300,
+        "window": 5,
+        "workers": 4
+      }
+    ],
+    "split_config": {
+      "label_column": "label",
+      "random_state": 42,
+      "test_size": 0.2,
+      "text_column": "text",
+      "use_stratify": true
+    }
+  },
+  "train_shape": [
+    23780,
+    300
+  ],
+  "test_shape": [
+    5945,
+    300
+  ],
+  "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\dd5c60e10afe7b51\\word2vec_skipgram\\metadata.json"
+}

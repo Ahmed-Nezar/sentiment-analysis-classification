@@ -33,4 +33,13 @@ notebooks/
 
 .env
 embeddings/
-models/
+*.pt
+*.joblib
+*.csv
+*.pkl
+*.tensor
+*.safetensors
+*.model
+*.npy
+
+fine_tuned_bert/

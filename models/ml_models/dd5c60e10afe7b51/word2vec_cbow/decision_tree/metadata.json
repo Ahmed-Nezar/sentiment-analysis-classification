@@ -1,0 +1,37 @@
+{
+  "embedding_name": "word2vec_cbow",
+  "embedding_type": "word2vec",
+  "model_name": "decision_tree",
+  "model_type": "decision_tree",
+  "embedding_run_id": "dd5c60e10afe7b51",
+  "status": "generated",
+  "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\word2vec_cbow\\decision_tree",
+  "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\word2vec_cbow\\decision_tree\\model.joblib",
+  "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\word2vec_cbow\\decision_tree\\y_pred.joblib",
+  "metrics": {
+    "accuracy": 0.41900756938603867,
+    "f1_macro": 0.4167076589241499,
+    "precision_macro": 0.4163890527193028,
+    "recall_macro": 0.4171137982049921
+  },
+  "parameters": {
+    "max_depth": null,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "random_state": 42
+  },
+  "configured_parameters": {
+    "max_depth": null,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2
+  },
+  "train_shape": [
+    23780,
+    300
+  ],
+  "test_shape": [
+    5945,
+    300
+  ],
+  "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\word2vec_cbow\\decision_tree\\metadata.json"
+}

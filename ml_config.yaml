@@ -1,8 +1,8 @@
 ml:
-  # embedding_run_path: models/embeddings/dd5c60e10afe7b51
-  # embedding_run_path: models/embeddings/7e59a2c67cab1cde
+  # embedding_run_path: models/embeddings_runs/dd5c60e10afe7b51
+  # embedding_run_path: models/embeddings_runs/7e59a2c67cab1cde
   
-  embedding_run_path: models/embeddings/c63028fbbd858f3c
+  embedding_run_path: models/embeddings_runs/c63028fbbd858f3c
   output_dir: models/ml_models
   random_state: 42
   force_rerun: false
@@ -65,4 +65,3 @@ ml:
       max_depth: null
       min_samples_split: 2
       min_samples_leaf: 1
-

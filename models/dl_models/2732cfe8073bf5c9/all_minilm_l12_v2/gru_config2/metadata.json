@@ -1,0 +1,161 @@
+{
+  "embedding_name": "all_minilm_l12_v2",
+  "embedding_type": "sentence-transformers/all-minilm-l12-v2",
+  "model_name": "gru_config2",
+  "model_type": "gru",
+  "embedding_mode": "predefined",
+  "embedding_run_id": null,
+  "dataset_path": null,
+  "dl_run_id": "2732cfe8073bf5c9",
+  "dl_configuration_hash": "3657682cb1ea27d0",
+  "status": "generated",
+  "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\dl_models\\2732cfe8073bf5c9\\all_minilm_l12_v2\\gru_config2",
+  "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\dl_models\\2732cfe8073bf5c9\\all_minilm_l12_v2\\gru_config2\\model.pt",
+  "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\dl_models\\2732cfe8073bf5c9\\all_minilm_l12_v2\\gru_config2\\y_pred.joblib",
+  "metrics": {
+    "accuracy": 0.6788898233809925,
+    "f1_macro": 0.6813657117460973,
+    "precision_macro": 0.6928877450883536,
+    "recall_macro": 0.6760227445138688
+  },
+  "history": [
+    {
+      "accuracy": 0.6629100084104289,
+      "early_stopped": false,
+      "early_stopping_reason": null,
+      "epoch": 1.0,
+      "f1_macro": 0.6629215286322435,
+      "overfitting_streak": 0,
+      "precision_macro": 0.6769989227183295,
+      "recall_macro": 0.6584431312328981,
+      "train_loss": 0.7878820531703125,
+      "validation_higher_than_training": false,
+      "validation_loss": 0.7401527845328149
+    },
+    {
+      "accuracy": 0.6735071488645921,
+      "early_stopped": false,
+      "early_stopping_reason": null,
+      "epoch": 2.0,
+      "f1_macro": 0.6744052017481993,
+      "overfitting_streak": 0,
+      "precision_macro": 0.6724267734069936,
+      "recall_macro": 0.6781127134329362,
+      "train_loss": 0.7387786833652435,
+      "validation_higher_than_training": false,
+      "validation_loss": 0.7251089726505007
+    },
+    {
+      "accuracy": 0.6758620689655173,
+      "early_stopped": false,
+      "early_stopping_reason": null,
+      "epoch": 3.0,
+      "f1_macro": 0.6758259756670358,
+      "overfitting_streak": 0,
+      "precision_macro": 0.6743832729534862,
+      "recall_macro": 0.6798628470574172,
+      "train_loss": 0.7233292718009853,
+      "validation_higher_than_training": false,
+      "validation_loss": 0.7230855977064026
+    },
+    {
+      "accuracy": 0.67905803195963,
+      "early_stopped": false,
+      "early_stopping_reason": null,
+      "epoch": 4.0,
+      "f1_macro": 0.683073450886711,
+      "overfitting_streak": 1,
+      "precision_macro": 0.6900847470642132,
+      "recall_macro": 0.6790008057585503,
+      "train_loss": 0.7189902329865978,
+      "validation_higher_than_training": true,
+      "validation_loss": 0.7204137683115254
+    },
+    {
+      "accuracy": 0.6777123633305299,
+      "early_stopped": false,
+      "early_stopping_reason": null,
+      "epoch": 5.0,
+      "f1_macro": 0.6809658750539233,
+      "overfitting_streak": 2,
+      "precision_macro": 0.6843853065947522,
+      "recall_macro": 0.6784533826127978,
+      "train_loss": 0.7085071818481683,
+      "validation_higher_than_training": true,
+      "validation_loss": 0.7165619827600163
+    },
+    {
+      "accuracy": 0.6788898233809925,
+      "early_stopped": true,
+      "early_stopping_reason": "validation_loss_higher_than_train_loss",
+      "epoch": 6.0,
+      "f1_macro": 0.6813657117460973,
+      "overfitting_streak": 3,
+      "precision_macro": 0.6928877450883536,
+      "recall_macro": 0.6760227445138688,
+      "train_loss": 0.7012957407507804,
+      "validation_higher_than_training": true,
+      "validation_loss": 0.717735841536943
+    }
+  ],
+  "parameters": {
+    "activation_functions": [
+      "relu"
+    ],
+    "batch_size": 64,
+    "bidirectional": true,
+    "dropout": 0.3,
+    "early_stopping_patience": 3,
+    "embedding_mode": "predefined",
+    "epochs": 20,
+    "hidden_dim": 512,
+    "hidden_dims": [
+      512,
+      256
+    ],
+    "hidden_layers": 2,
+    "learning_rate": 0.001,
+    "max_sequence_length": 64,
+    "max_vocab_size": 30000,
+    "model_type": "gru",
+    "num_hidden_states": 128,
+    "token_embedding_dim": 128,
+    "weight_decay": 0.0001
+  },
+  "configured_parameters": {
+    "batch_size": 64,
+    "bidirectional": true,
+    "config_name": "config2",
+    "dropout": 0.3,
+    "early_stopping_patience": 3,
+    "embedding_mode": "predefined",
+    "embedding_run_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\7e59a2c67cab1cde",
+    "epochs": 20,
+    "hidden_dims": [
+      512,
+      256
+    ],
+    "learning_rate": 0.001,
+    "max_sequence_length": 64,
+    "max_vocab_size": 30000,
+    "name": "gru_config2",
+    "type": "gru",
+    "weight_decay": 0.0001
+  },
+  "device": "cuda",
+  "cuda_device_name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "train_shape": [
+    23780,
+    384
+  ],
+  "test_shape": [
+    5945,
+    384
+  ],
+  "classes": [
+    "0",
+    "1",
+    "2"
+  ],
+  "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\dl_models\\2732cfe8073bf5c9\\all_minilm_l12_v2\\gru_config2\\metadata.json"
+}

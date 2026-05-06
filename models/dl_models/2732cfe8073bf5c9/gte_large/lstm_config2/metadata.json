@@ -1,0 +1,174 @@
+{
+  "embedding_name": "gte_large",
+  "embedding_type": "thenlper/gte-large",
+  "model_name": "lstm_config2",
+  "model_type": "lstm",
+  "embedding_mode": "predefined",
+  "embedding_run_id": null,
+  "dataset_path": null,
+  "dl_run_id": "2732cfe8073bf5c9",
+  "dl_configuration_hash": "b43b8d4fec3ec913",
+  "status": "generated",
+  "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\dl_models\\2732cfe8073bf5c9\\gte_large\\lstm_config2",
+  "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\dl_models\\2732cfe8073bf5c9\\gte_large\\lstm_config2\\model.pt",
+  "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\dl_models\\2732cfe8073bf5c9\\gte_large\\lstm_config2\\y_pred.joblib",
+  "metrics": {
+    "accuracy": 0.7088309503784693,
+    "f1_macro": 0.7111401537044545,
+    "precision_macro": 0.7094396022986542,
+    "recall_macro": 0.715881419440417
+  },
+  "history": [
+    {
+      "accuracy": 0.6891505466778806,
+      "early_stopped": false,
+      "early_stopping_reason": null,
+      "epoch": 1.0,
+      "f1_macro": 0.689583882884906,
+      "overfitting_streak": 0,
+      "precision_macro": 0.7051614233116661,
+      "recall_macro": 0.685479972644957,
+      "train_loss": 0.7502399752378665,
+      "validation_higher_than_training": false,
+      "validation_loss": 0.6956599798395015
+    },
+    {
+      "accuracy": 0.7019343986543314,
+      "early_stopped": false,
+      "early_stopping_reason": null,
+      "epoch": 2.0,
+      "f1_macro": 0.7055082886977636,
+      "overfitting_streak": 0,
+      "precision_macro": 0.7057542492747011,
+      "recall_macro": 0.7056467623209705,
+      "train_loss": 0.6839866125854351,
+      "validation_higher_than_training": false,
+      "validation_loss": 0.6643718632456632
+    },
+    {
+      "accuracy": 0.7063078216989066,
+      "early_stopped": false,
+      "early_stopping_reason": null,
+      "epoch": 3.0,
+      "f1_macro": 0.7073489602000986,
+      "overfitting_streak": 0,
+      "precision_macro": 0.7047574902801464,
+      "recall_macro": 0.713446551064024,
+      "train_loss": 0.671187260503825,
+      "validation_higher_than_training": false,
+      "validation_loss": 0.6623226231542126
+    },
+    {
+      "accuracy": 0.7046257359125315,
+      "early_stopped": false,
+      "early_stopping_reason": null,
+      "epoch": 4.0,
+      "f1_macro": 0.7090509658135686,
+      "overfitting_streak": 0,
+      "precision_macro": 0.7127875630178536,
+      "recall_macro": 0.710348367518573,
+      "train_loss": 0.664548862622103,
+      "validation_higher_than_training": false,
+      "validation_loss": 0.6631761635623127
+    },
+    {
+      "accuracy": 0.6923465096719933,
+      "early_stopped": false,
+      "early_stopping_reason": null,
+      "epoch": 5.0,
+      "f1_macro": 0.6966245289326847,
+      "overfitting_streak": 1,
+      "precision_macro": 0.7134554247694149,
+      "recall_macro": 0.7020726691802223,
+      "train_loss": 0.6547914359828221,
+      "validation_higher_than_training": true,
+      "validation_loss": 0.7001889141895272
+    },
+    {
+      "accuracy": 0.7026072329688814,
+      "early_stopped": false,
+      "early_stopping_reason": null,
+      "epoch": 6.0,
+      "f1_macro": 0.708519607303738,
+      "overfitting_streak": 2,
+      "precision_macro": 0.7213170861097916,
+      "recall_macro": 0.7049564675826422,
+      "train_loss": 0.65041920000811,
+      "validation_higher_than_training": true,
+      "validation_loss": 0.6715450352736138
+    },
+    {
+      "accuracy": 0.7088309503784693,
+      "early_stopped": true,
+      "early_stopping_reason": "validation_loss_higher_than_train_loss",
+      "epoch": 7.0,
+      "f1_macro": 0.7111401537044545,
+      "overfitting_streak": 3,
+      "precision_macro": 0.7094396022986542,
+      "recall_macro": 0.715881419440417,
+      "train_loss": 0.6451020329714423,
+      "validation_higher_than_training": true,
+      "validation_loss": 0.6590744139368139
+    }
+  ],
+  "parameters": {
+    "activation_functions": [
+      "relu"
+    ],
+    "batch_size": 64,
+    "bidirectional": true,
+    "dropout": 0.3,
+    "early_stopping_patience": 3,
+    "embedding_mode": "predefined",
+    "epochs": 20,
+    "hidden_dim": 512,
+    "hidden_dims": [
+      512,
+      256
+    ],
+    "hidden_layers": 2,
+    "learning_rate": 0.001,
+    "max_sequence_length": 64,
+    "max_vocab_size": 30000,
+    "model_type": "lstm",
+    "num_hidden_states": 128,
+    "token_embedding_dim": 128,
+    "weight_decay": 0.0001
+  },
+  "configured_parameters": {
+    "batch_size": 64,
+    "bidirectional": true,
+    "config_name": "config2",
+    "dropout": 0.3,
+    "early_stopping_patience": 3,
+    "embedding_mode": "predefined",
+    "embedding_run_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\7e59a2c67cab1cde",
+    "epochs": 20,
+    "hidden_dims": [
+      512,
+      256
+    ],
+    "learning_rate": 0.001,
+    "max_sequence_length": 64,
+    "max_vocab_size": 30000,
+    "name": "lstm_config2",
+    "type": "lstm",
+    "weight_decay": 0.0001
+  },
+  "device": "cuda",
+  "cuda_device_name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "train_shape": [
+    23780,
+    1024
+  ],
+  "test_shape": [
+    5945,
+    1024
+  ],
+  "classes": [
+    "0",
+    "1",
+    "2"
+  ],
+  "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\dl_models\\2732cfe8073bf5c9\\gte_large\\lstm_config2\\metadata.json"
+}

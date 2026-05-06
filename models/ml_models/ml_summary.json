@@ -1,0 +1,2705 @@
+{
+  "generated_at_utc": "2026-05-02T18:17:51.952824+00:00",
+  "embedding_run_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\c63028fbbd858f3c",
+  "embedding_run_id": "c63028fbbd858f3c",
+  "ml_run_id": "c63028fbbd858f3c",
+  "output_root": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models",
+  "random_state": 42,
+  "force_rerun": false,
+  "embedding_filter": [
+    "bert_base_uncased",
+    "bert_large_uncased",
+    "qwen3_embedding_0_6b",
+    "bge_base_en_v1_5",
+    "bge_small_en_v1_5",
+    "all_minilm_l6_v2",
+    "bge_m3",
+    "all_minilm_l12_v2",
+    "gte_base",
+    "gte_small",
+    "gte_large"
+  ],
+  "hyperparameter_optimization": {
+    "enabled": false,
+    "framework": null,
+    "n_trials": 10,
+    "metric": null
+  },
+  "runs": [
+    {
+      "embedding_name": "all_minilm_l12_v2",
+      "embedding_type": "sentence-transformers/all-minilm-l12-v2",
+      "model_name": "logistic_regression",
+      "model_type": "logistic_regression",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l12_v2\\logistic_regression",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l12_v2\\logistic_regression\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l12_v2\\logistic_regression\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.5947855340622372,
+        "f1_macro": 0.595998748845019,
+        "precision_macro": 0.597082662250478,
+        "recall_macro": 0.5952080850270897
+      },
+      "parameters": {
+        "C": 1.0,
+        "max_iter": 1000,
+        "random_state": 42,
+        "solver": "lbfgs"
+      },
+      "configured_parameters": {
+        "c": 1.0,
+        "max_iter": 1000,
+        "multi_class": "auto",
+        "solver": "lbfgs"
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l12_v2\\logistic_regression\\metadata.json"
+    },
+    {
+      "embedding_name": "all_minilm_l12_v2",
+      "embedding_type": "sentence-transformers/all-minilm-l12-v2",
+      "model_name": "svm",
+      "model_type": "svm",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l12_v2\\svm",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l12_v2\\svm\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l12_v2\\svm\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.63986543313709,
+        "f1_macro": 0.6429126125709431,
+        "precision_macro": 0.6483702319653829,
+        "recall_macro": 0.639465612960218
+      },
+      "parameters": {
+        "C": 1.0,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "probability": false,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "c": 1.0,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "probability": false
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l12_v2\\svm\\metadata.json"
+    },
+    {
+      "embedding_name": "all_minilm_l12_v2",
+      "embedding_type": "sentence-transformers/all-minilm-l12-v2",
+      "model_name": "random_forest",
+      "model_type": "random_forest",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l12_v2\\random_forest",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l12_v2\\random_forest\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l12_v2\\random_forest\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.5912531539108494,
+        "f1_macro": 0.5911824373562897,
+        "precision_macro": 0.6100709490680861,
+        "recall_macro": 0.5854567748580976
+      },
+      "parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "n_estimators": 300,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "n_estimators": 300
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l12_v2\\random_forest\\metadata.json"
+    },
+    {
+      "embedding_name": "all_minilm_l12_v2",
+      "embedding_type": "sentence-transformers/all-minilm-l12-v2",
+      "model_name": "xgboost",
+      "model_type": "xgboost",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l12_v2\\xgboost",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l12_v2\\xgboost\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l12_v2\\xgboost\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6089150546677881,
+        "f1_macro": 0.6107694751890579,
+        "precision_macro": 0.6137399189274526,
+        "recall_macro": 0.6086997109708561
+      },
+      "parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.1,
+        "max_depth": 6,
+        "n_estimators": 300,
+        "random_state": 42,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0
+      },
+      "configured_parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.1,
+        "max_depth": 6,
+        "n_estimators": 300,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l12_v2\\xgboost\\metadata.json"
+    },
+    {
+      "embedding_name": "all_minilm_l12_v2",
+      "embedding_type": "sentence-transformers/all-minilm-l12-v2",
+      "model_name": "decision_tree",
+      "model_type": "decision_tree",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l12_v2\\decision_tree",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l12_v2\\decision_tree\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l12_v2\\decision_tree\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.4348191757779647,
+        "f1_macro": 0.4352441971348365,
+        "precision_macro": 0.43495269703010364,
+        "recall_macro": 0.43557968729392327
+      },
+      "parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l12_v2\\decision_tree\\metadata.json"
+    },
+    {
+      "embedding_name": "all_minilm_l6_v2",
+      "embedding_type": "sentence-transformers/all-minilm-l6-v2",
+      "model_name": "logistic_regression",
+      "model_type": "logistic_regression",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l6_v2\\logistic_regression",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l6_v2\\logistic_regression\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l6_v2\\logistic_regression\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.607905803195963,
+        "f1_macro": 0.6092165670684802,
+        "precision_macro": 0.6088626950205086,
+        "recall_macro": 0.6096290220202506
+      },
+      "parameters": {
+        "C": 1.0,
+        "max_iter": 1000,
+        "random_state": 42,
+        "solver": "lbfgs"
+      },
+      "configured_parameters": {
+        "c": 1.0,
+        "max_iter": 1000,
+        "multi_class": "auto",
+        "solver": "lbfgs"
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l6_v2\\logistic_regression\\metadata.json"
+    },
+    {
+      "embedding_name": "all_minilm_l6_v2",
+      "embedding_type": "sentence-transformers/all-minilm-l6-v2",
+      "model_name": "svm",
+      "model_type": "svm",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l6_v2\\svm",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l6_v2\\svm\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l6_v2\\svm\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.63919259882254,
+        "f1_macro": 0.6421605140619951,
+        "precision_macro": 0.6448117587840038,
+        "recall_macro": 0.6401555921743879
+      },
+      "parameters": {
+        "C": 1.0,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "probability": false,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "c": 1.0,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "probability": false
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l6_v2\\svm\\metadata.json"
+    },
+    {
+      "embedding_name": "all_minilm_l6_v2",
+      "embedding_type": "sentence-transformers/all-minilm-l6-v2",
+      "model_name": "random_forest",
+      "model_type": "random_forest",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l6_v2\\random_forest",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l6_v2\\random_forest\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l6_v2\\random_forest\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.5966358284272498,
+        "f1_macro": 0.595491190223794,
+        "precision_macro": 0.6133274068780409,
+        "recall_macro": 0.5904034296394199
+      },
+      "parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "n_estimators": 300,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "n_estimators": 300
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l6_v2\\random_forest\\metadata.json"
+    },
+    {
+      "embedding_name": "all_minilm_l6_v2",
+      "embedding_type": "sentence-transformers/all-minilm-l6-v2",
+      "model_name": "xgboost",
+      "model_type": "xgboost",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l6_v2\\xgboost",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l6_v2\\xgboost\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l6_v2\\xgboost\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6141295206055509,
+        "f1_macro": 0.6165110911200095,
+        "precision_macro": 0.6194953296931475,
+        "recall_macro": 0.61436267545735
+      },
+      "parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.1,
+        "max_depth": 6,
+        "n_estimators": 300,
+        "random_state": 42,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0
+      },
+      "configured_parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.1,
+        "max_depth": 6,
+        "n_estimators": 300,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l6_v2\\xgboost\\metadata.json"
+    },
+    {
+      "embedding_name": "all_minilm_l6_v2",
+      "embedding_type": "sentence-transformers/all-minilm-l6-v2",
+      "model_name": "decision_tree",
+      "model_type": "decision_tree",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l6_v2\\decision_tree",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l6_v2\\decision_tree\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l6_v2\\decision_tree\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.4381833473507149,
+        "f1_macro": 0.4369364756745096,
+        "precision_macro": 0.43676914114192306,
+        "recall_macro": 0.43735420192085694
+      },
+      "parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l6_v2\\decision_tree\\metadata.json"
+    },
+    {
+      "embedding_name": "bert_base_uncased",
+      "embedding_type": "bert-base-uncased",
+      "model_name": "logistic_regression",
+      "model_type": "logistic_regression",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_base_uncased\\logistic_regression",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_base_uncased\\logistic_regression\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_base_uncased\\logistic_regression\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.5998317914213624,
+        "f1_macro": 0.6010360271615113,
+        "precision_macro": 0.6021490620541161,
+        "recall_macro": 0.600154034386544
+      },
+      "parameters": {
+        "C": 1.0,
+        "max_iter": 1000,
+        "random_state": 42,
+        "solver": "lbfgs"
+      },
+      "configured_parameters": {
+        "c": 1.0,
+        "max_iter": 1000,
+        "multi_class": "auto",
+        "solver": "lbfgs"
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_base_uncased\\logistic_regression\\metadata.json"
+    },
+    {
+      "embedding_name": "bert_base_uncased",
+      "embedding_type": "bert-base-uncased",
+      "model_name": "svm",
+      "model_type": "svm",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_base_uncased\\svm",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_base_uncased\\svm\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_base_uncased\\svm\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6139613120269134,
+        "f1_macro": 0.6160879657111759,
+        "precision_macro": 0.6183972077128969,
+        "recall_macro": 0.6143285154597372
+      },
+      "parameters": {
+        "C": 1.0,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "probability": false,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "c": 1.0,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "probability": false
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_base_uncased\\svm\\metadata.json"
+    },
+    {
+      "embedding_name": "bert_base_uncased",
+      "embedding_type": "bert-base-uncased",
+      "model_name": "random_forest",
+      "model_type": "random_forest",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_base_uncased\\random_forest",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_base_uncased\\random_forest\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_base_uncased\\random_forest\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.5769554247266611,
+        "f1_macro": 0.5767171940994493,
+        "precision_macro": 0.5861482264479814,
+        "recall_macro": 0.5727777949062322
+      },
+      "parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "n_estimators": 300,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "n_estimators": 300
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_base_uncased\\random_forest\\metadata.json"
+    },
+    {
+      "embedding_name": "bert_base_uncased",
+      "embedding_type": "bert-base-uncased",
+      "model_name": "xgboost",
+      "model_type": "xgboost",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_base_uncased\\xgboost",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_base_uncased\\xgboost\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_base_uncased\\xgboost\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.5973086627417998,
+        "f1_macro": 0.5990451105593312,
+        "precision_macro": 0.6012163722846999,
+        "recall_macro": 0.5973437733966798
+      },
+      "parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.1,
+        "max_depth": 6,
+        "n_estimators": 300,
+        "random_state": 42,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0
+      },
+      "configured_parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.1,
+        "max_depth": 6,
+        "n_estimators": 300,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_base_uncased\\xgboost\\metadata.json"
+    },
+    {
+      "embedding_name": "bert_base_uncased",
+      "embedding_type": "bert-base-uncased",
+      "model_name": "decision_tree",
+      "model_type": "decision_tree",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_base_uncased\\decision_tree",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_base_uncased\\decision_tree\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_base_uncased\\decision_tree\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.4459209419680404,
+        "f1_macro": 0.4450618682036744,
+        "precision_macro": 0.44481476079602555,
+        "recall_macro": 0.4453666269016077
+      },
+      "parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_base_uncased\\decision_tree\\metadata.json"
+    },
+    {
+      "embedding_name": "bert_large_uncased",
+      "embedding_type": "bert-large-uncased",
+      "model_name": "logistic_regression",
+      "model_type": "logistic_regression",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_large_uncased\\logistic_regression",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_large_uncased\\logistic_regression\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_large_uncased\\logistic_regression\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.5880571909167368,
+        "f1_macro": 0.5891904520399514,
+        "precision_macro": 0.5899312450906274,
+        "recall_macro": 0.5885596754897139
+      },
+      "parameters": {
+        "C": 1.0,
+        "max_iter": 1000,
+        "random_state": 42,
+        "solver": "lbfgs"
+      },
+      "configured_parameters": {
+        "c": 1.0,
+        "max_iter": 1000,
+        "multi_class": "auto",
+        "solver": "lbfgs"
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_large_uncased\\logistic_regression\\metadata.json"
+    },
+    {
+      "embedding_name": "bert_large_uncased",
+      "embedding_type": "bert-large-uncased",
+      "model_name": "svm",
+      "model_type": "svm",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_large_uncased\\svm",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_large_uncased\\svm\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_large_uncased\\svm\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6063919259882254,
+        "f1_macro": 0.6090420313510464,
+        "precision_macro": 0.61153766690961,
+        "recall_macro": 0.6071447155157562
+      },
+      "parameters": {
+        "C": 1.0,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "probability": false,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "c": 1.0,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "probability": false
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_large_uncased\\svm\\metadata.json"
+    },
+    {
+      "embedding_name": "bert_large_uncased",
+      "embedding_type": "bert-large-uncased",
+      "model_name": "random_forest",
+      "model_type": "random_forest",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_large_uncased\\random_forest",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_large_uncased\\random_forest\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_large_uncased\\random_forest\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.5651808242220353,
+        "f1_macro": 0.563045825267531,
+        "precision_macro": 0.5791517754829373,
+        "recall_macro": 0.5586241226512719
+      },
+      "parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "n_estimators": 300,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "n_estimators": 300
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_large_uncased\\random_forest\\metadata.json"
+    },
+    {
+      "embedding_name": "bert_large_uncased",
+      "embedding_type": "bert-large-uncased",
+      "model_name": "xgboost",
+      "model_type": "xgboost",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_large_uncased\\xgboost",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_large_uncased\\xgboost\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_large_uncased\\xgboost\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.5853658536585366,
+        "f1_macro": 0.5869067699257599,
+        "precision_macro": 0.5898502277896784,
+        "recall_macro": 0.5848114468198004
+      },
+      "parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.1,
+        "max_depth": 6,
+        "n_estimators": 300,
+        "random_state": 42,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0
+      },
+      "configured_parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.1,
+        "max_depth": 6,
+        "n_estimators": 300,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_large_uncased\\xgboost\\metadata.json"
+    },
+    {
+      "embedding_name": "bert_large_uncased",
+      "embedding_type": "bert-large-uncased",
+      "model_name": "decision_tree",
+      "model_type": "decision_tree",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_large_uncased\\decision_tree",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_large_uncased\\decision_tree\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_large_uncased\\decision_tree\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.423717409587889,
+        "f1_macro": 0.423232920802939,
+        "precision_macro": 0.4231317608324901,
+        "recall_macro": 0.4233772615081352
+      },
+      "parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bert_large_uncased\\decision_tree\\metadata.json"
+    },
+    {
+      "embedding_name": "bge_base_en_v1_5",
+      "embedding_type": "baai/bge-base-en-v1.5",
+      "model_name": "logistic_regression",
+      "model_type": "logistic_regression",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_base_en_v1_5\\logistic_regression",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_base_en_v1_5\\logistic_regression\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_base_en_v1_5\\logistic_regression\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6619007569386038,
+        "f1_macro": 0.6655006418972063,
+        "precision_macro": 0.6664163207741628,
+        "recall_macro": 0.664869578539958
+      },
+      "parameters": {
+        "C": 1.0,
+        "max_iter": 1000,
+        "random_state": 42,
+        "solver": "lbfgs"
+      },
+      "configured_parameters": {
+        "c": 1.0,
+        "max_iter": 1000,
+        "multi_class": "auto",
+        "solver": "lbfgs"
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_base_en_v1_5\\logistic_regression\\metadata.json"
+    },
+    {
+      "embedding_name": "bge_base_en_v1_5",
+      "embedding_type": "baai/bge-base-en-v1.5",
+      "model_name": "svm",
+      "model_type": "svm",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_base_en_v1_5\\svm",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_base_en_v1_5\\svm\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_base_en_v1_5\\svm\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6891505466778806,
+        "f1_macro": 0.6934471842394543,
+        "precision_macro": 0.6974476569597723,
+        "recall_macro": 0.6909912173399816
+      },
+      "parameters": {
+        "C": 1.0,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "probability": false,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "c": 1.0,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "probability": false
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_base_en_v1_5\\svm\\metadata.json"
+    },
+    {
+      "embedding_name": "bge_base_en_v1_5",
+      "embedding_type": "baai/bge-base-en-v1.5",
+      "model_name": "random_forest",
+      "model_type": "random_forest",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_base_en_v1_5\\random_forest",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_base_en_v1_5\\random_forest\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_base_en_v1_5\\random_forest\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6600504625735912,
+        "f1_macro": 0.6645869440314303,
+        "precision_macro": 0.6741257657581424,
+        "recall_macro": 0.6591876848577162
+      },
+      "parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "n_estimators": 300,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "n_estimators": 300
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_base_en_v1_5\\random_forest\\metadata.json"
+    },
+    {
+      "embedding_name": "bge_base_en_v1_5",
+      "embedding_type": "baai/bge-base-en-v1.5",
+      "model_name": "xgboost",
+      "model_type": "xgboost",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_base_en_v1_5\\xgboost",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_base_en_v1_5\\xgboost\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_base_en_v1_5\\xgboost\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6735071488645921,
+        "f1_macro": 0.6772669121375289,
+        "precision_macro": 0.6795031449412817,
+        "recall_macro": 0.675676851155445
+      },
+      "parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.1,
+        "max_depth": 6,
+        "n_estimators": 300,
+        "random_state": 42,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0
+      },
+      "configured_parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.1,
+        "max_depth": 6,
+        "n_estimators": 300,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_base_en_v1_5\\xgboost\\metadata.json"
+    },
+    {
+      "embedding_name": "bge_base_en_v1_5",
+      "embedding_type": "baai/bge-base-en-v1.5",
+      "model_name": "decision_tree",
+      "model_type": "decision_tree",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_base_en_v1_5\\decision_tree",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_base_en_v1_5\\decision_tree\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_base_en_v1_5\\decision_tree\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.4994112699747687,
+        "f1_macro": 0.49979092731606967,
+        "precision_macro": 0.49974162376786996,
+        "recall_macro": 0.4999193497714208
+      },
+      "parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_base_en_v1_5\\decision_tree\\metadata.json"
+    },
+    {
+      "embedding_name": "bge_m3",
+      "embedding_type": "baai/bge-m3",
+      "model_name": "logistic_regression",
+      "model_type": "logistic_regression",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_m3\\logistic_regression",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_m3\\logistic_regression\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_m3\\logistic_regression\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6684608915054667,
+        "f1_macro": 0.6711567172658723,
+        "precision_macro": 0.6712277859690734,
+        "recall_macro": 0.6710896662863247
+      },
+      "parameters": {
+        "C": 1.0,
+        "max_iter": 1000,
+        "random_state": 42,
+        "solver": "lbfgs"
+      },
+      "configured_parameters": {
+        "c": 1.0,
+        "max_iter": 1000,
+        "multi_class": "auto",
+        "solver": "lbfgs"
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_m3\\logistic_regression\\metadata.json"
+    },
+    {
+      "embedding_name": "bge_m3",
+      "embedding_type": "baai/bge-m3",
+      "model_name": "svm",
+      "model_type": "svm",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_m3\\svm",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_m3\\svm\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_m3\\svm\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.695206055508831,
+        "f1_macro": 0.6991143673202757,
+        "precision_macro": 0.7012689111726388,
+        "recall_macro": 0.6980279695037788
+      },
+      "parameters": {
+        "C": 1.0,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "probability": false,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "c": 1.0,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "probability": false
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_m3\\svm\\metadata.json"
+    },
+    {
+      "embedding_name": "bge_m3",
+      "embedding_type": "baai/bge-m3",
+      "model_name": "random_forest",
+      "model_type": "random_forest",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_m3\\random_forest",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_m3\\random_forest\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_m3\\random_forest\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6603868797308663,
+        "f1_macro": 0.664054926877507,
+        "precision_macro": 0.6712334414747207,
+        "recall_macro": 0.6596444038229629
+      },
+      "parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "n_estimators": 300,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "n_estimators": 300
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_m3\\random_forest\\metadata.json"
+    },
+    {
+      "embedding_name": "bge_m3",
+      "embedding_type": "baai/bge-m3",
+      "model_name": "xgboost",
+      "model_type": "xgboost",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_m3\\xgboost",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_m3\\xgboost\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_m3\\xgboost\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6687973086627418,
+        "f1_macro": 0.6720563710330382,
+        "precision_macro": 0.6727319094003147,
+        "recall_macro": 0.6714666770879788
+      },
+      "parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.1,
+        "max_depth": 6,
+        "n_estimators": 300,
+        "random_state": 42,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0
+      },
+      "configured_parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.1,
+        "max_depth": 6,
+        "n_estimators": 300,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_m3\\xgboost\\metadata.json"
+    },
+    {
+      "embedding_name": "bge_m3",
+      "embedding_type": "baai/bge-m3",
+      "model_name": "decision_tree",
+      "model_type": "decision_tree",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_m3\\decision_tree",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_m3\\decision_tree\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_m3\\decision_tree\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.5158957106812447,
+        "f1_macro": 0.5172112244277299,
+        "precision_macro": 0.5169560598679133,
+        "recall_macro": 0.5174768898837816
+      },
+      "parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_m3\\decision_tree\\metadata.json"
+    },
+    {
+      "embedding_name": "bge_small_en_v1_5",
+      "embedding_type": "baai/bge-small-en-v1.5",
+      "model_name": "logistic_regression",
+      "model_type": "logistic_regression",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_small_en_v1_5\\logistic_regression",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_small_en_v1_5\\logistic_regression\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_small_en_v1_5\\logistic_regression\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6672834314550042,
+        "f1_macro": 0.6708385316456614,
+        "precision_macro": 0.670713976196437,
+        "recall_macro": 0.6711130376114713
+      },
+      "parameters": {
+        "C": 1.0,
+        "max_iter": 1000,
+        "random_state": 42,
+        "solver": "lbfgs"
+      },
+      "configured_parameters": {
+        "c": 1.0,
+        "max_iter": 1000,
+        "multi_class": "auto",
+        "solver": "lbfgs"
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_small_en_v1_5\\logistic_regression\\metadata.json"
+    },
+    {
+      "embedding_name": "bge_small_en_v1_5",
+      "embedding_type": "baai/bge-small-en-v1.5",
+      "model_name": "svm",
+      "model_type": "svm",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_small_en_v1_5\\svm",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_small_en_v1_5\\svm\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_small_en_v1_5\\svm\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6973927670311186,
+        "f1_macro": 0.701813800757071,
+        "precision_macro": 0.7046333395700929,
+        "recall_macro": 0.7000264950143126
+      },
+      "parameters": {
+        "C": 1.0,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "probability": false,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "c": 1.0,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "probability": false
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_small_en_v1_5\\svm\\metadata.json"
+    },
+    {
+      "embedding_name": "bge_small_en_v1_5",
+      "embedding_type": "baai/bge-small-en-v1.5",
+      "model_name": "random_forest",
+      "model_type": "random_forest",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_small_en_v1_5\\random_forest",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_small_en_v1_5\\random_forest\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_small_en_v1_5\\random_forest\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6667788057190916,
+        "f1_macro": 0.6712942394423577,
+        "precision_macro": 0.6776568824601389,
+        "recall_macro": 0.6671508182037246
+      },
+      "parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "n_estimators": 300,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "n_estimators": 300
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_small_en_v1_5\\random_forest\\metadata.json"
+    },
+    {
+      "embedding_name": "bge_small_en_v1_5",
+      "embedding_type": "baai/bge-small-en-v1.5",
+      "model_name": "xgboost",
+      "model_type": "xgboost",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_small_en_v1_5\\xgboost",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_small_en_v1_5\\xgboost\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_small_en_v1_5\\xgboost\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6765349032800673,
+        "f1_macro": 0.6805232028438297,
+        "precision_macro": 0.6813574444455291,
+        "recall_macro": 0.679950578549604
+      },
+      "parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.1,
+        "max_depth": 6,
+        "n_estimators": 300,
+        "random_state": 42,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0
+      },
+      "configured_parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.1,
+        "max_depth": 6,
+        "n_estimators": 300,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_small_en_v1_5\\xgboost\\metadata.json"
+    },
+    {
+      "embedding_name": "bge_small_en_v1_5",
+      "embedding_type": "baai/bge-small-en-v1.5",
+      "model_name": "decision_tree",
+      "model_type": "decision_tree",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_small_en_v1_5\\decision_tree",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_small_en_v1_5\\decision_tree\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_small_en_v1_5\\decision_tree\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.5133725820016821,
+        "f1_macro": 0.5153169359741265,
+        "precision_macro": 0.5154441270515396,
+        "recall_macro": 0.5152497152845221
+      },
+      "parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\bge_small_en_v1_5\\decision_tree\\metadata.json"
+    },
+    {
+      "embedding_name": "gte_base",
+      "embedding_type": "thenlper/gte-base",
+      "model_name": "logistic_regression",
+      "model_type": "logistic_regression",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_base\\logistic_regression",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_base\\logistic_regression\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_base\\logistic_regression\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6467619848612279,
+        "f1_macro": 0.6502236254935166,
+        "precision_macro": 0.6515035077547237,
+        "recall_macro": 0.6491006817755861
+      },
+      "parameters": {
+        "C": 1.0,
+        "max_iter": 1000,
+        "random_state": 42,
+        "solver": "lbfgs"
+      },
+      "configured_parameters": {
+        "c": 1.0,
+        "max_iter": 1000,
+        "multi_class": "auto",
+        "solver": "lbfgs"
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_base\\logistic_regression\\metadata.json"
+    },
+    {
+      "embedding_name": "gte_base",
+      "embedding_type": "thenlper/gte-base",
+      "model_name": "svm",
+      "model_type": "svm",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_base\\svm",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_base\\svm\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_base\\svm\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6723296888141295,
+        "f1_macro": 0.6766735065104479,
+        "precision_macro": 0.6800197284470477,
+        "recall_macro": 0.6744734262398725
+      },
+      "parameters": {
+        "C": 1.0,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "probability": false,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "c": 1.0,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "probability": false
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_base\\svm\\metadata.json"
+    },
+    {
+      "embedding_name": "gte_base",
+      "embedding_type": "thenlper/gte-base",
+      "model_name": "random_forest",
+      "model_type": "random_forest",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_base\\random_forest",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_base\\random_forest\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_base\\random_forest\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.633641715727502,
+        "f1_macro": 0.6370716636711354,
+        "precision_macro": 0.649754972022324,
+        "recall_macro": 0.6309565890143684
+      },
+      "parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "n_estimators": 300,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "n_estimators": 300
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_base\\random_forest\\metadata.json"
+    },
+    {
+      "embedding_name": "gte_base",
+      "embedding_type": "thenlper/gte-base",
+      "model_name": "xgboost",
+      "model_type": "xgboost",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_base\\xgboost",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_base\\xgboost\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_base\\xgboost\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6528174936921783,
+        "f1_macro": 0.6565514424775026,
+        "precision_macro": 0.6600863766389103,
+        "recall_macro": 0.6539367588619242
+      },
+      "parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.1,
+        "max_depth": 6,
+        "n_estimators": 300,
+        "random_state": 42,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0
+      },
+      "configured_parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.1,
+        "max_depth": 6,
+        "n_estimators": 300,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_base\\xgboost\\metadata.json"
+    },
+    {
+      "embedding_name": "gte_base",
+      "embedding_type": "thenlper/gte-base",
+      "model_name": "decision_tree",
+      "model_type": "decision_tree",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_base\\decision_tree",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_base\\decision_tree\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_base\\decision_tree\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.4750210260723297,
+        "f1_macro": 0.4763670108186769,
+        "precision_macro": 0.4760093024992456,
+        "recall_macro": 0.47676047154814993
+      },
+      "parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_base\\decision_tree\\metadata.json"
+    },
+    {
+      "embedding_name": "gte_large",
+      "embedding_type": "thenlper/gte-large",
+      "model_name": "logistic_regression",
+      "model_type": "logistic_regression",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_large\\logistic_regression",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_large\\logistic_regression\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_large\\logistic_regression\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6386879730866274,
+        "f1_macro": 0.6419998125781162,
+        "precision_macro": 0.6431400690711152,
+        "recall_macro": 0.6409985848290756
+      },
+      "parameters": {
+        "C": 1.0,
+        "max_iter": 1000,
+        "random_state": 42,
+        "solver": "lbfgs"
+      },
+      "configured_parameters": {
+        "c": 1.0,
+        "max_iter": 1000,
+        "multi_class": "auto",
+        "solver": "lbfgs"
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_large\\logistic_regression\\metadata.json"
+    },
+    {
+      "embedding_name": "gte_large",
+      "embedding_type": "thenlper/gte-large",
+      "model_name": "svm",
+      "model_type": "svm",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_large\\svm",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_large\\svm\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_large\\svm\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6671152228763667,
+        "f1_macro": 0.6720775044092412,
+        "precision_macro": 0.6786950094780378,
+        "recall_macro": 0.6680860047636936
+      },
+      "parameters": {
+        "C": 1.0,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "probability": false,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "c": 1.0,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "probability": false
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_large\\svm\\metadata.json"
+    },
+    {
+      "embedding_name": "gte_large",
+      "embedding_type": "thenlper/gte-large",
+      "model_name": "random_forest",
+      "model_type": "random_forest",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_large\\random_forest",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_large\\random_forest\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_large\\random_forest\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6297729184188393,
+        "f1_macro": 0.634499598995904,
+        "precision_macro": 0.6450987260460506,
+        "recall_macro": 0.6286224787704078
+      },
+      "parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "n_estimators": 300,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "n_estimators": 300
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_large\\random_forest\\metadata.json"
+    },
+    {
+      "embedding_name": "gte_large",
+      "embedding_type": "thenlper/gte-large",
+      "model_name": "xgboost",
+      "model_type": "xgboost",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_large\\xgboost",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_large\\xgboost\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_large\\xgboost\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6492851135407905,
+        "f1_macro": 0.6532953648449116,
+        "precision_macro": 0.657295360460356,
+        "recall_macro": 0.650382446832151
+      },
+      "parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.1,
+        "max_depth": 6,
+        "n_estimators": 300,
+        "random_state": 42,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0
+      },
+      "configured_parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.1,
+        "max_depth": 6,
+        "n_estimators": 300,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_large\\xgboost\\metadata.json"
+    },
+    {
+      "embedding_name": "gte_large",
+      "embedding_type": "thenlper/gte-large",
+      "model_name": "decision_tree",
+      "model_type": "decision_tree",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_large\\decision_tree",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_large\\decision_tree\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_large\\decision_tree\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.4735071488645921,
+        "f1_macro": 0.47452792124971604,
+        "precision_macro": 0.47421409658495267,
+        "recall_macro": 0.47486999052435874
+      },
+      "parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_large\\decision_tree\\metadata.json"
+    },
+    {
+      "embedding_name": "gte_small",
+      "embedding_type": "thenlper/gte-small",
+      "model_name": "logistic_regression",
+      "model_type": "logistic_regression",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_small\\logistic_regression",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_small\\logistic_regression\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_small\\logistic_regression\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6430613961312027,
+        "f1_macro": 0.646705792156525,
+        "precision_macro": 0.6475041174571975,
+        "recall_macro": 0.645964664629823
+      },
+      "parameters": {
+        "C": 1.0,
+        "max_iter": 1000,
+        "random_state": 42,
+        "solver": "lbfgs"
+      },
+      "configured_parameters": {
+        "c": 1.0,
+        "max_iter": 1000,
+        "multi_class": "auto",
+        "solver": "lbfgs"
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_small\\logistic_regression\\metadata.json"
+    },
+    {
+      "embedding_name": "gte_small",
+      "embedding_type": "thenlper/gte-small",
+      "model_name": "svm",
+      "model_type": "svm",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_small\\svm",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_small\\svm\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_small\\svm\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6669470142977292,
+        "f1_macro": 0.6718915897924278,
+        "precision_macro": 0.6764998425037971,
+        "recall_macro": 0.6690624754060188
+      },
+      "parameters": {
+        "C": 1.0,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "probability": false,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "c": 1.0,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "probability": false
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_small\\svm\\metadata.json"
+    },
+    {
+      "embedding_name": "gte_small",
+      "embedding_type": "thenlper/gte-small",
+      "model_name": "random_forest",
+      "model_type": "random_forest",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_small\\random_forest",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_small\\random_forest\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_small\\random_forest\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6333052985702271,
+        "f1_macro": 0.6380465349214967,
+        "precision_macro": 0.6481166911424858,
+        "recall_macro": 0.632446336327297
+      },
+      "parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "n_estimators": 300,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "n_estimators": 300
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_small\\random_forest\\metadata.json"
+    },
+    {
+      "embedding_name": "gte_small",
+      "embedding_type": "thenlper/gte-small",
+      "model_name": "xgboost",
+      "model_type": "xgboost",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_small\\xgboost",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_small\\xgboost\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_small\\xgboost\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6507989907485282,
+        "f1_macro": 0.6545707553250434,
+        "precision_macro": 0.657087182806726,
+        "recall_macro": 0.6525495907065695
+      },
+      "parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.1,
+        "max_depth": 6,
+        "n_estimators": 300,
+        "random_state": 42,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0
+      },
+      "configured_parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.1,
+        "max_depth": 6,
+        "n_estimators": 300,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_small\\xgboost\\metadata.json"
+    },
+    {
+      "embedding_name": "gte_small",
+      "embedding_type": "thenlper/gte-small",
+      "model_name": "decision_tree",
+      "model_type": "decision_tree",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_small\\decision_tree",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_small\\decision_tree\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_small\\decision_tree\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.46980656013456684,
+        "f1_macro": 0.4699962908915117,
+        "precision_macro": 0.47020672592921436,
+        "recall_macro": 0.4701237544345793
+      },
+      "parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\gte_small\\decision_tree\\metadata.json"
+    },
+    {
+      "embedding_name": "qwen3_embedding_0_6b",
+      "embedding_type": "qwen/qwen3-embedding-0.6b",
+      "model_name": "logistic_regression",
+      "model_type": "logistic_regression",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\qwen3_embedding_0_6b\\logistic_regression",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\qwen3_embedding_0_6b\\logistic_regression\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\qwen3_embedding_0_6b\\logistic_regression\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6587047939444912,
+        "f1_macro": 0.6607184995476265,
+        "precision_macro": 0.6601935364894858,
+        "recall_macro": 0.6612909981949314
+      },
+      "parameters": {
+        "C": 1.0,
+        "max_iter": 1000,
+        "random_state": 42,
+        "solver": "lbfgs"
+      },
+      "configured_parameters": {
+        "c": 1.0,
+        "max_iter": 1000,
+        "multi_class": "auto",
+        "solver": "lbfgs"
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\qwen3_embedding_0_6b\\logistic_regression\\metadata.json"
+    },
+    {
+      "embedding_name": "qwen3_embedding_0_6b",
+      "embedding_type": "qwen/qwen3-embedding-0.6b",
+      "model_name": "svm",
+      "model_type": "svm",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\qwen3_embedding_0_6b\\svm",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\qwen3_embedding_0_6b\\svm\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\qwen3_embedding_0_6b\\svm\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6798990748528175,
+        "f1_macro": 0.6836785296116404,
+        "precision_macro": 0.6855626061261136,
+        "recall_macro": 0.6826678568237914
+      },
+      "parameters": {
+        "C": 1.0,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "probability": false,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "c": 1.0,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "probability": false
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\qwen3_embedding_0_6b\\svm\\metadata.json"
+    },
+    {
+      "embedding_name": "qwen3_embedding_0_6b",
+      "embedding_type": "qwen/qwen3-embedding-0.6b",
+      "model_name": "random_forest",
+      "model_type": "random_forest",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\qwen3_embedding_0_6b\\random_forest",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\qwen3_embedding_0_6b\\random_forest\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\qwen3_embedding_0_6b\\random_forest\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.6489486963835156,
+        "f1_macro": 0.6529313300396323,
+        "precision_macro": 0.6626500679561708,
+        "recall_macro": 0.647685907510133
+      },
+      "parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "n_estimators": 300,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "n_estimators": 300
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\qwen3_embedding_0_6b\\random_forest\\metadata.json"
+    },
+    {
+      "embedding_name": "qwen3_embedding_0_6b",
+      "embedding_type": "qwen/qwen3-embedding-0.6b",
+      "model_name": "xgboost",
+      "model_type": "xgboost",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\qwen3_embedding_0_6b\\xgboost",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\qwen3_embedding_0_6b\\xgboost\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\qwen3_embedding_0_6b\\xgboost\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.663919259882254,
+        "f1_macro": 0.6671854013885419,
+        "precision_macro": 0.6692591815006965,
+        "recall_macro": 0.6656189889830683
+      },
+      "parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.1,
+        "max_depth": 6,
+        "n_estimators": 300,
+        "random_state": 42,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0
+      },
+      "configured_parameters": {
+        "colsample_bytree": 1.0,
+        "learning_rate": 0.1,
+        "max_depth": 6,
+        "n_estimators": 300,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 1.0
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\qwen3_embedding_0_6b\\xgboost\\metadata.json"
+    },
+    {
+      "embedding_name": "qwen3_embedding_0_6b",
+      "embedding_type": "qwen/qwen3-embedding-0.6b",
+      "model_name": "decision_tree",
+      "model_type": "decision_tree",
+      "embedding_run_id": "c63028fbbd858f3c",
+      "ml_run_id": "c63028fbbd858f3c",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\qwen3_embedding_0_6b\\decision_tree",
+      "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\qwen3_embedding_0_6b\\decision_tree\\model.joblib",
+      "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\qwen3_embedding_0_6b\\decision_tree\\y_pred.joblib",
+      "metrics": {
+        "accuracy": 0.4908326324642557,
+        "f1_macro": 0.4919110911344253,
+        "precision_macro": 0.4919848060706169,
+        "recall_macro": 0.49194866863679954
+      },
+      "parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "random_state": 42
+      },
+      "configured_parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2
+      },
+      "parameter_source": "config",
+      "hyperparameter_optimization": {
+        "direction": null,
+        "enabled": false,
+        "framework": null,
+        "metric": null,
+        "n_trials": 0
+      },
+      "train_shape": [
+        23780,
+        100
+      ],
+      "test_shape": [
+        5945,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\qwen3_embedding_0_6b\\decision_tree\\metadata.json"
+    }
+  ],
+  "summary_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\ml_summary.json",
+  "latest_summary_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\ml_summary.json"
+}

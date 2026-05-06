@@ -1,0 +1,39 @@
+{
+  "embedding_name": "tfidf_unigram_bigram",
+  "embedding_type": "tfidf",
+  "model_name": "svm",
+  "model_type": "svm",
+  "embedding_run_id": "dd5c60e10afe7b51",
+  "status": "generated",
+  "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\tfidf_unigram_bigram\\svm",
+  "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\tfidf_unigram_bigram\\svm\\model.joblib",
+  "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\tfidf_unigram_bigram\\svm\\y_pred.joblib",
+  "metrics": {
+    "accuracy": 0.6652649285113541,
+    "f1_macro": 0.6679504734371268,
+    "precision_macro": 0.6860172906877051,
+    "recall_macro": 0.6607807595712224
+  },
+  "parameters": {
+    "C": 1.0,
+    "gamma": "scale",
+    "kernel": "rbf",
+    "probability": false,
+    "random_state": 42
+  },
+  "configured_parameters": {
+    "c": 1.0,
+    "gamma": "scale",
+    "kernel": "rbf",
+    "probability": false
+  },
+  "train_shape": [
+    23780,
+    196052
+  ],
+  "test_shape": [
+    5945,
+    196052
+  ],
+  "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\tfidf_unigram_bigram\\svm\\metadata.json"
+}

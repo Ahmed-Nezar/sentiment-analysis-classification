@@ -1,0 +1,9 @@
+{
+  "kind": "transformer",
+  "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+  "batch_size": 64,
+  "max_length": 128,
+  "device": "cuda",
+  "uses_sentence_transformer": true,
+  "persists_model_weights": false
+}

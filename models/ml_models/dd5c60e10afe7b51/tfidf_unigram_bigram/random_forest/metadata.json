@@ -1,0 +1,39 @@
+{
+  "embedding_name": "tfidf_unigram_bigram",
+  "embedding_type": "tfidf",
+  "model_name": "random_forest",
+  "model_type": "random_forest",
+  "embedding_run_id": "dd5c60e10afe7b51",
+  "status": "generated",
+  "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\tfidf_unigram_bigram\\random_forest",
+  "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\tfidf_unigram_bigram\\random_forest\\model.joblib",
+  "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\tfidf_unigram_bigram\\random_forest\\y_pred.joblib",
+  "metrics": {
+    "accuracy": 0.649116904962153,
+    "f1_macro": 0.6475608543899241,
+    "precision_macro": 0.6735226824323847,
+    "recall_macro": 0.641510315431304
+  },
+  "parameters": {
+    "max_depth": null,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "n_estimators": 300,
+    "random_state": 42
+  },
+  "configured_parameters": {
+    "max_depth": null,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "n_estimators": 300
+  },
+  "train_shape": [
+    23780,
+    196052
+  ],
+  "test_shape": [
+    5945,
+    196052
+  ],
+  "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\dd5c60e10afe7b51\\tfidf_unigram_bigram\\random_forest\\metadata.json"
+}

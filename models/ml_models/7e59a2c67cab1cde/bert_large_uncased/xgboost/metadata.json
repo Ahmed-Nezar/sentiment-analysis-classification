@@ -1,0 +1,54 @@
+{
+  "embedding_name": "bert_large_uncased",
+  "embedding_type": "bert-large-uncased",
+  "model_name": "xgboost",
+  "model_type": "xgboost",
+  "embedding_run_id": "7e59a2c67cab1cde",
+  "ml_run_id": "7e59a2c67cab1cde",
+  "status": "generated",
+  "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\7e59a2c67cab1cde\\bert_large_uncased\\xgboost",
+  "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\7e59a2c67cab1cde\\bert_large_uncased\\xgboost\\model.joblib",
+  "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\7e59a2c67cab1cde\\bert_large_uncased\\xgboost\\y_pred.joblib",
+  "metrics": {
+    "accuracy": 0.6292682926829268,
+    "f1_macro": 0.6316136473121945,
+    "precision_macro": 0.6344725859167919,
+    "recall_macro": 0.6294725256437752
+  },
+  "parameters": {
+    "colsample_bytree": 1.0,
+    "learning_rate": 0.1,
+    "max_depth": 6,
+    "n_estimators": 300,
+    "random_state": 42,
+    "reg_alpha": 0.0,
+    "reg_lambda": 1.0,
+    "subsample": 1.0
+  },
+  "configured_parameters": {
+    "colsample_bytree": 1.0,
+    "learning_rate": 0.1,
+    "max_depth": 6,
+    "n_estimators": 300,
+    "reg_alpha": 0.0,
+    "reg_lambda": 1.0,
+    "subsample": 1.0
+  },
+  "parameter_source": "config",
+  "hyperparameter_optimization": {
+    "direction": null,
+    "enabled": false,
+    "framework": null,
+    "metric": null,
+    "n_trials": 0
+  },
+  "train_shape": [
+    23780,
+    1024
+  ],
+  "test_shape": [
+    5945,
+    1024
+  ],
+  "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\7e59a2c67cab1cde\\bert_large_uncased\\xgboost\\metadata.json"
+}
