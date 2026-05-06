@@ -1,120 +1,169 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import { useEffect, useMemo, useState } from 'react'
 import './App.css'
+import { EmptyState } from './components/EmptyState'
+import { RunDetails } from './components/RunDetails'
+import { RunFilters } from './components/RunFilters'
+import { RunOverview } from './components/RunOverview'
+import { RunsTable } from './components/RunsTable'
+import { SectionTabs } from './components/SectionTabs'
+import { fetchRunSummaries } from './services/runSummaries'
+import type { DashboardSection, RunSortKey, RunSummary } from './types/runSummary'
+import {
+  countSection,
+  filterRuns,
+  getFamilyOptions,
+  getRunConfigurationOptions,
+  sortRuns,
+  sortVisibleRuns,
+} from './utils/runSummary'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [runs, setRuns] = useState<RunSummary[]>([])
+  const [selectedPath, setSelectedPath] = useState<string>('')
+  const [section, setSection] = useState<DashboardSection>('models')
+  const [family, setFamily] = useState('')
+  const [runConfiguration, setRunConfiguration] = useState('all')
+  const [query, setQuery] = useState('')
+  const [sortKey, setSortKey] = useState<RunSortKey>('newest')
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    let isActive = true
+
+    fetchRunSummaries()
+      .then((response) => {
+        if (!isActive) {
+          return
+        }
+        const sortedRuns = sortRuns(response.runs)
+        setRuns(sortedRuns)
+        setSelectedPath('')
+        setError(null)
+      })
+      .catch((unknownError: unknown) => {
+        if (!isActive) {
+          return
+        }
+        setError(
+          unknownError instanceof Error
+            ? unknownError.message
+            : 'Unable to load model run summaries.',
+        )
+      })
+      .finally(() => {
+        if (isActive) {
+          setIsLoading(false)
+        }
+      })
+
+    return () => {
+      isActive = false
+    }
+  }, [])
+
+  const sectionTotal = useMemo(() => countSection(runs, section), [runs, section])
+  const familyOptions = useMemo(
+    () => getFamilyOptions(runs, section),
+    [runs, section],
+  )
+  const runConfigurationOptions = useMemo(
+    () => getRunConfigurationOptions(runs, section, family),
+    [family, runs, section],
+  )
+  const filteredRuns = useMemo(
+    () =>
+      sortVisibleRuns(
+        filterRuns(runs, { section, family, runConfiguration, query }),
+        sortKey,
+      ),
+    [family, query, runConfiguration, runs, section, sortKey],
+  )
+  const selectedRun = useMemo(
+    () =>
+      filteredRuns.find((run) => run.relativePath === selectedPath) ??
+      filteredRuns[0] ??
+      null,
+    [filteredRuns, selectedPath],
+  )
+
+  function handleSectionChange(nextSection: DashboardSection) {
+    setSection(nextSection)
+    setRunConfiguration('all')
+    const nextFamily = nextSection === 'embeddings' ? 'embeddings_runs' : ''
+    setFamily(nextFamily)
+    const firstRun = runs.find(
+      (run) => run.section === nextSection && run.family === nextFamily,
+    )
+    setSelectedPath(firstRun?.relativePath ?? '')
+  }
+
+  const needsModelFamilySelection = section === 'models' && !family
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
+    <main className="app-shell">
+      <header className="app-header">
         <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
+          <p className="eyebrow">Sentiment run analytics</p>
+          <h1>Run Dashboard</h1>
         </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+        <div className="header-stat">
+          <span>{runs.length}</span>
+          <small>metadata runs</small>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      </header>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      <SectionTabs
+        activeSection={section}
+        embeddingCount={countSection(runs, 'embeddings')}
+        modelCount={countSection(runs, 'models')}
+        onChange={handleSectionChange}
+      />
+
+      <RunFilters
+        section={section}
+        families={familyOptions}
+        family={family}
+        runConfiguration={runConfiguration}
+        runConfigurationOptions={runConfigurationOptions}
+        query={query}
+        sortKey={sortKey}
+        onFamilyChange={(value) => {
+          setFamily(value)
+          setRunConfiguration('all')
+        }}
+        onRunConfigurationChange={setRunConfiguration}
+        onQueryChange={setQuery}
+        onSortKeyChange={setSortKey}
+      />
+
+      {isLoading && <EmptyState title="Loading run metadata" />}
+      {error && <EmptyState title="Could not load runs" detail={error} />}
+      {!isLoading && !error && needsModelFamilySelection && (
+        <EmptyState
+          title="Select a model family"
+          detail="Choose ML Models, DL Models, or Fine Tuned Models to render the table and details."
+        />
+      )}
+
+      {!isLoading && !error && !needsModelFamilySelection && (
+        <section className="dashboard-grid">
+          <div className="runs-column">
+            <RunOverview
+              runs={filteredRuns}
+              section={section}
+              totalRuns={sectionTotal}
+            />
+            <RunsTable
+              runs={filteredRuns}
+              selectedPath={selectedRun?.relativePath ?? ''}
+              onSelectRun={setSelectedPath}
+            />
+          </div>
+          <RunDetails run={selectedRun} />
+        </section>
+      )}
+    </main>
   )
 }
 
