@@ -162,6 +162,14 @@ class DLPipeline:
         )
         self.default_max_vocab_size = to_int(self.config.get("DL_MAX_VOCAB_SIZE"), 30000)
         self.default_dropout = _to_float(self.config.get("DL_DROPOUT"), 0.2)
+        self.default_early_stopping_patience = to_int(
+            self.config.get("DL_EARLY_STOPPING_PATIENCE"),
+            3,
+        )
+        self.default_early_stopping_min_delta = _to_float(
+            self.config.get("DL_EARLY_STOPPING_MIN_DELTA"),
+            0.0,
+        )
         self.default_activation_functions = _to_string_list(
             self.config.get("DL_ACTIVATION_FUNCTIONS"),
             ["relu"],
@@ -233,6 +241,8 @@ class DLPipeline:
                 "max_sequence_length": self.default_max_sequence_length,
                 "max_vocab_size": self.default_max_vocab_size,
                 "dropout": self.default_dropout,
+                "early_stopping_patience": self.default_early_stopping_patience,
+                "early_stopping_min_delta": self.default_early_stopping_min_delta,
                 "activation_functions": self.default_activation_functions,
                 "bidirectional": self.default_bidirectional,
             },
@@ -364,6 +374,14 @@ class DLPipeline:
                 run_config.get("max_vocab_size"), self.default_max_vocab_size
             ),
             "dropout": _to_float(run_config.get("dropout"), self.default_dropout),
+            "early_stopping_patience": to_int(
+                run_config.get("early_stopping_patience"),
+                self.default_early_stopping_patience,
+            ),
+            "early_stopping_min_delta": _to_float(
+                run_config.get("early_stopping_min_delta"),
+                self.default_early_stopping_min_delta,
+            ),
             "activation_functions": _to_string_list(
                 run_config.get("activation_functions"),
                 self.default_activation_functions,
@@ -545,7 +563,7 @@ class DLPipeline:
         train_loader: DataLoader,
         test_loader: DataLoader,
         params: dict[str, Any],
-    ) -> tuple[list[dict[str, float]], np.ndarray, np.ndarray]:
+    ) -> tuple[list[dict[str, Any]], np.ndarray, np.ndarray]:
         model.to(self.device)
         criterion = nn.CrossEntropyLoss()
         optimizer = torch.optim.AdamW(
@@ -553,7 +571,10 @@ class DLPipeline:
             lr=float(params["learning_rate"]),
             weight_decay=float(params["weight_decay"]),
         )
-        history: list[dict[str, float]] = []
+        history: list[dict[str, Any]] = []
+        overfitting_streak = 0
+        early_stopping_patience = max(1, int(params["early_stopping_patience"]))
+        early_stopping_min_delta = max(0.0, float(params["early_stopping_min_delta"]))
 
         epoch_iterator = tqdm(
             range(1, int(params["epochs"]) + 1),
@@ -584,19 +605,44 @@ class DLPipeline:
 
             y_true, y_pred, eval_loss = self._predict(model, test_loader, criterion)
             metrics = compute_metrics(y_true, y_pred)
+            train_loss = total_loss / max(1, total_examples)
+            validation_train_loss_gap = eval_loss - train_loss
+            is_overfitting = validation_train_loss_gap > (
+                early_stopping_min_delta + 1e-12
+            )
+            overfitting_streak = overfitting_streak + 1 if is_overfitting else 0
+            should_stop = overfitting_streak >= early_stopping_patience
             epoch_iterator.set_postfix(
-                train_loss=f"{total_loss / max(1, total_examples):.4f}",
+                train_loss=f"{train_loss:.4f}",
                 val_loss=f"{eval_loss:.4f}",
                 accuracy=f"{metrics['accuracy']:.4f}",
+                overfit_streak=overfitting_streak,
             )
             history.append(
                 {
                     "epoch": float(epoch),
-                    "train_loss": total_loss / max(1, total_examples),
+                    "train_loss": train_loss,
                     "validation_loss": eval_loss,
+                    "validation_train_loss_gap": validation_train_loss_gap,
+                    "early_stopping_min_delta": early_stopping_min_delta,
+                    "validation_gap_exceeded_threshold": is_overfitting,
+                    "overfitting_streak": overfitting_streak,
+                    "early_stopped": should_stop,
+                    "early_stopping_reason": (
+                        "validation_loss_gap_exceeded_threshold"
+                        if should_stop
+                        else None
+                    ),
                     **metrics,
                 }
             )
+            if should_stop:
+                epoch_iterator.write(
+                    "Early stopping: validation loss exceeded training loss by more "
+                    f"than {early_stopping_min_delta:g} for "
+                    f"{early_stopping_patience} consecutive epochs."
+                )
+                break
 
         y_true, y_pred, _ = self._predict(model, test_loader, criterion)
         return history, y_true, y_pred

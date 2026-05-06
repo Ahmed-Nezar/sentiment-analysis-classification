@@ -1,5 +1,4 @@
 dl:
-  # embedding_run_path: models/embeddings/c63028fbbd858f3c
   output_dir: models/dl_models
   random_state: 42
   force_rerun: false
@@ -29,6 +28,8 @@ dl:
         learning_rate: 0.01
         weight_decay: 1e-5
         dropout: 0.2
+        early_stopping_patience: 3
+        early_stopping_min_delta: 0.1
       
       # predefined - Transformer-based embeddings - large vector dimensions
       config2:
@@ -40,6 +41,8 @@ dl:
         learning_rate: 0.01
         weight_decay: 1e-5
         dropout: 0.2
+        early_stopping_patience: 3
+        early_stopping_min_delta: 0.1
 
       # predefined - Transformer-based embeddings - 100 vector dimensions
       config3:
@@ -51,6 +54,8 @@ dl:
         learning_rate: 0.01
         weight_decay: 1e-5
         dropout: 0.2
+        early_stopping_patience: 3
+        early_stopping_min_delta: 0.1
 
     rnn:
       type: rnn
@@ -66,6 +71,8 @@ dl:
         learning_rate: 0.001
         dropout: 0.3
         weight_decay: 0.0001
+        early_stopping_patience: 3
+        early_stopping_min_delta: 0.1
 
       config2:
         embedding_mode: predefined
@@ -78,7 +85,9 @@ dl:
         batch_size: 64
         learning_rate: 0.001
         dropout: 0.3
-        weight_decay: 0.0001      
+        weight_decay: 0.0001
+        early_stopping_patience: 3
+        early_stopping_min_delta: 0.1
 
       config3:
         embedding_mode: predefined
@@ -92,6 +101,8 @@ dl:
         learning_rate: 0.001
         dropout: 0.3
         weight_decay: 0.0001
+        early_stopping_patience: 3
+        early_stopping_min_delta: 0.1
 
     lstm:
       type: lstm
@@ -107,6 +118,8 @@ dl:
         learning_rate: 0.001
         dropout: 0.3
         weight_decay: 0.0001
+        early_stopping_patience: 3
+        early_stopping_min_delta: 0.1
 
       config2:
         embedding_mode: predefined
@@ -120,6 +133,8 @@ dl:
         learning_rate: 0.001
         dropout: 0.3
         weight_decay: 0.0001
+        early_stopping_patience: 3
+        early_stopping_min_delta: 0.1
 
       config3:
         embedding_mode: predefined
@@ -133,6 +148,8 @@ dl:
         learning_rate: 0.001
         dropout: 0.3
         weight_decay: 0.0001
+        early_stopping_patience: 3
+        early_stopping_min_delta: 0.1
 
     hmm:
       type: hmm
@@ -147,6 +164,8 @@ dl:
         learning_rate: 0.001
         dropout: 0.3
         weight_decay: 0.0001
+        early_stopping_patience: 3
+        early_stopping_min_delta: 0.1
 
       config2:
         embedding_mode: predefined
@@ -159,6 +178,8 @@ dl:
         learning_rate: 0.001
         dropout: 0.3
         weight_decay: 0.0001
+        early_stopping_patience: 3
+        early_stopping_min_delta: 0.1
 
       config3:
         embedding_mode: predefined
@@ -171,6 +192,8 @@ dl:
         learning_rate: 0.001
         dropout: 0.3
         weight_decay: 0.0001
+        early_stopping_patience: 3
+        early_stopping_min_delta: 0.1
 
 
     gru:
@@ -187,6 +210,8 @@ dl:
         learning_rate: 0.001
         dropout: 0.3
         weight_decay: 0.0001
+        early_stopping_patience: 3
+        early_stopping_min_delta: 0.1
 
       config2:
         embedding_mode: predefined
@@ -200,6 +225,8 @@ dl:
         learning_rate: 0.001
         dropout: 0.3
         weight_decay: 0.0001
+        early_stopping_patience: 3
+        early_stopping_min_delta: 0.1
 
       config3:
         embedding_mode: predefined
@@ -213,6 +240,8 @@ dl:
         learning_rate: 0.001
         dropout: 0.3
         weight_decay: 0.0001
+        early_stopping_patience: 3
+        early_stopping_min_delta: 0.1
 
 
   # Filter embedding runs used by predefined-input models.
@@ -227,6 +256,11 @@ dl:
     # learning_rate: 0.05
     # weight_decay: 0.0
     # dropout: 0.0
+    # Stop a DL run when validation_loss > train_loss for this many consecutive epochs.
+    # early_stopping_patience: 3
+    # Minimum accepted gap before counting overfitting.
+    # Example: train_loss=0.50 and validation_loss=0.60 is acceptable with 0.1.
+    # early_stopping_min_delta: 0.1
 
     # Used by nn hidden layers only. The output layer returns raw logits;
     # do not add softmax here because CrossEntropyLoss applies it internally.
@@ -251,4 +285,3 @@ dl:
 
     # Used only by rnn/lstm/gru. Ignored by nn and hmm.
     # bidirectional: false
-
