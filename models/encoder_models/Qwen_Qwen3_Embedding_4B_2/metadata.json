@@ -1,0 +1,79 @@
+{
+  "model_name": "Qwen/Qwen3-Embedding-4B",
+  "model_slug": "Qwen_Qwen3-Embedding-4B",
+  "trust_remote_code": false,
+  "accelerator_error_manual_head": false,
+  "use_zero_token_type_ids": false,
+  "task": "sequence_classification",
+  "model_head_mode": "auto_seq_cls",
+  "tuning_mode": "full",
+  "generated_at_utc": "2026-05-06T18:55:04.570817+00:00",
+  "dataset_path": "cleaned_dataset.csv",
+  "text_column": "text",
+  "label_column": "label",
+  "test_size": 0.2,
+  "random_state": 42,
+  "use_stratify": true,
+  "max_length": 64,
+  "batch_size": 32,
+  "epochs": 3,
+  "learning_rate": 1e-05,
+  "use_classifier_learning_rate": true,
+  "classifier_learning_rate": 0.0001,
+  "weight_decay": 0.05,
+  "warmup_ratio": 0.1,
+  "use_peft": false,
+  "peft_r": null,
+  "peft_alpha": null,
+  "peft_dropout": null,
+  "peft_target_modules": null,
+  "peft_modules_to_save": null,
+  "use_dataparallel": false,
+  "device": "cuda",
+  "cuda_device_name": "NVIDIA H100 80GB HBM3",
+  "labels": [
+    "0",
+    "1",
+    "2"
+  ],
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.0811678669049622,
+      "validation_loss": 0.6018555508830951,
+      "accuracy": 0.7428090832632465,
+      "precision_macro": 0.7448957508987868,
+      "recall_macro": 0.7448574542988048,
+      "f1_macro": 0.7439749831926075
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.5300188249053827,
+      "validation_loss": 0.5790803721614802,
+      "accuracy": 0.7560975609756098,
+      "precision_macro": 0.7556139529336572,
+      "recall_macro": 0.7606745766770131,
+      "f1_macro": 0.7575595687832676
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.4643036427670311,
+      "validation_loss": 0.5791270237594617,
+      "accuracy": 0.7592935239697225,
+      "precision_macro": 0.7628111088603861,
+      "recall_macro": 0.7615240668756158,
+      "f1_macro": 0.7620747659095531
+    }
+  ],
+  "final_validation_loss": 0.5791270237594617,
+  "metrics": {
+    "accuracy": 0.7592935239697225,
+    "precision_macro": 0.7628111088603861,
+    "recall_macro": 0.7615240668756158,
+    "f1_macro": 0.7620747659095531
+  },
+  "model_dir": "models/fine_tuned_encoder_models/Qwen_Qwen3-Embedding-4B_auto_seq_cls_full_classifier_lr0.0001_len64_bs32_ep3_lr1e-05_wd0.05_warmup0.1_20260506_185441/model",
+  "tokenizer_dir": "models/fine_tuned_encoder_models/Qwen_Qwen3-Embedding-4B_auto_seq_cls_full_classifier_lr0.0001_len64_bs32_ep3_lr1e-05_wd0.05_warmup0.1_20260506_185441/tokenizer",
+  "predictions_path": "models/fine_tuned_encoder_models/Qwen_Qwen3-Embedding-4B_auto_seq_cls_full_classifier_lr0.0001_len64_bs32_ep3_lr1e-05_wd0.05_warmup0.1_20260506_185441/y_pred.joblib",
+  "targets_path": "models/fine_tuned_encoder_models/Qwen_Qwen3-Embedding-4B_auto_seq_cls_full_classifier_lr0.0001_len64_bs32_ep3_lr1e-05_wd0.05_warmup0.1_20260506_185441/y_true.joblib"
+}

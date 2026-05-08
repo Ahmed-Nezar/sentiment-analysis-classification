@@ -1,0 +1,64 @@
+{
+  "model_name": "bert-base-uncased",
+  "task": "sequence_classification",
+  "generated_at_utc": "2026-05-02T20:20:46.086126+00:00",
+  "dataset_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\datasets\\cleaned_dataset.csv",
+  "text_column": "text",
+  "label_column": "label",
+  "test_size": 0.2,
+  "random_state": 42,
+  "use_stratify": true,
+  "max_length": 128,
+  "batch_size": 16,
+  "epochs": 3,
+  "learning_rate": 2e-05,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.1,
+  "device": "cuda",
+  "cuda_device_name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "labels": [
+    "0",
+    "1",
+    "2"
+  ],
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.7285127148696412,
+      "validation_loss": 0.6036146197828353,
+      "accuracy": 0.7486963835155593,
+      "precision_macro": 0.7513408855585905,
+      "recall_macro": 0.7510038558855127,
+      "f1_macro": 0.7491425505502365
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.500588534487908,
+      "validation_loss": 0.5953709378775877,
+      "accuracy": 0.7606391925988225,
+      "precision_macro": 0.7630146385772348,
+      "recall_macro": 0.7637128241548709,
+      "f1_macro": 0.7631942662337451
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.35528592017265404,
+      "validation_loss": 0.6918909866635392,
+      "accuracy": 0.7596299411269974,
+      "precision_macro": 0.7628609424218323,
+      "recall_macro": 0.7611636774358668,
+      "f1_macro": 0.7619342303400681
+    }
+  ],
+  "final_validation_loss": 0.6918909866635392,
+  "metrics": {
+    "accuracy": 0.7596299411269974,
+    "precision_macro": 0.7628609424218323,
+    "recall_macro": 0.7611636774358668,
+    "f1_macro": 0.7619342303400681
+  },
+  "model_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\fine_tuned_bert\\bert_base_uncased_20260502_201900\\model",
+  "tokenizer_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\fine_tuned_bert\\bert_base_uncased_20260502_201900\\tokenizer",
+  "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\fine_tuned_bert\\bert_base_uncased_20260502_201900\\y_pred.joblib",
+  "targets_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\fine_tuned_bert\\bert_base_uncased_20260502_201900\\y_true.joblib"
+}

@@ -1,0 +1,92 @@
+{
+  "model_name": "openai-community/gpt2",
+  "model_slug": "openai-community_gpt2",
+  "trust_remote_code": false,
+  "tokenizer_pad_token": "<|endoftext|>",
+  "tokenizer_pad_token_id": 50256,
+  "tokenizer_added_pad_token": false,
+  "approach": "classification_head",
+  "task": "decoder_sentiment_classification",
+  "tuning_mode": "classifier_only",
+  "classification_tuning_mode": "classifier_only",
+  "generated_at_utc": "2026-05-07T12:15:56.797327+00:00",
+  "dataset_path": "..\\datasets\\dataset.csv",
+  "text_column": "text",
+  "label_column": "label",
+  "test_size": 0.2,
+  "random_state": 42,
+  "use_stratify": true,
+  "max_length": 64,
+  "batch_size": 8,
+  "epochs": 5,
+  "learning_rate": 2e-05,
+  "use_classifier_learning_rate": true,
+  "classifier_learning_rate": 0.0001,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.1,
+  "gradient_clip_norm": 1.0,
+  "use_peft": false,
+  "peft_r": null,
+  "peft_alpha": null,
+  "peft_dropout": null,
+  "peft_target_modules": null,
+  "label_names": [
+    "0",
+    "1",
+    "2"
+  ],
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.72758672709987,
+      "validation_loss": 0.9110495395635211,
+      "accuracy": 0.5804386105330559,
+      "precision_macro": 0.582598710207308,
+      "recall_macro": 0.5768102553135707,
+      "f1_macro": 0.5779913778709567
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.9127747513089915,
+      "validation_loss": 0.8796793429283251,
+      "accuracy": 0.5802785336961742,
+      "precision_macro": 0.61888527895381,
+      "recall_macro": 0.5662107837597871,
+      "f1_macro": 0.5711627426860518
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.8844589087732654,
+      "validation_loss": 0.8638996160162036,
+      "accuracy": 0.6023691371858492,
+      "precision_macro": 0.601233535708179,
+      "recall_macro": 0.6033738801735075,
+      "f1_macro": 0.6015320134367181
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.8738605199359717,
+      "validation_loss": 0.8586077398064614,
+      "accuracy": 0.6015687530014406,
+      "precision_macro": 0.6100980033758951,
+      "recall_macro": 0.5962697068361871,
+      "f1_macro": 0.5992624152266735
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.8670174271172467,
+      "validation_loss": 0.8561306693219215,
+      "accuracy": 0.6041299823915479,
+      "precision_macro": 0.6043547417287441,
+      "recall_macro": 0.6043724622392195,
+      "f1_macro": 0.6039995227062777
+    }
+  ],
+  "final_validation_loss": 0.8561306693219215,
+  "final_metrics": {
+    "accuracy": 0.6041299823915479,
+    "precision_macro": 0.6043547417287441,
+    "recall_macro": 0.6043724622392195,
+    "f1_macro": 0.6039995227062777
+  }
+}

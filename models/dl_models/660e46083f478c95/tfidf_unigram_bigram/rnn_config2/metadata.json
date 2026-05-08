@@ -1,0 +1,145 @@
+{
+  "embedding_name": "tfidf_unigram_bigram",
+  "embedding_type": "tfidf",
+  "model_name": "rnn_config2",
+  "model_type": "rnn",
+  "embedding_mode": "predefined",
+  "embedding_run_id": null,
+  "dataset_path": null,
+  "dl_run_id": "660e46083f478c95",
+  "dl_configuration_hash": "3d11cfb0f9c9b457",
+  "status": "generated",
+  "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\dl_models\\660e46083f478c95\\tfidf_unigram_bigram\\rnn_config2",
+  "model_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\dl_models\\660e46083f478c95\\tfidf_unigram_bigram\\rnn_config2\\model.pt",
+  "predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\dl_models\\660e46083f478c95\\tfidf_unigram_bigram\\rnn_config2\\y_pred.joblib",
+  "metrics": {
+    "accuracy": 0.6036497518809029,
+    "f1_macro": 0.6055232069770767,
+    "precision_macro": 0.6157536751035374,
+    "recall_macro": 0.6004589913558281
+  },
+  "history": [
+    {
+      "accuracy": 0.66447894989595,
+      "early_stopped": false,
+      "early_stopping_min_delta": 0.1,
+      "early_stopping_reason": null,
+      "epoch": 1.0,
+      "f1_macro": 0.6665740436771342,
+      "overfitting_streak": 0,
+      "precision_macro": 0.6669361235843038,
+      "recall_macro": 0.6662461816663504,
+      "train_loss": 0.8318765704097905,
+      "validation_gap_exceeded_threshold": false,
+      "validation_loss": 0.7734123102680137,
+      "validation_train_loss_gap": -0.05846426014177675
+    },
+    {
+      "accuracy": 0.6146950536257404,
+      "early_stopped": false,
+      "early_stopping_min_delta": 0.1,
+      "early_stopping_reason": null,
+      "epoch": 2.0,
+      "f1_macro": 0.6175687974687488,
+      "overfitting_streak": 1,
+      "precision_macro": 0.6232585688261588,
+      "recall_macro": 0.6138879923218358,
+      "train_loss": 0.14258060356796276,
+      "validation_gap_exceeded_threshold": true,
+      "validation_loss": 1.3023350011334909,
+      "validation_train_loss_gap": 1.159754397565528
+    },
+    {
+      "accuracy": 0.6079718264767088,
+      "early_stopped": false,
+      "early_stopping_min_delta": 0.1,
+      "early_stopping_reason": null,
+      "epoch": 3.0,
+      "f1_macro": 0.6090791796596196,
+      "overfitting_streak": 2,
+      "precision_macro": 0.6072645169101295,
+      "recall_macro": 0.6116120235734885,
+      "train_loss": 0.023566893297617547,
+      "validation_gap_exceeded_threshold": true,
+      "validation_loss": 1.5310282260489612,
+      "validation_train_loss_gap": 1.5074613327513435
+    },
+    {
+      "accuracy": 0.6036497518809029,
+      "early_stopped": true,
+      "early_stopping_min_delta": 0.1,
+      "early_stopping_reason": "validation_loss_gap_exceeded_threshold",
+      "epoch": 4.0,
+      "f1_macro": 0.6055232069770767,
+      "overfitting_streak": 3,
+      "precision_macro": 0.6157536751035374,
+      "recall_macro": 0.6004589913558281,
+      "train_loss": 0.013837253675983027,
+      "validation_gap_exceeded_threshold": true,
+      "validation_loss": 1.5169151045903218,
+      "validation_train_loss_gap": 1.5030778509143388
+    }
+  ],
+  "parameters": {
+    "activation_functions": [
+      "relu"
+    ],
+    "batch_size": 64,
+    "bidirectional": true,
+    "dropout": 0.3,
+    "early_stopping_min_delta": 0.1,
+    "early_stopping_patience": 3,
+    "embedding_mode": "predefined",
+    "epochs": 20,
+    "hidden_dim": 512,
+    "hidden_dims": [
+      512,
+      256
+    ],
+    "hidden_layers": 2,
+    "learning_rate": 0.001,
+    "max_sequence_length": 64,
+    "max_vocab_size": 30000,
+    "model_type": "rnn",
+    "num_hidden_states": 128,
+    "token_embedding_dim": 128,
+    "weight_decay": 0.0001
+  },
+  "configured_parameters": {
+    "batch_size": 64,
+    "bidirectional": true,
+    "config_name": "config2",
+    "dropout": 0.3,
+    "early_stopping_min_delta": 0.1,
+    "early_stopping_patience": 3,
+    "embedding_mode": "predefined",
+    "embedding_run_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\69b237c8ec77cafb",
+    "epochs": 20,
+    "hidden_dims": [
+      512,
+      256
+    ],
+    "learning_rate": 0.001,
+    "max_sequence_length": 64,
+    "max_vocab_size": 30000,
+    "name": "rnn_config2",
+    "type": "rnn",
+    "weight_decay": 0.0001
+  },
+  "device": "cuda",
+  "cuda_device_name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "train_shape": [
+    24985,
+    200827
+  ],
+  "test_shape": [
+    6247,
+    200827
+  ],
+  "classes": [
+    "0",
+    "1",
+    "2"
+  ],
+  "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\dl_models\\660e46083f478c95\\tfidf_unigram_bigram\\rnn_config2\\metadata.json"
+}

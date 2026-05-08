@@ -1,0 +1,48 @@
+{
+  "model_name": "BAAI/bge-m3",
+  "task": "sequence_classification",
+  "generated_at_utc": "2026-05-06T17:05:08.215413+00:00",
+  "dataset_path": "/kaggle/input/datasets/ahmednezar/sentiment-analysis-nlp-project/cleaned_dataset.csv",
+  "text_column": "text",
+  "label_column": "label",
+  "test_size": 0.2,
+  "random_state": 42,
+  "use_stratify": true,
+  "max_length": 64,
+  "batch_size": 32,
+  "epochs": 1,
+  "learning_rate": 1e-05,
+  "use_classifier_learning_rate": true,
+  "classifier_learning_rate": 0.0001,
+  "weight_decay": 0.05,
+  "warmup_ratio": 0.1,
+  "device": "cuda",
+  "cuda_device_name": "Tesla T4",
+  "labels": [
+    "0",
+    "1",
+    "2"
+  ],
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.6297739282137612,
+      "validation_loss": 0.5471449186763812,
+      "accuracy": 0.775946173254836,
+      "precision_macro": 0.7768157615708757,
+      "recall_macro": 0.7794447076817422,
+      "f1_macro": 0.7779769475443677
+    }
+  ],
+  "final_validation_loss": 0.5471449186763812,
+  "metrics": {
+    "accuracy": 0.775946173254836,
+    "precision_macro": 0.7768157615708757,
+    "recall_macro": 0.7794447076817422,
+    "f1_macro": 0.7779769475443677
+  },
+  "model_dir": "/kaggle/working/models/fine_tuned_bert/bert_base_uncased_20260506_170339/model",
+  "tokenizer_dir": "/kaggle/working/models/fine_tuned_bert/bert_base_uncased_20260506_170339/tokenizer",
+  "predictions_path": "/kaggle/working/models/fine_tuned_bert/bert_base_uncased_20260506_170339/y_pred.joblib",
+  "targets_path": "/kaggle/working/models/fine_tuned_bert/bert_base_uncased_20260506_170339/y_true.joblib"
+}

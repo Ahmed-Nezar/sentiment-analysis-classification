@@ -1,0 +1,73 @@
+{
+  "model_name": "Qwen/Qwen3-4B-Instruct-2507",
+  "model_slug": "Qwen_Qwen3-4B-Instruct-2507",
+  "trust_remote_code": false,
+  "tokenizer_pad_token": "<|endoftext|>",
+  "tokenizer_pad_token_id": 151643,
+  "tokenizer_added_pad_token": false,
+  "approach": "instruction",
+  "fine_tune_model": true,
+  "use_chat_template": true,
+  "tokenizer_has_chat_template": true,
+  "task": "decoder_sentiment_classification",
+  "tuning_mode": "full",
+  "classification_tuning_mode": null,
+  "generated_at_utc": "2026-05-07T14:54:18.755619+00:00",
+  "dataset_path": "dataset.csv",
+  "text_column": "text",
+  "label_column": "label",
+  "test_size": 0.2,
+  "random_state": 42,
+  "use_stratify": true,
+  "max_length": 256,
+  "batch_size": 8,
+  "epochs": 1,
+  "learning_rate": 2e-05,
+  "use_classifier_learning_rate": null,
+  "classifier_learning_rate": null,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.1,
+  "gradient_clip_norm": 1.0,
+  "generation_max_new_tokens": 3,
+  "generation_do_sample": false,
+  "generation_temperature": 0.0,
+  "use_peft": false,
+  "peft_r": null,
+  "peft_alpha": null,
+  "peft_dropout": null,
+  "peft_target_modules": null,
+  "label_names": [
+    "0",
+    "1",
+    "2"
+  ],
+  "use_semantic_label_names_for_instruction": true,
+  "semantic_label_map": {
+    "0": "negative",
+    "1": "neutral",
+    "2": "positive"
+  },
+  "instruction_label_names": [
+    "negative",
+    "neutral",
+    "positive"
+  ],
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.303631154313398,
+      "validation_loss": 0.25738233823298795,
+      "accuracy": 0.7875780374579798,
+      "precision_macro": 0.7894485058332285,
+      "recall_macro": 0.7900349623818755,
+      "f1_macro": 0.7897173131700971
+    }
+  ],
+  "final_validation_loss": 0.25738233823298795,
+  "final_metrics": {
+    "accuracy": 0.7875780374579798,
+    "precision_macro": 0.7894485058332285,
+    "recall_macro": 0.7900349623818755,
+    "f1_macro": 0.7897173131700971
+  }
+}

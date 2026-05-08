@@ -1,0 +1,12 @@
+{
+  "base_model_name": "openai-community/gpt2",
+  "num_labels": 3,
+  "labels": [
+    "0",
+    "1",
+    "2"
+  ],
+  "hidden_size": 768,
+  "pooling": "last_non_padding_token",
+  "dropout": 0.1
+}

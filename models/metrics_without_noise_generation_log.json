@@ -1,0 +1,20 @@
+{
+  "generated_at_utc": "2026-05-08T23:04:21.297931+00:00",
+  "output_file_name": "metrics_without_noise.json",
+  "noise_policy": "strict_noisy_and_ambiguous_rows_removed",
+  "written_count": 413,
+  "summary_counts": {
+    "ml_models": 169,
+    "dl_models": 221,
+    "encoder_models": 8,
+    "decoder_models": 15
+  },
+  "summary_paths": [
+    "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\metrics_without_noise_summary.json",
+    "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\dl_models\\metrics_without_noise_summary.json",
+    "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\encoder_models\\metrics_without_noise_summary.json",
+    "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\metrics_without_noise_summary.json"
+  ],
+  "skipped_count": 0,
+  "skipped": []
+}

@@ -1,0 +1,96 @@
+{
+  "generated_at_utc": "2026-05-08T23:04:21.294388+00:00",
+  "model_root": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\encoder_models",
+  "generated_count": 8,
+  "skipped_count": 0,
+  "results": [
+    {
+      "model_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\encoder_models\\baai_bge_m3_20260506_170339",
+      "status": "generated",
+      "metrics_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\encoder_models\\baai_bge_m3_20260506_170339\\metrics_without_noise.json",
+      "dataset_kind": "cleaned_dataset",
+      "evaluation_size_original": 5945,
+      "noisy_rows_removed_count": 1581,
+      "evaluation_size_without_noise": 4364,
+      "accuracy_without_noise": 0.8377635197066912,
+      "f1_macro_without_noise": 0.8316548239862266
+    },
+    {
+      "model_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\encoder_models\\bert_base_uncased_20260502_201900",
+      "status": "generated",
+      "metrics_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\encoder_models\\bert_base_uncased_20260502_201900\\metrics_without_noise.json",
+      "dataset_kind": "cleaned_dataset",
+      "evaluation_size_original": 5945,
+      "noisy_rows_removed_count": 1581,
+      "evaluation_size_without_noise": 4364,
+      "accuracy_without_noise": 0.8185151237396884,
+      "f1_macro_without_noise": 0.8131743557081155
+    },
+    {
+      "model_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\encoder_models\\bert_base_uncased_20260506_134931",
+      "status": "generated",
+      "metrics_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\encoder_models\\bert_base_uncased_20260506_134931\\metrics_without_noise.json",
+      "dataset_kind": "cleaned_dataset",
+      "evaluation_size_original": 5945,
+      "noisy_rows_removed_count": 1581,
+      "evaluation_size_without_noise": 4364,
+      "accuracy_without_noise": 0.821494042163153,
+      "f1_macro_without_noise": 0.8172658664639153
+    },
+    {
+      "model_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\encoder_models\\bert_base_uncased_20260506_141458",
+      "status": "generated",
+      "metrics_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\encoder_models\\bert_base_uncased_20260506_141458\\metrics_without_noise.json",
+      "dataset_kind": "cleaned_dataset",
+      "evaluation_size_original": 5945,
+      "noisy_rows_removed_count": 1581,
+      "evaluation_size_without_noise": 4364,
+      "accuracy_without_noise": 0.8155362053162236,
+      "f1_macro_without_noise": 0.8108799424758898
+    },
+    {
+      "model_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\encoder_models\\bert_base_uncased_20260506_150648",
+      "status": "generated",
+      "metrics_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\encoder_models\\bert_base_uncased_20260506_150648\\metrics_without_noise.json",
+      "dataset_kind": "cleaned_dataset",
+      "evaluation_size_original": 5945,
+      "noisy_rows_removed_count": 1581,
+      "evaluation_size_without_noise": 4364,
+      "accuracy_without_noise": 0.8182859761686526,
+      "f1_macro_without_noise": 0.813729275063802
+    },
+    {
+      "model_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\encoder_models\\bert_base_uncased_20260506_152333",
+      "status": "generated",
+      "metrics_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\encoder_models\\bert_base_uncased_20260506_152333\\metrics_without_noise.json",
+      "dataset_kind": "cleaned_dataset",
+      "evaluation_size_original": 5945,
+      "noisy_rows_removed_count": 1581,
+      "evaluation_size_without_noise": 4364,
+      "accuracy_without_noise": 0.8240146654445463,
+      "f1_macro_without_noise": 0.8186811202792444
+    },
+    {
+      "model_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\encoder_models\\Qwen_Qwen3_Embedding_4B_1",
+      "status": "generated",
+      "metrics_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\encoder_models\\Qwen_Qwen3_Embedding_4B_1\\metrics_without_noise.json",
+      "dataset_kind": "cleaned_dataset",
+      "evaluation_size_original": 5945,
+      "noisy_rows_removed_count": 1581,
+      "evaluation_size_without_noise": 4364,
+      "accuracy_without_noise": 0.7836846929422548,
+      "f1_macro_without_noise": 0.778610617950792
+    },
+    {
+      "model_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\encoder_models\\Qwen_Qwen3_Embedding_4B_2",
+      "status": "generated",
+      "metrics_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\encoder_models\\Qwen_Qwen3_Embedding_4B_2\\metrics_without_noise.json",
+      "dataset_kind": "cleaned_dataset",
+      "evaluation_size_original": 5945,
+      "noisy_rows_removed_count": 1581,
+      "evaluation_size_without_noise": 4364,
+      "accuracy_without_noise": 0.8201191567369386,
+      "f1_macro_without_noise": 0.8152056890156517
+    }
+  ]
+}

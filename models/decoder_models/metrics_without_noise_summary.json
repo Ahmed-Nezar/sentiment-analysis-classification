@@ -1,0 +1,173 @@
+{
+  "generated_at_utc": "2026-05-08T23:04:21.295912+00:00",
+  "model_root": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models",
+  "generated_count": 15,
+  "skipped_count": 0,
+  "results": [
+    {
+      "model_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\google_gemma_4_26B_A4B_it_20260507_152425",
+      "status": "generated",
+      "metrics_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\google_gemma_4_26B_A4B_it_20260507_152425\\metrics_without_noise.json",
+      "dataset_kind": "dataset",
+      "evaluation_size_original": 6247,
+      "noisy_rows_removed_count": 1503,
+      "evaluation_size_without_noise": 4744,
+      "accuracy_without_noise": 0.7308178752107926,
+      "f1_macro_without_noise": 0.7120846000295709
+    },
+    {
+      "model_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\google_gemma_4_e4b_it_20260507_023321",
+      "status": "generated",
+      "metrics_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\google_gemma_4_e4b_it_20260507_023321\\metrics_without_noise.json",
+      "dataset_kind": "cleaned_dataset",
+      "evaluation_size_original": 5945,
+      "noisy_rows_removed_count": 1581,
+      "evaluation_size_without_noise": 4364,
+      "accuracy_without_noise": 0.8318056828597616,
+      "f1_macro_without_noise": 0.828321607458166
+    },
+    {
+      "model_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\google_gemma_4_e4b_it_20260507_031516",
+      "status": "generated",
+      "metrics_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\google_gemma_4_e4b_it_20260507_031516\\metrics_without_noise.json",
+      "dataset_kind": "cleaned_dataset",
+      "evaluation_size_original": 5945,
+      "noisy_rows_removed_count": 1581,
+      "evaluation_size_without_noise": 4364,
+      "accuracy_without_noise": 0.8368469294225481,
+      "f1_macro_without_noise": 0.832445577706478
+    },
+    {
+      "model_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\google_gemma_4_e4b_it_20260507_033926",
+      "status": "generated",
+      "metrics_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\google_gemma_4_e4b_it_20260507_033926\\metrics_without_noise.json",
+      "dataset_kind": "dataset",
+      "evaluation_size_original": 6247,
+      "noisy_rows_removed_count": 1503,
+      "evaluation_size_without_noise": 4744,
+      "accuracy_without_noise": 0.8328414839797639,
+      "f1_macro_without_noise": 0.8293410320879248
+    },
+    {
+      "model_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\mistralai_Mistral_7B_Instruct_v0.3_20260507_140505",
+      "status": "generated",
+      "metrics_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\mistralai_Mistral_7B_Instruct_v0.3_20260507_140505\\metrics_without_noise.json",
+      "dataset_kind": "dataset",
+      "evaluation_size_original": 6247,
+      "noisy_rows_removed_count": 1503,
+      "evaluation_size_without_noise": 4744,
+      "accuracy_without_noise": 0.039418212478920744,
+      "f1_macro_without_noise": 0.05414941143400652
+    },
+    {
+      "model_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\mistralai_Mistral_7B_Instruct_v0.3_20260507_151443",
+      "status": "generated",
+      "metrics_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\mistralai_Mistral_7B_Instruct_v0.3_20260507_151443\\metrics_without_noise.json",
+      "dataset_kind": "dataset",
+      "evaluation_size_original": 6247,
+      "noisy_rows_removed_count": 1503,
+      "evaluation_size_without_noise": 4744,
+      "accuracy_without_noise": 0.3619308600337268,
+      "f1_macro_without_noise": 0.2147775867884622
+    },
+    {
+      "model_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\openai_community_gpt2_20260507_015229",
+      "status": "generated",
+      "metrics_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\openai_community_gpt2_20260507_015229\\metrics_without_noise.json",
+      "dataset_kind": "cleaned_dataset",
+      "evaluation_size_original": 5945,
+      "noisy_rows_removed_count": 1581,
+      "evaluation_size_without_noise": 4364,
+      "accuracy_without_noise": 0.8175985334555453,
+      "f1_macro_without_noise": 0.6092971722573323
+    },
+    {
+      "model_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\openai_community_gpt2_20260507_115008",
+      "status": "generated",
+      "metrics_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\openai_community_gpt2_20260507_115008\\metrics_without_noise.json",
+      "dataset_kind": "cleaned_dataset",
+      "evaluation_size_original": 5945,
+      "noisy_rows_removed_count": 1581,
+      "evaluation_size_without_noise": 4364,
+      "accuracy_without_noise": 0.5999083409715857,
+      "f1_macro_without_noise": 0.5970972597183254
+    },
+    {
+      "model_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\openai_community_gpt2_20260507_121459",
+      "status": "generated",
+      "metrics_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\openai_community_gpt2_20260507_121459\\metrics_without_noise.json",
+      "dataset_kind": "dataset",
+      "evaluation_size_original": 6247,
+      "noisy_rows_removed_count": 1503,
+      "evaluation_size_without_noise": 4744,
+      "accuracy_without_noise": 0.6625210792580101,
+      "f1_macro_without_noise": 0.6573975596428053
+    },
+    {
+      "model_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\openai_community_gpt2_medium_20260507_153921",
+      "status": "generated",
+      "metrics_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\openai_community_gpt2_medium_20260507_153921\\metrics_without_noise.json",
+      "dataset_kind": "dataset",
+      "evaluation_size_original": 6247,
+      "noisy_rows_removed_count": 1503,
+      "evaluation_size_without_noise": 4744,
+      "accuracy_without_noise": 0.01011804384485666,
+      "f1_macro_without_noise": 0.014829549148208474
+    },
+    {
+      "model_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\Qwen_Qwen3_4B_Instruct_2507_20260507_134744",
+      "status": "generated",
+      "metrics_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\Qwen_Qwen3_4B_Instruct_2507_20260507_134744\\metrics_without_noise.json",
+      "dataset_kind": "dataset",
+      "evaluation_size_original": 6247,
+      "noisy_rows_removed_count": 1503,
+      "evaluation_size_without_noise": 4744,
+      "accuracy_without_noise": 0.17179595278246207,
+      "f1_macro_without_noise": 0.13407129681624216
+    },
+    {
+      "model_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\Qwen_Qwen3_4B_Instruct_2507_20260507_141802",
+      "status": "generated",
+      "metrics_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\Qwen_Qwen3_4B_Instruct_2507_20260507_141802\\metrics_without_noise.json",
+      "dataset_kind": "dataset",
+      "evaluation_size_original": 6247,
+      "noisy_rows_removed_count": 1503,
+      "evaluation_size_without_noise": 4744,
+      "accuracy_without_noise": 0.33811129848229343,
+      "f1_macro_without_noise": 0.3209631025418078
+    },
+    {
+      "model_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\Qwen_Qwen3_4B_Instruct_2507_20260507_142906",
+      "status": "generated",
+      "metrics_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\Qwen_Qwen3_4B_Instruct_2507_20260507_142906\\metrics_without_noise.json",
+      "dataset_kind": "dataset",
+      "evaluation_size_original": 6247,
+      "noisy_rows_removed_count": 1503,
+      "evaluation_size_without_noise": 4744,
+      "accuracy_without_noise": 0.6916104553119731,
+      "f1_macro_without_noise": 0.48754047200129513
+    },
+    {
+      "model_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\Qwen_Qwen3_4B_Instruct_2507_20260507_143454",
+      "status": "generated",
+      "metrics_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\Qwen_Qwen3_4B_Instruct_2507_20260507_143454\\metrics_without_noise.json",
+      "dataset_kind": "dataset",
+      "evaluation_size_original": 6247,
+      "noisy_rows_removed_count": 1503,
+      "evaluation_size_without_noise": 4744,
+      "accuracy_without_noise": 0.6970910623946037,
+      "f1_macro_without_noise": 0.653192163530527
+    },
+    {
+      "model_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\Qwen_Qwen3_4B_Instruct_2507_20260507_145236",
+      "status": "generated",
+      "metrics_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\Qwen_Qwen3_4B_Instruct_2507_20260507_145236\\metrics_without_noise.json",
+      "dataset_kind": "dataset",
+      "evaluation_size_original": 6247,
+      "noisy_rows_removed_count": 1503,
+      "evaluation_size_without_noise": 4744,
+      "accuracy_without_noise": 0.8381112984822934,
+      "f1_macro_without_noise": 0.8335417334372942
+    }
+  ]
+}

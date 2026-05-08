@@ -1,0 +1,59 @@
+{
+  "model_name": "mistralai/Mistral-7B-Instruct-v0.3",
+  "model_slug": "mistralai_Mistral-7B-Instruct-v0.3",
+  "trust_remote_code": false,
+  "tokenizer_pad_token": "</s>",
+  "tokenizer_pad_token_id": 2,
+  "tokenizer_added_pad_token": false,
+  "approach": "instruction",
+  "fine_tune_model": false,
+  "use_chat_template": true,
+  "tokenizer_has_chat_template": true,
+  "task": "decoder_sentiment_classification",
+  "tuning_mode": "inference_only",
+  "classification_tuning_mode": null,
+  "generated_at_utc": "2026-05-07T14:07:12.753297+00:00",
+  "dataset_path": "dataset.csv",
+  "text_column": "text",
+  "label_column": "label",
+  "test_size": 0.2,
+  "random_state": 42,
+  "use_stratify": true,
+  "max_length": 64,
+  "batch_size": 8,
+  "epochs": 1,
+  "learning_rate": 2e-05,
+  "use_classifier_learning_rate": null,
+  "classifier_learning_rate": null,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.1,
+  "gradient_clip_norm": 1.0,
+  "use_peft": false,
+  "peft_r": null,
+  "peft_alpha": null,
+  "peft_dropout": null,
+  "peft_target_modules": null,
+  "label_names": [
+    "0",
+    "1",
+    "2"
+  ],
+  "history": [
+    {
+      "epoch": 0,
+      "train_loss": null,
+      "validation_loss": 12.414919536133203,
+      "accuracy": 0.05058428045461821,
+      "precision_macro": 0.25780401384987767,
+      "recall_macro": 0.037114357293299205,
+      "f1_macro": 0.06275979379639435
+    }
+  ],
+  "final_validation_loss": 12.414919536133203,
+  "final_metrics": {
+    "accuracy": 0.05058428045461821,
+    "precision_macro": 0.25780401384987767,
+    "recall_macro": 0.037114357293299205,
+    "f1_macro": 0.06275979379639435
+  }
+}

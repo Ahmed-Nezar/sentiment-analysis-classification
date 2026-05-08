@@ -1,0 +1,56 @@
+{
+  "model_name": "openai-community/gpt2",
+  "model_slug": "openai-community_gpt2",
+  "trust_remote_code": false,
+  "tokenizer_pad_token": "<|endoftext|>",
+  "tokenizer_pad_token_id": 50256,
+  "tokenizer_added_pad_token": false,
+  "approach": "classification_head",
+  "task": "decoder_sentiment_classification",
+  "tuning_mode": "classifier_only",
+  "classification_tuning_mode": "classifier_only",
+  "generated_at_utc": "2026-05-07T11:50:43.606742+00:00",
+  "dataset_path": "..\\datasets\\cleaned_dataset.csv",
+  "text_column": "text",
+  "label_column": "label",
+  "test_size": 0.2,
+  "random_state": 42,
+  "use_stratify": true,
+  "max_length": 64,
+  "batch_size": 8,
+  "epochs": 1,
+  "learning_rate": 2e-05,
+  "use_classifier_learning_rate": true,
+  "classifier_learning_rate": 0.0001,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.1,
+  "gradient_clip_norm": 1.0,
+  "use_peft": false,
+  "peft_r": null,
+  "peft_alpha": null,
+  "peft_dropout": null,
+  "peft_target_modules": null,
+  "label_names": [
+    "0",
+    "1",
+    "2"
+  ],
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.3585370540819417,
+      "validation_loss": 0.9540773685987102,
+      "accuracy": 0.5623212783851976,
+      "precision_macro": 0.5790372350484517,
+      "recall_macro": 0.5544177483961681,
+      "f1_macro": 0.5586188744319679
+    }
+  ],
+  "final_validation_loss": 0.9540773685987102,
+  "final_metrics": {
+    "accuracy": 0.5623212783851976,
+    "precision_macro": 0.5790372350484517,
+    "recall_macro": 0.5544177483961681,
+    "f1_macro": 0.5586188744319679
+  }
+}

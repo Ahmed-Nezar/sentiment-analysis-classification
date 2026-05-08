@@ -6,6 +6,8 @@ from typing import Final
 
 import pandas as pd
 
+from .noise_rows import get_noise_rows
+
 
 URL_PATTERN: Final[re.Pattern[str]] = re.compile(r"http\S+|www\S+|https\S+")
 SPECIAL_CHAR_PATTERN: Final[re.Pattern[str]] = re.compile(r"[^a-zA-Z0-9\s]")
@@ -64,9 +66,29 @@ def save_cleaned_dataset(
 	df: pd.DataFrame,
 	output_path: str | Path | None = None,
 ) -> Path:
+	output_path = Path(output_path)
 	output_path.parent.mkdir(parents=True, exist_ok=True)
 	df.to_csv(output_path, index=False)
 	return output_path
+
+
+def remove_noise_rows(df: pd.DataFrame, *, clean: bool = False) -> pd.DataFrame:
+	rows_to_remove = get_noise_rows(clean=clean)
+	data_rows = pd.Series(range(1, len(df) + 1), index=df.index)
+	filtered_df = df[~data_rows.isin(rows_to_remove)].copy()
+	filtered_df.reset_index(drop=True, inplace=True)
+	return filtered_df
+
+
+def save_noise_removed_dataset(
+	dataset_path: str | Path,
+	output_path: str | Path,
+	*,
+	clean: bool = False,
+) -> Path:
+	dataset_df = load_dataset(dataset_path)
+	filtered_df = remove_noise_rows(dataset_df, clean=clean)
+	return save_cleaned_dataset(filtered_df, output_path)
 
 
 def preprocess_and_save(

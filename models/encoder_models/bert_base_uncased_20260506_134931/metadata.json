@@ -1,0 +1,64 @@
+{
+  "model_name": "bert-base-uncased",
+  "task": "sequence_classification",
+  "generated_at_utc": "2026-05-06T13:49:49.583961+00:00",
+  "dataset_path": "/kaggle/input/datasets/ahmednezar/sentiment-analysis-nlp-project/cleaned_dataset.csv",
+  "text_column": "text",
+  "label_column": "label",
+  "test_size": 0.2,
+  "random_state": 42,
+  "use_stratify": true,
+  "max_length": 64,
+  "batch_size": 32,
+  "epochs": 3,
+  "learning_rate": 1e-05,
+  "weight_decay": 0.05,
+  "warmup_ratio": 0.1,
+  "device": "cuda",
+  "cuda_device_name": "Tesla T4",
+  "labels": [
+    "0",
+    "1",
+    "2"
+  ],
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.7921249505749663,
+      "validation_loss": 0.6167478372912331,
+      "accuracy": 0.7426408746846089,
+      "precision_macro": 0.7468266293823458,
+      "recall_macro": 0.7432852875682671,
+      "f1_macro": 0.7444300282148034
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.5702405040959935,
+      "validation_loss": 0.5971503669018501,
+      "accuracy": 0.7571068124474348,
+      "precision_macro": 0.7622301845844688,
+      "recall_macro": 0.7585611733279677,
+      "f1_macro": 0.7601569434197878
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.5039747797610682,
+      "validation_loss": 0.6132893997746621,
+      "accuracy": 0.7586206896551724,
+      "precision_macro": 0.7629443456947618,
+      "recall_macro": 0.7597533362848364,
+      "f1_macro": 0.7611895257935339
+    }
+  ],
+  "final_validation_loss": 0.6132893997746621,
+  "metrics": {
+    "accuracy": 0.7586206896551724,
+    "precision_macro": 0.7629443456947618,
+    "recall_macro": 0.7597533362848364,
+    "f1_macro": 0.7611895257935339
+  },
+  "model_dir": "/kaggle/working/models/fine_tuned_bert/bert_base_uncased_20260506_134931/model",
+  "tokenizer_dir": "/kaggle/working/models/fine_tuned_bert/bert_base_uncased_20260506_134931/tokenizer",
+  "predictions_path": "/kaggle/working/models/fine_tuned_bert/bert_base_uncased_20260506_134931/y_pred.joblib",
+  "targets_path": "/kaggle/working/models/fine_tuned_bert/bert_base_uncased_20260506_134931/y_true.joblib"
+}

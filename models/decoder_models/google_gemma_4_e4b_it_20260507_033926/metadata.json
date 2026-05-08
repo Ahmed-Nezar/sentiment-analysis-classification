@@ -1,0 +1,56 @@
+{
+  "model_name": "google/gemma-4-E4B-it",
+  "model_slug": "google_gemma-4-E4B-it",
+  "trust_remote_code": false,
+  "tokenizer_pad_token": "<pad>",
+  "tokenizer_pad_token_id": 0,
+  "tokenizer_added_pad_token": false,
+  "approach": "instruction",
+  "task": "decoder_sentiment_classification",
+  "tuning_mode": "full",
+  "classification_tuning_mode": null,
+  "generated_at_utc": "2026-05-07T03:42:24.337509+00:00",
+  "dataset_path": "dataset.csv",
+  "text_column": "text",
+  "label_column": "label",
+  "test_size": 0.2,
+  "random_state": 42,
+  "use_stratify": true,
+  "max_length": 64,
+  "batch_size": 8,
+  "epochs": 1,
+  "learning_rate": 2e-05,
+  "use_classifier_learning_rate": null,
+  "classifier_learning_rate": null,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.1,
+  "gradient_clip_norm": 1.0,
+  "use_peft": false,
+  "peft_r": null,
+  "peft_alpha": null,
+  "peft_dropout": null,
+  "peft_target_modules": null,
+  "label_names": [
+    "0",
+    "1",
+    "2"
+  ],
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.3112069633061188,
+      "validation_loss": 0.17838558836118382,
+      "accuracy": 0.7816551944933569,
+      "precision_macro": 0.5903456054053071,
+      "recall_macro": 0.5871474835155952,
+      "f1_macro": 0.5885677979734616
+    }
+  ],
+  "final_validation_loss": 0.17838558836118382,
+  "final_metrics": {
+    "accuracy": 0.7816551944933569,
+    "precision_macro": 0.5903456054053071,
+    "recall_macro": 0.5871474835155952,
+    "f1_macro": 0.5885677979734616
+  }
+}

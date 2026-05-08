@@ -43,3 +43,10 @@ embeddings/
 *.npy
 
 fine_tuned_bert/
+kaggle/
+
+noisy_dataset_cleaned_dataset_report.md
+noisy_test_splits_report.md
+
+requriements.txt
+.jupyter*

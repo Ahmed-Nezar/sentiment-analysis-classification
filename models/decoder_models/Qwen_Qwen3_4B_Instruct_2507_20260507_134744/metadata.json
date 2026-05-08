@@ -1,0 +1,59 @@
+{
+  "model_name": "Qwen/Qwen3-4B-Instruct-2507",
+  "model_slug": "Qwen_Qwen3-4B-Instruct-2507",
+  "trust_remote_code": false,
+  "tokenizer_pad_token": "<|endoftext|>",
+  "tokenizer_pad_token_id": 151643,
+  "tokenizer_added_pad_token": false,
+  "approach": "instruction",
+  "fine_tune_model": false,
+  "use_chat_template": true,
+  "tokenizer_has_chat_template": true,
+  "task": "decoder_sentiment_classification",
+  "tuning_mode": "inference_only",
+  "classification_tuning_mode": null,
+  "generated_at_utc": "2026-05-07T13:50:31.536996+00:00",
+  "dataset_path": "dataset.csv",
+  "text_column": "text",
+  "label_column": "label",
+  "test_size": 0.2,
+  "random_state": 42,
+  "use_stratify": true,
+  "max_length": 64,
+  "batch_size": 8,
+  "epochs": 5,
+  "learning_rate": 2e-05,
+  "use_classifier_learning_rate": null,
+  "classifier_learning_rate": null,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.1,
+  "gradient_clip_norm": 1.0,
+  "use_peft": false,
+  "peft_r": null,
+  "peft_alpha": null,
+  "peft_dropout": null,
+  "peft_target_modules": null,
+  "label_names": [
+    "0",
+    "1",
+    "2"
+  ],
+  "history": [
+    {
+      "epoch": 0,
+      "train_loss": null,
+      "validation_loss": 6.566343846694362,
+      "accuracy": 0.20025612293901074,
+      "precision_macro": 0.16001799468182654,
+      "recall_macro": 0.14626959009880883,
+      "f1_macro": 0.1506791642624096
+    }
+  ],
+  "final_validation_loss": 6.566343846694362,
+  "final_metrics": {
+    "accuracy": 0.20025612293901074,
+    "precision_macro": 0.16001799468182654,
+    "recall_macro": 0.14626959009880883,
+    "f1_macro": 0.1506791642624096
+  }
+}

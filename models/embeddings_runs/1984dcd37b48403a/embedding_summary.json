@@ -1,0 +1,2889 @@
+{
+  "generated_at_utc": "2026-05-07T03:52:36.007558+00:00",
+  "configuration_hash": "1984dcd37b48403a",
+  "configuration_output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a",
+  "configuration_hash_payload": {
+    "dataset": {
+      "dataset_mtime_ns": 1776813861245991600,
+      "dataset_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\datasets\\dataset.csv",
+      "dataset_size_bytes": 3586409
+    },
+    "embedding_runs": [
+      {
+        "batch_size": 64,
+        "name": "all_minilm_l12_v2",
+        "type": "sentence-transformers/all-MiniLM-L12-v2",
+        "vector_dimension": 100
+      },
+      {
+        "batch_size": 64,
+        "name": "all_minilm_l6_v2",
+        "type": "sentence-transformers/all-MiniLM-L6-v2",
+        "vector_dimension": 100
+      },
+      {
+        "batch_size": 64,
+        "max_length": 128,
+        "name": "bert_base_uncased",
+        "type": "bert-base-uncased",
+        "vector_dimension": 100
+      },
+      {
+        "batch_size": 64,
+        "max_length": 128,
+        "name": "bert_large_uncased",
+        "type": "bert-large-uncased",
+        "vector_dimension": 100
+      },
+      {
+        "batch_size": 64,
+        "name": "bge_base_en_v1_5",
+        "type": "BAAI/bge-base-en-v1.5",
+        "vector_dimension": 100
+      },
+      {
+        "batch_size": 64,
+        "name": "bge_m3",
+        "type": "BAAI/bge-m3",
+        "vector_dimension": 100
+      },
+      {
+        "batch_size": 64,
+        "name": "bge_small_en_v1_5",
+        "type": "BAAI/bge-small-en-v1.5",
+        "vector_dimension": 100
+      },
+      {
+        "epochs": 5,
+        "min_count": 1,
+        "name": "fasttext_cbow",
+        "sg": 0,
+        "type": "fasttext",
+        "vector_dimension": 100,
+        "window": 5,
+        "workers": 4
+      },
+      {
+        "epochs": 5,
+        "min_count": 1,
+        "name": "fasttext_skipgram",
+        "sg": 1,
+        "type": "fasttext",
+        "vector_dimension": 100,
+        "window": 5,
+        "workers": 4
+      },
+      {
+        "glove_file_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\embeddings\\glove\\glove.6B.300d.txt",
+        "name": "glove_300d",
+        "type": "glove",
+        "vector_dimension": 100
+      },
+      {
+        "batch_size": 64,
+        "name": "gte_base",
+        "type": "thenlper/gte-base",
+        "vector_dimension": 100
+      },
+      {
+        "batch_size": 64,
+        "name": "gte_large",
+        "type": "thenlper/gte-large",
+        "vector_dimension": 100
+      },
+      {
+        "batch_size": 64,
+        "name": "gte_small",
+        "type": "thenlper/gte-small",
+        "vector_dimension": 100
+      },
+      {
+        "batch_size": 64,
+        "name": "qwen3_embedding_0_6b",
+        "type": "Qwen/Qwen3-Embedding-0.6B",
+        "vector_dimension": 100
+      },
+      {
+        "epochs": 5,
+        "min_count": 1,
+        "name": "word2vec_cbow",
+        "sg": 0,
+        "type": "word2vec",
+        "vector_dimension": 100,
+        "window": 5,
+        "workers": 4
+      },
+      {
+        "epochs": 5,
+        "min_count": 1,
+        "name": "word2vec_skipgram",
+        "sg": 1,
+        "type": "word2vec",
+        "vector_dimension": 100,
+        "window": 5,
+        "workers": 4
+      }
+    ],
+    "split_config": {
+      "label_column": "label",
+      "random_state": 42,
+      "test_size": 0.2,
+      "text_column": "text",
+      "use_stratify": true
+    }
+  },
+  "dataset_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\datasets\\dataset.csv",
+  "dataset_signature": {
+    "dataset_mtime_ns": 1776813861245991600,
+    "dataset_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\datasets\\dataset.csv",
+    "dataset_size_bytes": 3586409
+  },
+  "output_root": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs",
+  "text_column": "text",
+  "label_column": "label",
+  "test_size": 0.2,
+  "random_state": 42,
+  "use_stratify": true,
+  "force_rerun": false,
+  "hash_algorithm": "sha256",
+  "hash_length": 16,
+  "runs": [
+    {
+      "name": "bert_base_uncased",
+      "type": "bert-base-uncased",
+      "configuration_hash": "1984dcd37b48403a",
+      "run_hash": "1984dcd37b48403a",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bert_base_uncased",
+      "embedding_object_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bert_base_uncased\\embedding_object.json",
+      "x_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bert_base_uncased\\X_train.joblib",
+      "x_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bert_base_uncased\\X_test.joblib",
+      "y_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bert_base_uncased\\y_train.joblib",
+      "y_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bert_base_uncased\\y_test.joblib",
+      "train_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bert_base_uncased\\train_split.csv",
+      "test_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bert_base_uncased\\test_split.csv",
+      "parameters": {
+        "batch_size": 64,
+        "device": "cuda",
+        "kind": "transformer",
+        "max_length": 128,
+        "model_name": "bert-base-uncased",
+        "persists_model_weights": false,
+        "uses_sentence_transformer": false,
+        "vector_dimension": 100
+      },
+      "configured_parameters": {
+        "batch_size": 64,
+        "max_length": 128,
+        "name": "bert_base_uncased",
+        "type": "bert-base-uncased",
+        "vector_dimension": 100
+      },
+      "configuration_hash_payload": {
+        "dataset": {
+          "dataset_mtime_ns": 1776813861245991600,
+          "dataset_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\datasets\\dataset.csv",
+          "dataset_size_bytes": 3586409
+        },
+        "embedding_runs": [
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l12_v2",
+            "type": "sentence-transformers/all-MiniLM-L12-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l6_v2",
+            "type": "sentence-transformers/all-MiniLM-L6-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_base_uncased",
+            "type": "bert-base-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_large_uncased",
+            "type": "bert-large-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_base_en_v1_5",
+            "type": "BAAI/bge-base-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_m3",
+            "type": "BAAI/bge-m3",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_small_en_v1_5",
+            "type": "BAAI/bge-small-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_cbow",
+            "sg": 0,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_skipgram",
+            "sg": 1,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "glove_file_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\embeddings\\glove\\glove.6B.300d.txt",
+            "name": "glove_300d",
+            "type": "glove",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_base",
+            "type": "thenlper/gte-base",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_large",
+            "type": "thenlper/gte-large",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_small",
+            "type": "thenlper/gte-small",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "qwen3_embedding_0_6b",
+            "type": "Qwen/Qwen3-Embedding-0.6B",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_cbow",
+            "sg": 0,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_skipgram",
+            "sg": 1,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          }
+        ],
+        "split_config": {
+          "label_column": "label",
+          "random_state": 42,
+          "test_size": 0.2,
+          "text_column": "text",
+          "use_stratify": true
+        }
+      },
+      "train_shape": [
+        24985,
+        100
+      ],
+      "test_shape": [
+        6247,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bert_base_uncased\\metadata.json"
+    },
+    {
+      "name": "bert_large_uncased",
+      "type": "bert-large-uncased",
+      "configuration_hash": "1984dcd37b48403a",
+      "run_hash": "1984dcd37b48403a",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bert_large_uncased",
+      "embedding_object_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bert_large_uncased\\embedding_object.json",
+      "x_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bert_large_uncased\\X_train.joblib",
+      "x_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bert_large_uncased\\X_test.joblib",
+      "y_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bert_large_uncased\\y_train.joblib",
+      "y_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bert_large_uncased\\y_test.joblib",
+      "train_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bert_large_uncased\\train_split.csv",
+      "test_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bert_large_uncased\\test_split.csv",
+      "parameters": {
+        "batch_size": 64,
+        "device": "cuda",
+        "kind": "transformer",
+        "max_length": 128,
+        "model_name": "bert-large-uncased",
+        "persists_model_weights": false,
+        "uses_sentence_transformer": false,
+        "vector_dimension": 100
+      },
+      "configured_parameters": {
+        "batch_size": 64,
+        "max_length": 128,
+        "name": "bert_large_uncased",
+        "type": "bert-large-uncased",
+        "vector_dimension": 100
+      },
+      "configuration_hash_payload": {
+        "dataset": {
+          "dataset_mtime_ns": 1776813861245991600,
+          "dataset_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\datasets\\dataset.csv",
+          "dataset_size_bytes": 3586409
+        },
+        "embedding_runs": [
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l12_v2",
+            "type": "sentence-transformers/all-MiniLM-L12-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l6_v2",
+            "type": "sentence-transformers/all-MiniLM-L6-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_base_uncased",
+            "type": "bert-base-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_large_uncased",
+            "type": "bert-large-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_base_en_v1_5",
+            "type": "BAAI/bge-base-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_m3",
+            "type": "BAAI/bge-m3",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_small_en_v1_5",
+            "type": "BAAI/bge-small-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_cbow",
+            "sg": 0,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_skipgram",
+            "sg": 1,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "glove_file_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\embeddings\\glove\\glove.6B.300d.txt",
+            "name": "glove_300d",
+            "type": "glove",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_base",
+            "type": "thenlper/gte-base",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_large",
+            "type": "thenlper/gte-large",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_small",
+            "type": "thenlper/gte-small",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "qwen3_embedding_0_6b",
+            "type": "Qwen/Qwen3-Embedding-0.6B",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_cbow",
+            "sg": 0,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_skipgram",
+            "sg": 1,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          }
+        ],
+        "split_config": {
+          "label_column": "label",
+          "random_state": 42,
+          "test_size": 0.2,
+          "text_column": "text",
+          "use_stratify": true
+        }
+      },
+      "train_shape": [
+        24985,
+        100
+      ],
+      "test_shape": [
+        6247,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bert_large_uncased\\metadata.json"
+    },
+    {
+      "name": "qwen3_embedding_0_6b",
+      "type": "qwen/qwen3-embedding-0.6b",
+      "configuration_hash": "1984dcd37b48403a",
+      "run_hash": "1984dcd37b48403a",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\qwen3_embedding_0_6b",
+      "embedding_object_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\qwen3_embedding_0_6b\\embedding_object.json",
+      "x_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\qwen3_embedding_0_6b\\X_train.joblib",
+      "x_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\qwen3_embedding_0_6b\\X_test.joblib",
+      "y_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\qwen3_embedding_0_6b\\y_train.joblib",
+      "y_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\qwen3_embedding_0_6b\\y_test.joblib",
+      "train_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\qwen3_embedding_0_6b\\train_split.csv",
+      "test_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\qwen3_embedding_0_6b\\test_split.csv",
+      "parameters": {
+        "batch_size": 64,
+        "device": "cuda",
+        "kind": "transformer",
+        "max_length": 128,
+        "model_name": "Qwen/Qwen3-Embedding-0.6B",
+        "persists_model_weights": false,
+        "uses_sentence_transformer": true,
+        "vector_dimension": 100
+      },
+      "configured_parameters": {
+        "batch_size": 64,
+        "name": "qwen3_embedding_0_6b",
+        "type": "Qwen/Qwen3-Embedding-0.6B",
+        "vector_dimension": 100
+      },
+      "configuration_hash_payload": {
+        "dataset": {
+          "dataset_mtime_ns": 1776813861245991600,
+          "dataset_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\datasets\\dataset.csv",
+          "dataset_size_bytes": 3586409
+        },
+        "embedding_runs": [
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l12_v2",
+            "type": "sentence-transformers/all-MiniLM-L12-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l6_v2",
+            "type": "sentence-transformers/all-MiniLM-L6-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_base_uncased",
+            "type": "bert-base-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_large_uncased",
+            "type": "bert-large-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_base_en_v1_5",
+            "type": "BAAI/bge-base-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_m3",
+            "type": "BAAI/bge-m3",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_small_en_v1_5",
+            "type": "BAAI/bge-small-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_cbow",
+            "sg": 0,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_skipgram",
+            "sg": 1,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "glove_file_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\embeddings\\glove\\glove.6B.300d.txt",
+            "name": "glove_300d",
+            "type": "glove",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_base",
+            "type": "thenlper/gte-base",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_large",
+            "type": "thenlper/gte-large",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_small",
+            "type": "thenlper/gte-small",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "qwen3_embedding_0_6b",
+            "type": "Qwen/Qwen3-Embedding-0.6B",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_cbow",
+            "sg": 0,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_skipgram",
+            "sg": 1,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          }
+        ],
+        "split_config": {
+          "label_column": "label",
+          "random_state": 42,
+          "test_size": 0.2,
+          "text_column": "text",
+          "use_stratify": true
+        }
+      },
+      "train_shape": [
+        24985,
+        100
+      ],
+      "test_shape": [
+        6247,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\qwen3_embedding_0_6b\\metadata.json"
+    },
+    {
+      "name": "bge_base_en_v1_5",
+      "type": "baai/bge-base-en-v1.5",
+      "configuration_hash": "1984dcd37b48403a",
+      "run_hash": "1984dcd37b48403a",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_base_en_v1_5",
+      "embedding_object_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_base_en_v1_5\\embedding_object.json",
+      "x_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_base_en_v1_5\\X_train.joblib",
+      "x_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_base_en_v1_5\\X_test.joblib",
+      "y_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_base_en_v1_5\\y_train.joblib",
+      "y_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_base_en_v1_5\\y_test.joblib",
+      "train_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_base_en_v1_5\\train_split.csv",
+      "test_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_base_en_v1_5\\test_split.csv",
+      "parameters": {
+        "batch_size": 64,
+        "device": "cuda",
+        "kind": "transformer",
+        "max_length": 128,
+        "model_name": "BAAI/bge-base-en-v1.5",
+        "persists_model_weights": false,
+        "uses_sentence_transformer": true,
+        "vector_dimension": 100
+      },
+      "configured_parameters": {
+        "batch_size": 64,
+        "name": "bge_base_en_v1_5",
+        "type": "BAAI/bge-base-en-v1.5",
+        "vector_dimension": 100
+      },
+      "configuration_hash_payload": {
+        "dataset": {
+          "dataset_mtime_ns": 1776813861245991600,
+          "dataset_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\datasets\\dataset.csv",
+          "dataset_size_bytes": 3586409
+        },
+        "embedding_runs": [
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l12_v2",
+            "type": "sentence-transformers/all-MiniLM-L12-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l6_v2",
+            "type": "sentence-transformers/all-MiniLM-L6-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_base_uncased",
+            "type": "bert-base-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_large_uncased",
+            "type": "bert-large-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_base_en_v1_5",
+            "type": "BAAI/bge-base-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_m3",
+            "type": "BAAI/bge-m3",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_small_en_v1_5",
+            "type": "BAAI/bge-small-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_cbow",
+            "sg": 0,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_skipgram",
+            "sg": 1,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "glove_file_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\embeddings\\glove\\glove.6B.300d.txt",
+            "name": "glove_300d",
+            "type": "glove",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_base",
+            "type": "thenlper/gte-base",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_large",
+            "type": "thenlper/gte-large",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_small",
+            "type": "thenlper/gte-small",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "qwen3_embedding_0_6b",
+            "type": "Qwen/Qwen3-Embedding-0.6B",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_cbow",
+            "sg": 0,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_skipgram",
+            "sg": 1,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          }
+        ],
+        "split_config": {
+          "label_column": "label",
+          "random_state": 42,
+          "test_size": 0.2,
+          "text_column": "text",
+          "use_stratify": true
+        }
+      },
+      "train_shape": [
+        24985,
+        100
+      ],
+      "test_shape": [
+        6247,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_base_en_v1_5\\metadata.json"
+    },
+    {
+      "name": "bge_small_en_v1_5",
+      "type": "baai/bge-small-en-v1.5",
+      "configuration_hash": "1984dcd37b48403a",
+      "run_hash": "1984dcd37b48403a",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_small_en_v1_5",
+      "embedding_object_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_small_en_v1_5\\embedding_object.json",
+      "x_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_small_en_v1_5\\X_train.joblib",
+      "x_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_small_en_v1_5\\X_test.joblib",
+      "y_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_small_en_v1_5\\y_train.joblib",
+      "y_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_small_en_v1_5\\y_test.joblib",
+      "train_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_small_en_v1_5\\train_split.csv",
+      "test_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_small_en_v1_5\\test_split.csv",
+      "parameters": {
+        "batch_size": 64,
+        "device": "cuda",
+        "kind": "transformer",
+        "max_length": 128,
+        "model_name": "BAAI/bge-small-en-v1.5",
+        "persists_model_weights": false,
+        "uses_sentence_transformer": true,
+        "vector_dimension": 100
+      },
+      "configured_parameters": {
+        "batch_size": 64,
+        "name": "bge_small_en_v1_5",
+        "type": "BAAI/bge-small-en-v1.5",
+        "vector_dimension": 100
+      },
+      "configuration_hash_payload": {
+        "dataset": {
+          "dataset_mtime_ns": 1776813861245991600,
+          "dataset_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\datasets\\dataset.csv",
+          "dataset_size_bytes": 3586409
+        },
+        "embedding_runs": [
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l12_v2",
+            "type": "sentence-transformers/all-MiniLM-L12-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l6_v2",
+            "type": "sentence-transformers/all-MiniLM-L6-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_base_uncased",
+            "type": "bert-base-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_large_uncased",
+            "type": "bert-large-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_base_en_v1_5",
+            "type": "BAAI/bge-base-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_m3",
+            "type": "BAAI/bge-m3",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_small_en_v1_5",
+            "type": "BAAI/bge-small-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_cbow",
+            "sg": 0,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_skipgram",
+            "sg": 1,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "glove_file_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\embeddings\\glove\\glove.6B.300d.txt",
+            "name": "glove_300d",
+            "type": "glove",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_base",
+            "type": "thenlper/gte-base",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_large",
+            "type": "thenlper/gte-large",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_small",
+            "type": "thenlper/gte-small",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "qwen3_embedding_0_6b",
+            "type": "Qwen/Qwen3-Embedding-0.6B",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_cbow",
+            "sg": 0,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_skipgram",
+            "sg": 1,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          }
+        ],
+        "split_config": {
+          "label_column": "label",
+          "random_state": 42,
+          "test_size": 0.2,
+          "text_column": "text",
+          "use_stratify": true
+        }
+      },
+      "train_shape": [
+        24985,
+        100
+      ],
+      "test_shape": [
+        6247,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_small_en_v1_5\\metadata.json"
+    },
+    {
+      "name": "all_minilm_l6_v2",
+      "type": "sentence-transformers/all-minilm-l6-v2",
+      "configuration_hash": "1984dcd37b48403a",
+      "run_hash": "1984dcd37b48403a",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\all_minilm_l6_v2",
+      "embedding_object_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\all_minilm_l6_v2\\embedding_object.json",
+      "x_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\all_minilm_l6_v2\\X_train.joblib",
+      "x_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\all_minilm_l6_v2\\X_test.joblib",
+      "y_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\all_minilm_l6_v2\\y_train.joblib",
+      "y_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\all_minilm_l6_v2\\y_test.joblib",
+      "train_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\all_minilm_l6_v2\\train_split.csv",
+      "test_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\all_minilm_l6_v2\\test_split.csv",
+      "parameters": {
+        "batch_size": 64,
+        "device": "cuda",
+        "kind": "transformer",
+        "max_length": 128,
+        "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+        "persists_model_weights": false,
+        "uses_sentence_transformer": true,
+        "vector_dimension": 100
+      },
+      "configured_parameters": {
+        "batch_size": 64,
+        "name": "all_minilm_l6_v2",
+        "type": "sentence-transformers/all-MiniLM-L6-v2",
+        "vector_dimension": 100
+      },
+      "configuration_hash_payload": {
+        "dataset": {
+          "dataset_mtime_ns": 1776813861245991600,
+          "dataset_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\datasets\\dataset.csv",
+          "dataset_size_bytes": 3586409
+        },
+        "embedding_runs": [
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l12_v2",
+            "type": "sentence-transformers/all-MiniLM-L12-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l6_v2",
+            "type": "sentence-transformers/all-MiniLM-L6-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_base_uncased",
+            "type": "bert-base-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_large_uncased",
+            "type": "bert-large-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_base_en_v1_5",
+            "type": "BAAI/bge-base-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_m3",
+            "type": "BAAI/bge-m3",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_small_en_v1_5",
+            "type": "BAAI/bge-small-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_cbow",
+            "sg": 0,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_skipgram",
+            "sg": 1,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "glove_file_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\embeddings\\glove\\glove.6B.300d.txt",
+            "name": "glove_300d",
+            "type": "glove",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_base",
+            "type": "thenlper/gte-base",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_large",
+            "type": "thenlper/gte-large",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_small",
+            "type": "thenlper/gte-small",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "qwen3_embedding_0_6b",
+            "type": "Qwen/Qwen3-Embedding-0.6B",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_cbow",
+            "sg": 0,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_skipgram",
+            "sg": 1,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          }
+        ],
+        "split_config": {
+          "label_column": "label",
+          "random_state": 42,
+          "test_size": 0.2,
+          "text_column": "text",
+          "use_stratify": true
+        }
+      },
+      "train_shape": [
+        24985,
+        100
+      ],
+      "test_shape": [
+        6247,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\all_minilm_l6_v2\\metadata.json"
+    },
+    {
+      "name": "bge_m3",
+      "type": "baai/bge-m3",
+      "configuration_hash": "1984dcd37b48403a",
+      "run_hash": "1984dcd37b48403a",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_m3",
+      "embedding_object_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_m3\\embedding_object.json",
+      "x_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_m3\\X_train.joblib",
+      "x_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_m3\\X_test.joblib",
+      "y_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_m3\\y_train.joblib",
+      "y_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_m3\\y_test.joblib",
+      "train_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_m3\\train_split.csv",
+      "test_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_m3\\test_split.csv",
+      "parameters": {
+        "batch_size": 64,
+        "device": "cuda",
+        "kind": "transformer",
+        "max_length": 128,
+        "model_name": "BAAI/bge-m3",
+        "persists_model_weights": false,
+        "uses_sentence_transformer": true,
+        "vector_dimension": 100
+      },
+      "configured_parameters": {
+        "batch_size": 64,
+        "name": "bge_m3",
+        "type": "BAAI/bge-m3",
+        "vector_dimension": 100
+      },
+      "configuration_hash_payload": {
+        "dataset": {
+          "dataset_mtime_ns": 1776813861245991600,
+          "dataset_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\datasets\\dataset.csv",
+          "dataset_size_bytes": 3586409
+        },
+        "embedding_runs": [
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l12_v2",
+            "type": "sentence-transformers/all-MiniLM-L12-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l6_v2",
+            "type": "sentence-transformers/all-MiniLM-L6-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_base_uncased",
+            "type": "bert-base-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_large_uncased",
+            "type": "bert-large-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_base_en_v1_5",
+            "type": "BAAI/bge-base-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_m3",
+            "type": "BAAI/bge-m3",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_small_en_v1_5",
+            "type": "BAAI/bge-small-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_cbow",
+            "sg": 0,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_skipgram",
+            "sg": 1,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "glove_file_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\embeddings\\glove\\glove.6B.300d.txt",
+            "name": "glove_300d",
+            "type": "glove",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_base",
+            "type": "thenlper/gte-base",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_large",
+            "type": "thenlper/gte-large",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_small",
+            "type": "thenlper/gte-small",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "qwen3_embedding_0_6b",
+            "type": "Qwen/Qwen3-Embedding-0.6B",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_cbow",
+            "sg": 0,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_skipgram",
+            "sg": 1,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          }
+        ],
+        "split_config": {
+          "label_column": "label",
+          "random_state": 42,
+          "test_size": 0.2,
+          "text_column": "text",
+          "use_stratify": true
+        }
+      },
+      "train_shape": [
+        24985,
+        100
+      ],
+      "test_shape": [
+        6247,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\bge_m3\\metadata.json"
+    },
+    {
+      "name": "all_minilm_l12_v2",
+      "type": "sentence-transformers/all-minilm-l12-v2",
+      "configuration_hash": "1984dcd37b48403a",
+      "run_hash": "1984dcd37b48403a",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\all_minilm_l12_v2",
+      "embedding_object_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\all_minilm_l12_v2\\embedding_object.json",
+      "x_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\all_minilm_l12_v2\\X_train.joblib",
+      "x_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\all_minilm_l12_v2\\X_test.joblib",
+      "y_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\all_minilm_l12_v2\\y_train.joblib",
+      "y_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\all_minilm_l12_v2\\y_test.joblib",
+      "train_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\all_minilm_l12_v2\\train_split.csv",
+      "test_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\all_minilm_l12_v2\\test_split.csv",
+      "parameters": {
+        "batch_size": 64,
+        "device": "cuda",
+        "kind": "transformer",
+        "max_length": 128,
+        "model_name": "sentence-transformers/all-MiniLM-L12-v2",
+        "persists_model_weights": false,
+        "uses_sentence_transformer": true,
+        "vector_dimension": 100
+      },
+      "configured_parameters": {
+        "batch_size": 64,
+        "name": "all_minilm_l12_v2",
+        "type": "sentence-transformers/all-MiniLM-L12-v2",
+        "vector_dimension": 100
+      },
+      "configuration_hash_payload": {
+        "dataset": {
+          "dataset_mtime_ns": 1776813861245991600,
+          "dataset_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\datasets\\dataset.csv",
+          "dataset_size_bytes": 3586409
+        },
+        "embedding_runs": [
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l12_v2",
+            "type": "sentence-transformers/all-MiniLM-L12-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l6_v2",
+            "type": "sentence-transformers/all-MiniLM-L6-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_base_uncased",
+            "type": "bert-base-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_large_uncased",
+            "type": "bert-large-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_base_en_v1_5",
+            "type": "BAAI/bge-base-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_m3",
+            "type": "BAAI/bge-m3",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_small_en_v1_5",
+            "type": "BAAI/bge-small-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_cbow",
+            "sg": 0,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_skipgram",
+            "sg": 1,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "glove_file_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\embeddings\\glove\\glove.6B.300d.txt",
+            "name": "glove_300d",
+            "type": "glove",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_base",
+            "type": "thenlper/gte-base",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_large",
+            "type": "thenlper/gte-large",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_small",
+            "type": "thenlper/gte-small",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "qwen3_embedding_0_6b",
+            "type": "Qwen/Qwen3-Embedding-0.6B",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_cbow",
+            "sg": 0,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_skipgram",
+            "sg": 1,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          }
+        ],
+        "split_config": {
+          "label_column": "label",
+          "random_state": 42,
+          "test_size": 0.2,
+          "text_column": "text",
+          "use_stratify": true
+        }
+      },
+      "train_shape": [
+        24985,
+        100
+      ],
+      "test_shape": [
+        6247,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\all_minilm_l12_v2\\metadata.json"
+    },
+    {
+      "name": "gte_base",
+      "type": "thenlper/gte-base",
+      "configuration_hash": "1984dcd37b48403a",
+      "run_hash": "1984dcd37b48403a",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_base",
+      "embedding_object_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_base\\embedding_object.json",
+      "x_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_base\\X_train.joblib",
+      "x_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_base\\X_test.joblib",
+      "y_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_base\\y_train.joblib",
+      "y_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_base\\y_test.joblib",
+      "train_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_base\\train_split.csv",
+      "test_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_base\\test_split.csv",
+      "parameters": {
+        "batch_size": 64,
+        "device": "cuda",
+        "kind": "transformer",
+        "max_length": 128,
+        "model_name": "thenlper/gte-base",
+        "persists_model_weights": false,
+        "uses_sentence_transformer": true,
+        "vector_dimension": 100
+      },
+      "configured_parameters": {
+        "batch_size": 64,
+        "name": "gte_base",
+        "type": "thenlper/gte-base",
+        "vector_dimension": 100
+      },
+      "configuration_hash_payload": {
+        "dataset": {
+          "dataset_mtime_ns": 1776813861245991600,
+          "dataset_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\datasets\\dataset.csv",
+          "dataset_size_bytes": 3586409
+        },
+        "embedding_runs": [
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l12_v2",
+            "type": "sentence-transformers/all-MiniLM-L12-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l6_v2",
+            "type": "sentence-transformers/all-MiniLM-L6-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_base_uncased",
+            "type": "bert-base-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_large_uncased",
+            "type": "bert-large-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_base_en_v1_5",
+            "type": "BAAI/bge-base-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_m3",
+            "type": "BAAI/bge-m3",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_small_en_v1_5",
+            "type": "BAAI/bge-small-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_cbow",
+            "sg": 0,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_skipgram",
+            "sg": 1,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "glove_file_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\embeddings\\glove\\glove.6B.300d.txt",
+            "name": "glove_300d",
+            "type": "glove",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_base",
+            "type": "thenlper/gte-base",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_large",
+            "type": "thenlper/gte-large",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_small",
+            "type": "thenlper/gte-small",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "qwen3_embedding_0_6b",
+            "type": "Qwen/Qwen3-Embedding-0.6B",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_cbow",
+            "sg": 0,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_skipgram",
+            "sg": 1,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          }
+        ],
+        "split_config": {
+          "label_column": "label",
+          "random_state": 42,
+          "test_size": 0.2,
+          "text_column": "text",
+          "use_stratify": true
+        }
+      },
+      "train_shape": [
+        24985,
+        100
+      ],
+      "test_shape": [
+        6247,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_base\\metadata.json"
+    },
+    {
+      "name": "gte_small",
+      "type": "thenlper/gte-small",
+      "configuration_hash": "1984dcd37b48403a",
+      "run_hash": "1984dcd37b48403a",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_small",
+      "embedding_object_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_small\\embedding_object.json",
+      "x_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_small\\X_train.joblib",
+      "x_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_small\\X_test.joblib",
+      "y_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_small\\y_train.joblib",
+      "y_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_small\\y_test.joblib",
+      "train_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_small\\train_split.csv",
+      "test_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_small\\test_split.csv",
+      "parameters": {
+        "batch_size": 64,
+        "device": "cuda",
+        "kind": "transformer",
+        "max_length": 128,
+        "model_name": "thenlper/gte-small",
+        "persists_model_weights": false,
+        "uses_sentence_transformer": true,
+        "vector_dimension": 100
+      },
+      "configured_parameters": {
+        "batch_size": 64,
+        "name": "gte_small",
+        "type": "thenlper/gte-small",
+        "vector_dimension": 100
+      },
+      "configuration_hash_payload": {
+        "dataset": {
+          "dataset_mtime_ns": 1776813861245991600,
+          "dataset_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\datasets\\dataset.csv",
+          "dataset_size_bytes": 3586409
+        },
+        "embedding_runs": [
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l12_v2",
+            "type": "sentence-transformers/all-MiniLM-L12-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l6_v2",
+            "type": "sentence-transformers/all-MiniLM-L6-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_base_uncased",
+            "type": "bert-base-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_large_uncased",
+            "type": "bert-large-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_base_en_v1_5",
+            "type": "BAAI/bge-base-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_m3",
+            "type": "BAAI/bge-m3",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_small_en_v1_5",
+            "type": "BAAI/bge-small-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_cbow",
+            "sg": 0,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_skipgram",
+            "sg": 1,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "glove_file_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\embeddings\\glove\\glove.6B.300d.txt",
+            "name": "glove_300d",
+            "type": "glove",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_base",
+            "type": "thenlper/gte-base",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_large",
+            "type": "thenlper/gte-large",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_small",
+            "type": "thenlper/gte-small",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "qwen3_embedding_0_6b",
+            "type": "Qwen/Qwen3-Embedding-0.6B",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_cbow",
+            "sg": 0,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_skipgram",
+            "sg": 1,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          }
+        ],
+        "split_config": {
+          "label_column": "label",
+          "random_state": 42,
+          "test_size": 0.2,
+          "text_column": "text",
+          "use_stratify": true
+        }
+      },
+      "train_shape": [
+        24985,
+        100
+      ],
+      "test_shape": [
+        6247,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_small\\metadata.json"
+    },
+    {
+      "name": "gte_large",
+      "type": "thenlper/gte-large",
+      "configuration_hash": "1984dcd37b48403a",
+      "run_hash": "1984dcd37b48403a",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_large",
+      "embedding_object_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_large\\embedding_object.json",
+      "x_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_large\\X_train.joblib",
+      "x_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_large\\X_test.joblib",
+      "y_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_large\\y_train.joblib",
+      "y_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_large\\y_test.joblib",
+      "train_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_large\\train_split.csv",
+      "test_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_large\\test_split.csv",
+      "parameters": {
+        "batch_size": 64,
+        "device": "cuda",
+        "kind": "transformer",
+        "max_length": 128,
+        "model_name": "thenlper/gte-large",
+        "persists_model_weights": false,
+        "uses_sentence_transformer": true,
+        "vector_dimension": 100
+      },
+      "configured_parameters": {
+        "batch_size": 64,
+        "name": "gte_large",
+        "type": "thenlper/gte-large",
+        "vector_dimension": 100
+      },
+      "configuration_hash_payload": {
+        "dataset": {
+          "dataset_mtime_ns": 1776813861245991600,
+          "dataset_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\datasets\\dataset.csv",
+          "dataset_size_bytes": 3586409
+        },
+        "embedding_runs": [
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l12_v2",
+            "type": "sentence-transformers/all-MiniLM-L12-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l6_v2",
+            "type": "sentence-transformers/all-MiniLM-L6-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_base_uncased",
+            "type": "bert-base-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_large_uncased",
+            "type": "bert-large-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_base_en_v1_5",
+            "type": "BAAI/bge-base-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_m3",
+            "type": "BAAI/bge-m3",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_small_en_v1_5",
+            "type": "BAAI/bge-small-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_cbow",
+            "sg": 0,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_skipgram",
+            "sg": 1,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "glove_file_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\embeddings\\glove\\glove.6B.300d.txt",
+            "name": "glove_300d",
+            "type": "glove",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_base",
+            "type": "thenlper/gte-base",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_large",
+            "type": "thenlper/gte-large",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_small",
+            "type": "thenlper/gte-small",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "qwen3_embedding_0_6b",
+            "type": "Qwen/Qwen3-Embedding-0.6B",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_cbow",
+            "sg": 0,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_skipgram",
+            "sg": 1,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          }
+        ],
+        "split_config": {
+          "label_column": "label",
+          "random_state": 42,
+          "test_size": 0.2,
+          "text_column": "text",
+          "use_stratify": true
+        }
+      },
+      "train_shape": [
+        24985,
+        100
+      ],
+      "test_shape": [
+        6247,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\gte_large\\metadata.json"
+    },
+    {
+      "name": "word2vec_skipgram",
+      "type": "word2vec",
+      "configuration_hash": "1984dcd37b48403a",
+      "run_hash": "1984dcd37b48403a",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\word2vec_skipgram",
+      "embedding_object_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\word2vec_skipgram\\embedding_object.model",
+      "x_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\word2vec_skipgram\\X_train.joblib",
+      "x_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\word2vec_skipgram\\X_test.joblib",
+      "y_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\word2vec_skipgram\\y_train.joblib",
+      "y_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\word2vec_skipgram\\y_test.joblib",
+      "train_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\word2vec_skipgram\\train_split.csv",
+      "test_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\word2vec_skipgram\\test_split.csv",
+      "parameters": {
+        "epochs": 5,
+        "kind": "word2vec",
+        "min_count": 1,
+        "sg": 1,
+        "vector_dimension": 100,
+        "vector_size": 100,
+        "window": 5,
+        "workers": 4
+      },
+      "configured_parameters": {
+        "epochs": 5,
+        "min_count": 1,
+        "name": "word2vec_skipgram",
+        "sg": 1,
+        "type": "word2vec",
+        "vector_dimension": 100,
+        "window": 5,
+        "workers": 4
+      },
+      "configuration_hash_payload": {
+        "dataset": {
+          "dataset_mtime_ns": 1776813861245991600,
+          "dataset_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\datasets\\dataset.csv",
+          "dataset_size_bytes": 3586409
+        },
+        "embedding_runs": [
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l12_v2",
+            "type": "sentence-transformers/all-MiniLM-L12-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l6_v2",
+            "type": "sentence-transformers/all-MiniLM-L6-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_base_uncased",
+            "type": "bert-base-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_large_uncased",
+            "type": "bert-large-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_base_en_v1_5",
+            "type": "BAAI/bge-base-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_m3",
+            "type": "BAAI/bge-m3",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_small_en_v1_5",
+            "type": "BAAI/bge-small-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_cbow",
+            "sg": 0,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_skipgram",
+            "sg": 1,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "glove_file_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\embeddings\\glove\\glove.6B.300d.txt",
+            "name": "glove_300d",
+            "type": "glove",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_base",
+            "type": "thenlper/gte-base",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_large",
+            "type": "thenlper/gte-large",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_small",
+            "type": "thenlper/gte-small",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "qwen3_embedding_0_6b",
+            "type": "Qwen/Qwen3-Embedding-0.6B",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_cbow",
+            "sg": 0,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_skipgram",
+            "sg": 1,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          }
+        ],
+        "split_config": {
+          "label_column": "label",
+          "random_state": 42,
+          "test_size": 0.2,
+          "text_column": "text",
+          "use_stratify": true
+        }
+      },
+      "train_shape": [
+        24985,
+        100
+      ],
+      "test_shape": [
+        6247,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\word2vec_skipgram\\metadata.json"
+    },
+    {
+      "name": "word2vec_cbow",
+      "type": "word2vec",
+      "configuration_hash": "1984dcd37b48403a",
+      "run_hash": "1984dcd37b48403a",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\word2vec_cbow",
+      "embedding_object_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\word2vec_cbow\\embedding_object.model",
+      "x_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\word2vec_cbow\\X_train.joblib",
+      "x_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\word2vec_cbow\\X_test.joblib",
+      "y_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\word2vec_cbow\\y_train.joblib",
+      "y_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\word2vec_cbow\\y_test.joblib",
+      "train_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\word2vec_cbow\\train_split.csv",
+      "test_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\word2vec_cbow\\test_split.csv",
+      "parameters": {
+        "epochs": 5,
+        "kind": "word2vec",
+        "min_count": 1,
+        "sg": 0,
+        "vector_dimension": 100,
+        "vector_size": 100,
+        "window": 5,
+        "workers": 4
+      },
+      "configured_parameters": {
+        "epochs": 5,
+        "min_count": 1,
+        "name": "word2vec_cbow",
+        "sg": 0,
+        "type": "word2vec",
+        "vector_dimension": 100,
+        "window": 5,
+        "workers": 4
+      },
+      "configuration_hash_payload": {
+        "dataset": {
+          "dataset_mtime_ns": 1776813861245991600,
+          "dataset_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\datasets\\dataset.csv",
+          "dataset_size_bytes": 3586409
+        },
+        "embedding_runs": [
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l12_v2",
+            "type": "sentence-transformers/all-MiniLM-L12-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l6_v2",
+            "type": "sentence-transformers/all-MiniLM-L6-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_base_uncased",
+            "type": "bert-base-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_large_uncased",
+            "type": "bert-large-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_base_en_v1_5",
+            "type": "BAAI/bge-base-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_m3",
+            "type": "BAAI/bge-m3",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_small_en_v1_5",
+            "type": "BAAI/bge-small-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_cbow",
+            "sg": 0,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_skipgram",
+            "sg": 1,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "glove_file_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\embeddings\\glove\\glove.6B.300d.txt",
+            "name": "glove_300d",
+            "type": "glove",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_base",
+            "type": "thenlper/gte-base",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_large",
+            "type": "thenlper/gte-large",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_small",
+            "type": "thenlper/gte-small",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "qwen3_embedding_0_6b",
+            "type": "Qwen/Qwen3-Embedding-0.6B",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_cbow",
+            "sg": 0,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_skipgram",
+            "sg": 1,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          }
+        ],
+        "split_config": {
+          "label_column": "label",
+          "random_state": 42,
+          "test_size": 0.2,
+          "text_column": "text",
+          "use_stratify": true
+        }
+      },
+      "train_shape": [
+        24985,
+        100
+      ],
+      "test_shape": [
+        6247,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\word2vec_cbow\\metadata.json"
+    },
+    {
+      "name": "glove_300d",
+      "type": "glove",
+      "configuration_hash": "1984dcd37b48403a",
+      "run_hash": "1984dcd37b48403a",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\glove_300d",
+      "embedding_object_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\glove_300d\\embedding_object.joblib",
+      "x_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\glove_300d\\X_train.joblib",
+      "x_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\glove_300d\\X_test.joblib",
+      "y_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\glove_300d\\y_train.joblib",
+      "y_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\glove_300d\\y_test.joblib",
+      "train_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\glove_300d\\train_split.csv",
+      "test_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\glove_300d\\test_split.csv",
+      "parameters": {
+        "glove_file_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\embeddings\\glove\\glove.6B.300d.txt",
+        "kind": "glove",
+        "loaded_vocabulary_size": 0,
+        "vector_dimension": 100,
+        "vector_size": 100
+      },
+      "configured_parameters": {
+        "glove_file_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\embeddings\\glove\\glove.6B.300d.txt",
+        "name": "glove_300d",
+        "type": "glove",
+        "vector_dimension": 100
+      },
+      "configuration_hash_payload": {
+        "dataset": {
+          "dataset_mtime_ns": 1776813861245991600,
+          "dataset_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\datasets\\dataset.csv",
+          "dataset_size_bytes": 3586409
+        },
+        "embedding_runs": [
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l12_v2",
+            "type": "sentence-transformers/all-MiniLM-L12-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l6_v2",
+            "type": "sentence-transformers/all-MiniLM-L6-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_base_uncased",
+            "type": "bert-base-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_large_uncased",
+            "type": "bert-large-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_base_en_v1_5",
+            "type": "BAAI/bge-base-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_m3",
+            "type": "BAAI/bge-m3",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_small_en_v1_5",
+            "type": "BAAI/bge-small-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_cbow",
+            "sg": 0,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_skipgram",
+            "sg": 1,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "glove_file_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\embeddings\\glove\\glove.6B.300d.txt",
+            "name": "glove_300d",
+            "type": "glove",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_base",
+            "type": "thenlper/gte-base",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_large",
+            "type": "thenlper/gte-large",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_small",
+            "type": "thenlper/gte-small",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "qwen3_embedding_0_6b",
+            "type": "Qwen/Qwen3-Embedding-0.6B",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_cbow",
+            "sg": 0,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_skipgram",
+            "sg": 1,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          }
+        ],
+        "split_config": {
+          "label_column": "label",
+          "random_state": 42,
+          "test_size": 0.2,
+          "text_column": "text",
+          "use_stratify": true
+        }
+      },
+      "train_shape": [
+        24985,
+        100
+      ],
+      "test_shape": [
+        6247,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\glove_300d\\metadata.json"
+    },
+    {
+      "name": "fasttext_skipgram",
+      "type": "fasttext",
+      "configuration_hash": "1984dcd37b48403a",
+      "run_hash": "1984dcd37b48403a",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\fasttext_skipgram",
+      "embedding_object_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\fasttext_skipgram\\embedding_object.model",
+      "x_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\fasttext_skipgram\\X_train.joblib",
+      "x_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\fasttext_skipgram\\X_test.joblib",
+      "y_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\fasttext_skipgram\\y_train.joblib",
+      "y_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\fasttext_skipgram\\y_test.joblib",
+      "train_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\fasttext_skipgram\\train_split.csv",
+      "test_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\fasttext_skipgram\\test_split.csv",
+      "parameters": {
+        "epochs": 5,
+        "kind": "fasttext",
+        "min_count": 1,
+        "sg": 1,
+        "vector_dimension": 100,
+        "vector_size": 100,
+        "window": 5,
+        "workers": 4
+      },
+      "configured_parameters": {
+        "epochs": 5,
+        "min_count": 1,
+        "name": "fasttext_skipgram",
+        "sg": 1,
+        "type": "fasttext",
+        "vector_dimension": 100,
+        "window": 5,
+        "workers": 4
+      },
+      "configuration_hash_payload": {
+        "dataset": {
+          "dataset_mtime_ns": 1776813861245991600,
+          "dataset_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\datasets\\dataset.csv",
+          "dataset_size_bytes": 3586409
+        },
+        "embedding_runs": [
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l12_v2",
+            "type": "sentence-transformers/all-MiniLM-L12-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l6_v2",
+            "type": "sentence-transformers/all-MiniLM-L6-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_base_uncased",
+            "type": "bert-base-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_large_uncased",
+            "type": "bert-large-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_base_en_v1_5",
+            "type": "BAAI/bge-base-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_m3",
+            "type": "BAAI/bge-m3",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_small_en_v1_5",
+            "type": "BAAI/bge-small-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_cbow",
+            "sg": 0,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_skipgram",
+            "sg": 1,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "glove_file_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\embeddings\\glove\\glove.6B.300d.txt",
+            "name": "glove_300d",
+            "type": "glove",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_base",
+            "type": "thenlper/gte-base",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_large",
+            "type": "thenlper/gte-large",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_small",
+            "type": "thenlper/gte-small",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "qwen3_embedding_0_6b",
+            "type": "Qwen/Qwen3-Embedding-0.6B",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_cbow",
+            "sg": 0,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_skipgram",
+            "sg": 1,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          }
+        ],
+        "split_config": {
+          "label_column": "label",
+          "random_state": 42,
+          "test_size": 0.2,
+          "text_column": "text",
+          "use_stratify": true
+        }
+      },
+      "train_shape": [
+        24985,
+        100
+      ],
+      "test_shape": [
+        6247,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\fasttext_skipgram\\metadata.json"
+    },
+    {
+      "name": "fasttext_cbow",
+      "type": "fasttext",
+      "configuration_hash": "1984dcd37b48403a",
+      "run_hash": "1984dcd37b48403a",
+      "status": "generated",
+      "output_dir": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\fasttext_cbow",
+      "embedding_object_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\fasttext_cbow\\embedding_object.model",
+      "x_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\fasttext_cbow\\X_train.joblib",
+      "x_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\fasttext_cbow\\X_test.joblib",
+      "y_train_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\fasttext_cbow\\y_train.joblib",
+      "y_test_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\fasttext_cbow\\y_test.joblib",
+      "train_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\fasttext_cbow\\train_split.csv",
+      "test_split_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\fasttext_cbow\\test_split.csv",
+      "parameters": {
+        "epochs": 5,
+        "kind": "fasttext",
+        "min_count": 1,
+        "sg": 0,
+        "vector_dimension": 100,
+        "vector_size": 100,
+        "window": 5,
+        "workers": 4
+      },
+      "configured_parameters": {
+        "epochs": 5,
+        "min_count": 1,
+        "name": "fasttext_cbow",
+        "sg": 0,
+        "type": "fasttext",
+        "vector_dimension": 100,
+        "window": 5,
+        "workers": 4
+      },
+      "configuration_hash_payload": {
+        "dataset": {
+          "dataset_mtime_ns": 1776813861245991600,
+          "dataset_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\datasets\\dataset.csv",
+          "dataset_size_bytes": 3586409
+        },
+        "embedding_runs": [
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l12_v2",
+            "type": "sentence-transformers/all-MiniLM-L12-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "all_minilm_l6_v2",
+            "type": "sentence-transformers/all-MiniLM-L6-v2",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_base_uncased",
+            "type": "bert-base-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "max_length": 128,
+            "name": "bert_large_uncased",
+            "type": "bert-large-uncased",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_base_en_v1_5",
+            "type": "BAAI/bge-base-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_m3",
+            "type": "BAAI/bge-m3",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "bge_small_en_v1_5",
+            "type": "BAAI/bge-small-en-v1.5",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_cbow",
+            "sg": 0,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "fasttext_skipgram",
+            "sg": 1,
+            "type": "fasttext",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "glove_file_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\embeddings\\glove\\glove.6B.300d.txt",
+            "name": "glove_300d",
+            "type": "glove",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_base",
+            "type": "thenlper/gte-base",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_large",
+            "type": "thenlper/gte-large",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "gte_small",
+            "type": "thenlper/gte-small",
+            "vector_dimension": 100
+          },
+          {
+            "batch_size": 64,
+            "name": "qwen3_embedding_0_6b",
+            "type": "Qwen/Qwen3-Embedding-0.6B",
+            "vector_dimension": 100
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_cbow",
+            "sg": 0,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          },
+          {
+            "epochs": 5,
+            "min_count": 1,
+            "name": "word2vec_skipgram",
+            "sg": 1,
+            "type": "word2vec",
+            "vector_dimension": 100,
+            "window": 5,
+            "workers": 4
+          }
+        ],
+        "split_config": {
+          "label_column": "label",
+          "random_state": 42,
+          "test_size": 0.2,
+          "text_column": "text",
+          "use_stratify": true
+        }
+      },
+      "train_shape": [
+        24985,
+        100
+      ],
+      "test_shape": [
+        6247,
+        100
+      ],
+      "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\fasttext_cbow\\metadata.json"
+    }
+  ],
+  "summary_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\1984dcd37b48403a\\embedding_summary.json",
+  "latest_summary_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\embedding_summary.json"
+}
