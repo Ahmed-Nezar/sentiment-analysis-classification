@@ -88,7 +88,7 @@
 
 .filter-bar {
   display: grid;
-  grid-template-columns: minmax(220px, 1fr) 180px minmax(220px, 280px) 190px;
+  grid-template-columns: minmax(220px, 1fr) 170px minmax(200px, 260px) minmax(190px, 230px) 170px;
   gap: 14px;
   padding: 20px 0;
 }
@@ -323,6 +323,13 @@ tbody tr:last-child td {
   margin: 0 0 12px;
   color: var(--text-h);
   font-size: 15px;
+}
+
+.detail-note {
+  margin: -4px 0 12px;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.45;
 }
 
 .detail-list {

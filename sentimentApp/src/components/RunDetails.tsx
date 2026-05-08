@@ -1,9 +1,19 @@
-import type { DetailItem, RunSummary } from '../types/runSummary'
+import type {
+  DetailItem,
+  EvaluationMetricSet,
+  RunSummary,
+} from '../types/runSummary'
 import { exportRunConfiguration } from '../utils/exportRunConfiguration'
-import { formatLabel, formatMetric } from '../utils/runSummary'
+import {
+  formatLabel,
+  formatMetric,
+  getRunMetrics,
+  hasNoiseRemovedEvaluation,
+} from '../utils/runSummary'
 
 type RunDetailsProps = {
   run: RunSummary | null
+  evaluationMetricSet: EvaluationMetricSet
 }
 
 function DetailSection({
@@ -32,7 +42,7 @@ function DetailSection({
   )
 }
 
-export function RunDetails({ run }: RunDetailsProps) {
+export function RunDetails({ run, evaluationMetricSet }: RunDetailsProps) {
   if (!run) {
     return (
       <aside className="details-panel">
@@ -40,6 +50,9 @@ export function RunDetails({ run }: RunDetailsProps) {
       </aside>
     )
   }
+  const activeMetrics = getRunMetrics(run, evaluationMetricSet)
+  const isNoiseRemovedEvaluation =
+    evaluationMetricSet === 'without_noise' && hasNoiseRemovedEvaluation(run)
 
   return (
     <aside className="details-panel">
@@ -53,18 +66,34 @@ export function RunDetails({ run }: RunDetailsProps) {
           <button
             type="button"
             className="export-button"
-            onClick={() => exportRunConfiguration(run)}
+            onClick={() => exportRunConfiguration(run, evaluationMetricSet)}
           >
             Export JSON
           </button>
         </div>
       </div>
 
-      {Object.keys(run.metrics).length > 0 && (
+      {Object.keys(activeMetrics).length > 0 && (
         <section className="detail-card">
-          <h3>Evaluation Metrics</h3>
+          <h3>
+            {isNoiseRemovedEvaluation
+              ? 'Evaluation Metrics Without Noise'
+              : 'Evaluation Metrics'}
+          </h3>
+          {isNoiseRemovedEvaluation && run.trainedOnNoisyData && (
+            <p className="detail-note">
+              Scores exclude noisy evaluation rows. This model was trained on
+              {run.datasetName ? ` ${run.datasetName}` : ' a noisy dataset'}.
+            </p>
+          )}
+          {isNoiseRemovedEvaluation && run.trainedOnNoisyData === false && (
+            <p className="detail-note">
+              Scores come from the metadata evaluation for
+              {run.datasetName ? ` ${run.datasetName}` : ' a noise removed dataset'}.
+            </p>
+          )}
           <div className="metric-grid">
-            {Object.entries(run.metrics).map(([key, value]) => (
+            {Object.entries(activeMetrics).map(([key, value]) => (
               <div key={key}>
                 <span>{formatLabel(key)}</span>
                 <strong>{formatMetric(value)}</strong>

@@ -1,4 +1,8 @@
-import type { DashboardSection, RunSortKey } from '../types/runSummary'
+import type {
+  DashboardSection,
+  EvaluationMetricSet,
+  RunSortKey,
+} from '../types/runSummary'
 import { formatLabel } from '../utils/runSummary'
 
 type RunFiltersProps = {
@@ -7,10 +11,12 @@ type RunFiltersProps = {
   family: string
   runConfiguration: string
   runConfigurationOptions: { label: string; value: string }[]
+  evaluationMetricSet: EvaluationMetricSet
   query: string
   sortKey: RunSortKey
   onFamilyChange: (value: string) => void
   onRunConfigurationChange: (value: string) => void
+  onEvaluationMetricSetChange: (value: EvaluationMetricSet) => void
   onQueryChange: (value: string) => void
   onSortKeyChange: (value: RunSortKey) => void
 }
@@ -21,10 +27,12 @@ export function RunFilters({
   family,
   runConfiguration,
   runConfigurationOptions,
+  evaluationMetricSet,
   query,
   sortKey,
   onFamilyChange,
   onRunConfigurationChange,
+  onEvaluationMetricSetChange,
   onQueryChange,
   onSortKeyChange,
 }: RunFiltersProps) {
@@ -70,6 +78,19 @@ export function RunFilters({
               {option.label}
             </option>
           ))}
+        </select>
+      </label>
+
+      <label>
+        <span>Evaluation scores</span>
+        <select
+          value={evaluationMetricSet}
+          onChange={(event) =>
+            onEvaluationMetricSetChange(event.target.value as EvaluationMetricSet)
+          }
+        >
+          <option value="original">Original evaluation</option>
+          <option value="without_noise">After noisy rows removed</option>
         </select>
       </label>
 

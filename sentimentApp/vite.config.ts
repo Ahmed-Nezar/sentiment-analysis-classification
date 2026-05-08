@@ -36,6 +36,8 @@ const OMITTED_KEYS = new Set([
   'configuration_hash_payload',
   'history',
   'metrics',
+  'final_metrics',
+  'metrics_without_noise',
 ])
 
 function isJsonObject(value: JsonValue | undefined): value is JsonObject {
@@ -49,6 +51,14 @@ function readString(data: JsonObject, key: string): string | undefined {
 
 function compactPath(value: string): string {
   return value.replaceAll('\\', '/').split('/').slice(-2).join('/')
+}
+
+function baseName(value: string | undefined): string | undefined {
+  if (!value) {
+    return undefined
+  }
+  const normalized = value.replaceAll('\\', '/')
+  return normalized.split('/').filter(Boolean).at(-1)
 }
 
 function formatValue(value: JsonValue): string {
@@ -93,8 +103,13 @@ function detailsFromObject(data: DetailSource | undefined, preferredKeys?: strin
     .filter((item) => item.value !== '')
 }
 
-function readMetrics(data: JsonObject): Record<string, number | string> {
-  const metrics = data.metrics
+function readMetrics(
+  data: JsonObject,
+  keys = ['metrics', 'final_metrics'],
+): Record<string, number | string> {
+  const metrics = keys
+    .map((key) => data[key])
+    .find((value) => isJsonObject(value))
   if (!isJsonObject(metrics)) {
     return {}
   }
@@ -111,6 +126,10 @@ function inferFamily(parts: string[]): string {
     return 'fine_tuned_models'
   }
   return parts[0] ?? 'models'
+}
+
+function isEncoderOrDecoderFamily(family: string): boolean {
+  return family === 'encoder_models' || family === 'decoder_models'
 }
 
 function inferSection(parts: string[]): 'models' | 'embeddings' {
@@ -273,7 +292,7 @@ function modelRunConfiguration(data: JsonObject): DetailItem[] {
       embedding_name: data.embedding_name ?? 'No embedding used',
       embedding_type: data.embedding_type,
       embedding_run_id: data.embedding_run_id,
-      dataset: data.dataset_path,
+      dataset: baseName(readString(data, 'dataset_path')),
       test_size: data.test_size,
       random_state: data.random_state,
       stratify: data.use_stratify,
@@ -292,6 +311,7 @@ function embeddingRunConfiguration(data: JsonObject): DetailItem[] {
     ...detailsFromObject({
       status: data.status,
       run_hash: data.run_hash ?? data.configuration_hash,
+      dataset: datasetNameFromMetadata(data),
       output_vector_dimension: outputVectorDimension(data),
       text_column: splitConfig.text_column,
       label_column: splitConfig.label_column,
@@ -303,26 +323,11 @@ function embeddingRunConfiguration(data: JsonObject): DetailItem[] {
   ]
 }
 
-function fineTunedModelConfiguration(data: JsonObject): DetailItem[] {
-  return detailsFromObject(data, [
-    'model_name',
-    'task',
-    'max_length',
-    'batch_size',
-    'epochs',
-    'learning_rate',
-    'weight_decay',
-    'warmup_ratio',
-    'device',
-    'cuda_device_name',
-  ])
-}
-
 function fineTunedRunConfiguration(data: JsonObject): DetailItem[] {
   return [
     ...detailsFromObject({
       generated_at_utc: data.generated_at_utc,
-      dataset_path: data.dataset_path,
+      dataset: baseName(readString(data, 'dataset_path')),
       text_column: data.text_column,
       label_column: data.label_column,
       test_size: data.test_size,
@@ -336,6 +341,132 @@ function fineTunedRunConfiguration(data: JsonObject): DetailItem[] {
     }),
     ...shapeDetails(data),
   ]
+}
+
+function transformerModelConfiguration(data: JsonObject): DetailItem[] {
+  return detailsFromObject(data, [
+    'model_name',
+    'model_slug',
+    'task',
+    'approach',
+    'tuning_mode',
+    'classification_tuning_mode',
+    'fine_tune_model',
+    'use_chat_template',
+    'trust_remote_code',
+    'max_length',
+    'batch_size',
+    'epochs',
+    'learning_rate',
+    'use_classifier_learning_rate',
+    'classifier_learning_rate',
+    'weight_decay',
+    'warmup_ratio',
+    'gradient_clip_norm',
+    'generation_max_new_tokens',
+    'generation_do_sample',
+    'generation_temperature',
+    'use_peft',
+    'peft_r',
+    'peft_alpha',
+    'peft_dropout',
+    'peft_target_modules',
+    'device',
+    'cuda_device_name',
+  ])
+}
+
+function transformerRunConfiguration(data: JsonObject): DetailItem[] {
+  return [
+    ...detailsFromObject({
+      generated_at_utc: data.generated_at_utc,
+      dataset: baseName(readString(data, 'dataset_path')),
+      text_column: data.text_column,
+      label_column: data.label_column,
+      test_size: data.test_size,
+      random_state: data.random_state,
+      use_stratify: data.use_stratify,
+      epochs: data.epochs,
+      embedding_name: 'No embedding used',
+      final_validation_loss: data.final_validation_loss,
+    }),
+    ...shapeDetails(data),
+  ]
+}
+
+async function readOptionalJson(filePath: string): Promise<JsonObject | undefined> {
+  try {
+    const rawJson = await fs.readFile(filePath, 'utf-8')
+    return JSON.parse(rawJson) as JsonObject
+  } catch {
+    return undefined
+  }
+}
+
+async function findEmbeddingMetadata(data: JsonObject): Promise<JsonObject | undefined> {
+  const embeddingName = readString(data, 'embedding_name')
+  if (!embeddingName) {
+    return undefined
+  }
+
+  const runIds = [
+    readString(data, 'embedding_run_id'),
+    readString(data, 'ml_run_id'),
+    readString(data, 'dl_run_id'),
+  ].filter((value): value is string => Boolean(value))
+
+  for (const runId of runIds) {
+    const metadata = await readOptionalJson(
+      path.join(modelsRoot, 'embeddings_runs', runId, embeddingName, 'metadata.json'),
+    )
+    if (metadata) {
+      return metadata
+    }
+  }
+
+  try {
+    const embeddingRootEntries = await fs.readdir(
+      path.join(modelsRoot, 'embeddings_runs'),
+      { withFileTypes: true },
+    )
+    for (const entry of embeddingRootEntries) {
+      if (!entry.isDirectory()) {
+        continue
+      }
+      const metadata = await readOptionalJson(
+        path.join(modelsRoot, 'embeddings_runs', entry.name, embeddingName, 'metadata.json'),
+      )
+      if (metadata) {
+        return metadata
+      }
+    }
+  } catch {
+    return undefined
+  }
+
+  return undefined
+}
+
+function datasetNameFromMetadata(data: JsonObject, sidecarData?: JsonObject): string | undefined {
+  const payload = isJsonObject(data.configuration_hash_payload)
+    ? data.configuration_hash_payload
+    : undefined
+  const datasetPayload = payload && isJsonObject(payload.dataset)
+    ? payload.dataset
+    : undefined
+  const datasetPath =
+    readString(data, 'dataset_path') ??
+    readString(sidecarData ?? {}, 'dataset_path') ??
+    (datasetPayload ? readString(datasetPayload, 'dataset_path') : undefined)
+
+  return baseName(datasetPath)
+}
+
+function trainedOnNoisyData(datasetName: string | undefined): boolean | undefined {
+  if (!datasetName) {
+    return undefined
+  }
+  return !datasetName.toLowerCase().includes('noise_removed')
 }
 
 async function listMetadataFiles(directory: string): Promise<string[]> {
@@ -373,10 +504,17 @@ async function loadRunSummaries() {
     metadataFiles.map(async (filePath) => {
       const rawJson = await fs.readFile(filePath, 'utf-8')
       const data = JSON.parse(rawJson) as JsonObject
+      const metricsWithoutNoiseData = await readOptionalJson(
+        path.join(path.dirname(filePath), 'metrics_without_noise.json'),
+      )
+      const embeddingMetadata = await findEmbeddingMetadata(data)
       const relativePath = path.relative(modelsRoot, filePath).replaceAll(path.sep, '/')
       const parts = relativePath.split('/')
       const section = inferSection(parts)
       const family = inferFamily(parts)
+      const datasetName =
+        datasetNameFromMetadata(data, metricsWithoutNoiseData) ??
+        (embeddingMetadata ? datasetNameFromMetadata(embeddingMetadata) : undefined)
 
       return {
         relativePath,
@@ -387,18 +525,28 @@ async function loadRunSummaries() {
         generatedAt: readString(data, 'generated_at_utc'),
         status: readString(data, 'status'),
         metrics: readMetrics(data),
+        metricsWithoutNoise: metricsWithoutNoiseData
+          ? readMetrics(metricsWithoutNoiseData, ['metrics_without_noise'])
+          : {},
+        datasetName,
+        trainedOnNoisyData: trainedOnNoisyData(datasetName),
         modelConfiguration:
-          family === 'fine_tuned_models'
-            ? fineTunedModelConfiguration(data)
+          isEncoderOrDecoderFamily(family) || family === 'fine_tuned_models'
+            ? transformerModelConfiguration(data)
             : section === 'models'
               ? modelConfiguration(data)
               : [],
         runConfiguration:
-          family === 'fine_tuned_models'
-            ? fineTunedRunConfiguration(data)
-            : section === 'models'
-              ? modelRunConfiguration(data)
-              : embeddingRunConfiguration(data),
+          isEncoderOrDecoderFamily(family)
+            ? transformerRunConfiguration(data)
+            : family === 'fine_tuned_models'
+              ? fineTunedRunConfiguration(data)
+              : section === 'models'
+                ? modelRunConfiguration({
+                    ...data,
+                    dataset_path: datasetName ?? data.dataset_path,
+                  })
+                : embeddingRunConfiguration(data),
         embeddingConfiguration:
           section === 'embeddings'
             ? embeddingConfiguration(data)

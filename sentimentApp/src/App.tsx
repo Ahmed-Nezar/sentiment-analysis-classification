@@ -7,7 +7,12 @@ import { RunOverview } from './components/RunOverview'
 import { RunsTable } from './components/RunsTable'
 import { SectionTabs } from './components/SectionTabs'
 import { fetchRunSummaries } from './services/runSummaries'
-import type { DashboardSection, RunSortKey, RunSummary } from './types/runSummary'
+import type {
+  DashboardSection,
+  EvaluationMetricSet,
+  RunSortKey,
+  RunSummary,
+} from './types/runSummary'
 import {
   countSection,
   filterRuns,
@@ -23,6 +28,8 @@ function App() {
   const [section, setSection] = useState<DashboardSection>('models')
   const [family, setFamily] = useState('')
   const [runConfiguration, setRunConfiguration] = useState('all')
+  const [evaluationMetricSet, setEvaluationMetricSet] =
+    useState<EvaluationMetricSet>('original')
   const [query, setQuery] = useState('')
   const [sortKey, setSortKey] = useState<RunSortKey>('newest')
   const [isLoading, setIsLoading] = useState(true)
@@ -74,10 +81,17 @@ function App() {
   const filteredRuns = useMemo(
     () =>
       sortVisibleRuns(
-        filterRuns(runs, { section, family, runConfiguration, query }),
+        filterRuns(runs, {
+          section,
+          family,
+          runConfiguration,
+          evaluationMetricSet,
+          query,
+        }),
         sortKey,
+        evaluationMetricSet,
       ),
-    [family, query, runConfiguration, runs, section, sortKey],
+    [evaluationMetricSet, family, query, runConfiguration, runs, section, sortKey],
   )
   const selectedRun = useMemo(
     () =>
@@ -128,11 +142,13 @@ function App() {
         runConfigurationOptions={runConfigurationOptions}
         query={query}
         sortKey={sortKey}
+        evaluationMetricSet={evaluationMetricSet}
         onFamilyChange={(value) => {
           setFamily(value)
           setRunConfiguration('all')
         }}
         onRunConfigurationChange={setRunConfiguration}
+        onEvaluationMetricSetChange={setEvaluationMetricSet}
         onQueryChange={setQuery}
         onSortKeyChange={setSortKey}
       />
@@ -157,10 +173,11 @@ function App() {
             <RunsTable
               runs={filteredRuns}
               selectedPath={selectedRun?.relativePath ?? ''}
+              evaluationMetricSet={evaluationMetricSet}
               onSelectRun={setSelectedPath}
             />
           </div>
-          <RunDetails run={selectedRun} />
+          <RunDetails run={selectedRun} evaluationMetricSet={evaluationMetricSet} />
         </section>
       )}
     </main>

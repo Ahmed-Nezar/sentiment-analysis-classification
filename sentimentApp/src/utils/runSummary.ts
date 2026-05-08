@@ -1,5 +1,6 @@
 import type {
   DashboardSection,
+  EvaluationMetricSet,
   MetricMap,
   RunFiltersState,
   RunSortKey,
@@ -53,6 +54,26 @@ export function extractPrimaryMetrics(metrics: MetricMap): MetricMap {
   )
 }
 
+export function getRunMetrics(
+  run: RunSummary,
+  evaluationMetricSet: EvaluationMetricSet,
+): MetricMap {
+  if (
+    evaluationMetricSet === 'without_noise' &&
+    Object.keys(run.metricsWithoutNoise).length > 0
+  ) {
+    return run.metricsWithoutNoise
+  }
+  return run.metrics
+}
+
+export function hasNoiseRemovedEvaluation(run: RunSummary): boolean {
+  return (
+    Object.keys(run.metricsWithoutNoise).length > 0 ||
+    run.trainedOnNoisyData === false
+  )
+}
+
 export function sortRuns(runs: RunSummary[]): RunSummary[] {
   return [...runs].sort((first, second) => {
     const firstDate = Date.parse(first.generatedAt ?? '')
@@ -64,8 +85,8 @@ export function sortRuns(runs: RunSummary[]): RunSummary[] {
   })
 }
 
-function getAccuracy(run: RunSummary): number | null {
-  const value = run.metrics.accuracy
+function getAccuracy(run: RunSummary, evaluationMetricSet: EvaluationMetricSet): number | null {
+  const value = getRunMetrics(run, evaluationMetricSet).accuracy
   if (typeof value === 'number') {
     return value
   }
@@ -76,11 +97,15 @@ function getAccuracy(run: RunSummary): number | null {
   return null
 }
 
-export function sortVisibleRuns(runs: RunSummary[], sortKey: RunSortKey): RunSummary[] {
+export function sortVisibleRuns(
+  runs: RunSummary[],
+  sortKey: RunSortKey,
+  evaluationMetricSet: EvaluationMetricSet,
+): RunSummary[] {
   return [...runs].sort((first, second) => {
     if (sortKey === 'accuracy_desc' || sortKey === 'accuracy_asc') {
-      const firstAccuracy = getAccuracy(first)
-      const secondAccuracy = getAccuracy(second)
+      const firstAccuracy = getAccuracy(first, evaluationMetricSet)
+      const secondAccuracy = getAccuracy(second, evaluationMetricSet)
       if (firstAccuracy !== null && secondAccuracy !== null) {
         return sortKey === 'accuracy_desc'
           ? secondAccuracy - firstAccuracy
@@ -126,14 +151,26 @@ export function filterRuns(
     ) {
       return false
     }
+    if (
+      filters.evaluationMetricSet === 'without_noise' &&
+      !hasNoiseRemovedEvaluation(run)
+    ) {
+      return false
+    }
     if (!normalizedQuery) {
       return true
     }
 
+    const activeMetrics = getRunMetrics(run, filters.evaluationMetricSet)
     const details = [
       ...run.modelConfiguration,
       ...run.runConfiguration,
       ...run.embeddingConfiguration,
+      { label: 'dataset', value: run.datasetName ?? '' },
+      {
+        label: 'training_noise_status',
+        value: run.trainedOnNoisyData ? 'trained on noisy data' : 'trained on noise removed data',
+      },
     ]
       .map((item) => `${item.label} ${item.value}`)
       .join(' ')
@@ -143,6 +180,7 @@ export function filterRuns(
       run.displayName,
       run.runId,
       run.family,
+      Object.entries(activeMetrics).map(([key, value]) => `${key} ${value}`).join(' '),
       details,
     ]
       .join(' ')

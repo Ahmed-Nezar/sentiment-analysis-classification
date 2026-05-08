@@ -15,6 +15,7 @@ export type DetailItem = {
 
 export type DashboardSection = 'models' | 'embeddings'
 export type RunSortKey = 'newest' | 'name' | 'accuracy_desc' | 'accuracy_asc'
+export type EvaluationMetricSet = 'original' | 'without_noise'
 
 export type RunSummary = {
   relativePath: string
@@ -25,6 +26,9 @@ export type RunSummary = {
   generatedAt?: string
   status?: string
   metrics: MetricMap
+  metricsWithoutNoise: MetricMap
+  datasetName?: string
+  trainedOnNoisyData?: boolean
   modelConfiguration: DetailItem[]
   runConfiguration: DetailItem[]
   embeddingConfiguration: DetailItem[]
@@ -39,5 +43,6 @@ export type RunFiltersState = {
   section: DashboardSection
   family: string
   runConfiguration: string
+  evaluationMetricSet: EvaluationMetricSet
   query: string
 }

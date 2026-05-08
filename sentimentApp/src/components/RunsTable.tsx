@@ -1,17 +1,24 @@
-import type { RunSummary } from '../types/runSummary'
+import type { EvaluationMetricSet, RunSummary } from '../types/runSummary'
 import {
   extractPrimaryMetrics,
   formatLabel,
   formatMetric,
+  getRunMetrics,
 } from '../utils/runSummary'
 
 type RunsTableProps = {
   runs: RunSummary[]
   selectedPath: string
+  evaluationMetricSet: EvaluationMetricSet
   onSelectRun: (relativePath: string) => void
 }
 
-export function RunsTable({ runs, selectedPath, onSelectRun }: RunsTableProps) {
+export function RunsTable({
+  runs,
+  selectedPath,
+  evaluationMetricSet,
+  onSelectRun,
+}: RunsTableProps) {
   if (runs.length === 0) {
     return (
       <section className="table-wrap table-empty">
@@ -33,7 +40,9 @@ export function RunsTable({ runs, selectedPath, onSelectRun }: RunsTableProps) {
         </thead>
         <tbody>
           {runs.map((run) => {
-            const primaryMetrics = extractPrimaryMetrics(run.metrics)
+            const primaryMetrics = extractPrimaryMetrics(
+              getRunMetrics(run, evaluationMetricSet),
+            )
             return (
               <tr
                 key={run.relativePath}
@@ -48,6 +57,7 @@ export function RunsTable({ runs, selectedPath, onSelectRun }: RunsTableProps) {
                   >
                     <strong>{run.displayName}</strong>
                     <span>{run.relativePath}</span>
+                    {run.datasetName && <span>Dataset: {run.datasetName}</span>}
                   </button>
                 </td>
                 <td>{formatLabel(run.family)}</td>

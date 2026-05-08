@@ -1,4 +1,5 @@
-import type { RunSummary } from '../types/runSummary'
+import type { EvaluationMetricSet, RunSummary } from '../types/runSummary'
+import { getRunMetrics } from './runSummary'
 
 function safeFileName(value: string): string {
   return value
@@ -8,7 +9,10 @@ function safeFileName(value: string): string {
     .replace(/^-+|-+$/g, '')
 }
 
-export function exportRunConfiguration(run: RunSummary) {
+export function exportRunConfiguration(
+  run: RunSummary,
+  evaluationMetricSet: EvaluationMetricSet,
+) {
   const payload = {
     displayName: run.displayName,
     section: run.section,
@@ -16,8 +20,13 @@ export function exportRunConfiguration(run: RunSummary) {
     runId: run.runId,
     status: run.status,
     generatedAt: run.generatedAt,
+    datasetName: run.datasetName,
+    trainedOnNoisyData: run.trainedOnNoisyData,
     sourceMetadataPath: run.relativePath,
-    evaluationMetrics: run.metrics,
+    evaluationMetricSet,
+    evaluationMetrics: getRunMetrics(run, evaluationMetricSet),
+    originalEvaluationMetrics: run.metrics,
+    evaluationMetricsWithoutNoise: run.metricsWithoutNoise,
     modelConfiguration: run.modelConfiguration,
     runConfiguration: run.runConfiguration,
     embeddingConfiguration: run.embeddingConfiguration,
