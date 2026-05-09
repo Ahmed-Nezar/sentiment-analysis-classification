@@ -1,0 +1,44 @@
+encoder:
+  output_dir: models/fine_tuned_encoder_models
+  dataset_path: datasets/cleaned_dataset.csv
+  text_column: text
+  label_column: label
+  test_size: 0.2
+  random_state: 42
+  use_stratify: true
+  require_cuda: false
+
+  runs_to_execute:
+    - bert_base_uncased
+
+  defaults:
+    max_length: 64
+    batch_size: 32
+    epochs: 1
+    learning_rate: 1e-5
+    use_classifier_learning_rate: true
+    classifier_learning_rate: 1e-4
+    weight_decay: 0.01
+    warmup_ratio: 0.1
+    gradient_accumulation_steps: 1
+    gradient_clip_norm: 1.0
+    use_mixed_precision: true
+    mixed_precision_dtype: float16
+    use_dataparallel: true
+    max_train_samples:
+    max_test_samples:
+
+    # PEFT/LoRA is optional. If enabled, install peft first.
+    use_peft: false
+    peft_r: 16
+    peft_alpha: 32
+    peft_dropout: 0.05
+    peft_target_modules:
+    peft_modules_to_save: [classifier, score]
+
+  runs:
+    bert_base_uncased:
+      model_name: bert-base-uncased
+      trust_remote_code: true
+      accelerator_error: false
+      use_zero_token_type_ids: false

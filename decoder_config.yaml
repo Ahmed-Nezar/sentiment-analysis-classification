@@ -1,0 +1,57 @@
+decoder:
+  output_dir: models/fine_tuned_decoder_models
+  dataset_path: datasets/cleaned_dataset.csv
+  text_column: text
+  label_column: label
+  test_size: 0.2
+  random_state: 42
+  use_stratify: true
+  require_cuda: false
+
+  runs_to_execute:
+    - gpt2_classification_head
+
+  defaults:
+    max_length: 256
+    batch_size: 8
+    epochs: 1
+    learning_rate: 2e-5
+    use_classifier_learning_rate: true
+    classifier_learning_rate: 1e-4
+    weight_decay: 0.01
+    warmup_ratio: 0.1
+    gradient_accumulation_steps: 1
+    gradient_clip_norm: 1.0
+    use_mixed_precision: true
+    mixed_precision_dtype: float16
+    use_dataparallel: true
+    max_train_samples:
+    max_test_samples:
+
+    # Used by the instruction approach.
+    use_chat_template: true
+    generation_max_new_tokens: 8
+    generation_do_sample: false
+    generation_temperature: 0.1
+
+    # PEFT/LoRA is optional. If enabled, install peft first.
+    use_peft: false
+    peft_r: 16
+    peft_alpha: 32
+    peft_dropout: 0.05
+    peft_target_modules:
+
+  runs:
+    gpt2_classification_head:
+      model_name: openai-community/gpt2
+      trust_remote_code: true
+      approach: classification_head
+      fine_tune_model: true
+      classification_tuning_mode: full_decoder
+      classifier_dropout: 0.1
+
+    gpt2_instruction:
+      model_name: openai-community/gpt2
+      trust_remote_code: true
+      approach: instruction
+      fine_tune_model: true

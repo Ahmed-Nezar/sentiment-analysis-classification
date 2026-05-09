@@ -1,0 +1,61 @@
+{
+  "model_name": "BAAI/bge-m3",
+  "model_slug": "BAAI_bge-m3",
+  "trust_remote_code": false,
+  "accelerator_error_manual_head": false,
+  "use_zero_token_type_ids": false,
+  "task": "sequence_classification",
+  "model_head_mode": "auto_seq_cls",
+  "tuning_mode": "full",
+  "generated_at_utc": "2026-05-09T00:48:04.778492+00:00",
+  "dataset_path": "/kaggle/input/datasets/ahmednezar/sentiment-analysis-nlp-project/dataset_noise_removed.csv",
+  "text_column": "text",
+  "label_column": "label",
+  "test_size": 0.2,
+  "random_state": 42,
+  "use_stratify": true,
+  "max_length": 64,
+  "batch_size": 32,
+  "epochs": 1,
+  "learning_rate": 1e-05,
+  "use_classifier_learning_rate": true,
+  "classifier_learning_rate": 0.0001,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.1,
+  "use_peft": false,
+  "peft_r": null,
+  "peft_alpha": null,
+  "peft_dropout": null,
+  "peft_target_modules": null,
+  "peft_modules_to_save": null,
+  "use_dataparallel": true,
+  "device": "cuda",
+  "cuda_device_name": "Tesla T4",
+  "labels": [
+    "0",
+    "1",
+    "2"
+  ],
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.45980156529837163,
+      "validation_loss": 0.37693270961044223,
+      "accuracy": 0.8494556113902848,
+      "precision_macro": 0.8429389831997393,
+      "recall_macro": 0.8421517059974191,
+      "f1_macro": 0.8418876437350168
+    }
+  ],
+  "final_validation_loss": 0.37693270961044223,
+  "metrics": {
+    "accuracy": 0.8494556113902848,
+    "precision_macro": 0.8429389831997393,
+    "recall_macro": 0.8421517059974191,
+    "f1_macro": 0.8418876437350168
+  },
+  "model_dir": "/kaggle/working/models/fine_tuned_encoder_models/BAAI_bge-m3_auto_seq_cls_full_classifier_lr0.0001_len64_bs32_ep1_lr1e-05_wd0.01_warmup0.1_20260509_004652/model",
+  "tokenizer_dir": "/kaggle/working/models/fine_tuned_encoder_models/BAAI_bge-m3_auto_seq_cls_full_classifier_lr0.0001_len64_bs32_ep1_lr1e-05_wd0.01_warmup0.1_20260509_004652/tokenizer",
+  "predictions_path": "/kaggle/working/models/fine_tuned_encoder_models/BAAI_bge-m3_auto_seq_cls_full_classifier_lr0.0001_len64_bs32_ep1_lr1e-05_wd0.01_warmup0.1_20260509_004652/y_pred.joblib",
+  "targets_path": "/kaggle/working/models/fine_tuned_encoder_models/BAAI_bge-m3_auto_seq_cls_full_classifier_lr0.0001_len64_bs32_ep1_lr1e-05_wd0.01_warmup0.1_20260509_004652/y_true.joblib"
+}

@@ -13,11 +13,15 @@ CONFIG_FILE_PATH: Final[Path] = PROJECT_ROOT / "config.yaml"
 EMBEDDING_CONFIG_FILE_PATH: Final[Path] = PROJECT_ROOT / "embedding_config.yaml"
 ML_CONFIG_FILE_PATH: Final[Path] = PROJECT_ROOT / "ml_config.yaml"
 DL_CONFIG_FILE_PATH: Final[Path] = PROJECT_ROOT / "dl_config.yaml"
+ENCODER_CONFIG_FILE_PATH: Final[Path] = PROJECT_ROOT / "encoder_config.yaml"
+DECODER_CONFIG_FILE_PATH: Final[Path] = PROJECT_ROOT / "decoder_config.yaml"
 CONFIG_FILE_PATHS: Final[tuple[Path, ...]] = (
     CONFIG_FILE_PATH,
     EMBEDDING_CONFIG_FILE_PATH,
     ML_CONFIG_FILE_PATH,
     DL_CONFIG_FILE_PATH,
+    ENCODER_CONFIG_FILE_PATH,
+    DECODER_CONFIG_FILE_PATH,
 )
 DATASET_PATH_KEYS: Final[set[str]] = {"DATASET_PATH", "CLEANED_DATASET_PATH"}
 CONFIG: dict[str, Any] = {}
@@ -209,6 +213,33 @@ def _normalize_dl_config(raw_config: dict[str, Any]) -> dict[str, Any]:
     return flattened
 
 
+def _normalize_finetune_config(
+    raw_config: dict[str, Any],
+    *,
+    section_name: str,
+    prefix: str,
+) -> dict[str, Any]:
+    section = raw_config.get(section_name, raw_config.get(section_name.upper()))
+    if not isinstance(section, dict):
+        return _normalize_flat_mapping(raw_config)
+
+    aliases = {
+        "runs_to_execute": f"{prefix}_RUN_TYPES",
+        "RUNS_TO_EXECUTE": f"{prefix}_RUN_TYPES",
+        "run_types": f"{prefix}_RUN_TYPES",
+        "RUN_TYPES": f"{prefix}_RUN_TYPES",
+    }
+    flattened = _section_to_flat_keys(section, prefix=prefix, aliases=aliases)
+
+    defaults = section.get("defaults")
+    if isinstance(defaults, dict):
+        flattened.update(_section_to_flat_keys(defaults, prefix=prefix, aliases={}))
+
+    runs = section.get("runs")
+    flattened.update(_section_runs_to_flat_keys(runs, prefix=prefix))
+    return flattened
+
+
 def _normalize_yaml_config(raw_config: dict[str, Any], config_path: Path) -> dict[str, Any]:
     if config_path == EMBEDDING_CONFIG_FILE_PATH:
         return _normalize_embedding_config(raw_config)
@@ -216,6 +247,18 @@ def _normalize_yaml_config(raw_config: dict[str, Any], config_path: Path) -> dic
         return _normalize_ml_config(raw_config)
     if config_path == DL_CONFIG_FILE_PATH:
         return _normalize_dl_config(raw_config)
+    if config_path == ENCODER_CONFIG_FILE_PATH:
+        return _normalize_finetune_config(
+            raw_config,
+            section_name="encoder",
+            prefix="ENCODER",
+        )
+    if config_path == DECODER_CONFIG_FILE_PATH:
+        return _normalize_finetune_config(
+            raw_config,
+            section_name="decoder",
+            prefix="DECODER",
+        )
     return _normalize_flat_mapping(raw_config)
 
 
@@ -345,6 +388,16 @@ def _apply_dl_runs(config: dict[str, Any]) -> None:
     config["DL_RUNS"] = runs
 
 
+def _apply_finetune_runs(config: dict[str, Any], *, prefix: str) -> None:
+    _apply_prefixed_runs(
+        config,
+        prefix=prefix,
+        types_key=f"{prefix}_RUN_TYPES",
+        runs_key=f"{prefix}_RUNS",
+        infer_type=lambda run_name: run_name,
+    )
+
+
 def load_config() -> dict[str, Any]:
     load_dotenv(ENV_FILE_PATH, override=False)
 
@@ -367,6 +420,8 @@ def load_config() -> dict[str, Any]:
     _apply_embedding_runs(parsed_config)
     _apply_ml_runs(parsed_config)
     _apply_dl_runs(parsed_config)
+    _apply_finetune_runs(parsed_config, prefix="ENCODER")
+    _apply_finetune_runs(parsed_config, prefix="DECODER")
     CONFIG.clear()
     CONFIG.update(parsed_config)
     return CONFIG
