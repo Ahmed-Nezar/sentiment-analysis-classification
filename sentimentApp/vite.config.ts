@@ -512,7 +512,7 @@ async function loadRunSummaries() {
   try {
     await fs.access(modelsRoot)
   } catch {
-    return { modelsRoot, runs: [] }
+    return { modelsRoot: 'models', runs: [] }
   }
 
   const metadataFiles = await listMetadataFiles(modelsRoot)
@@ -576,7 +576,7 @@ async function loadRunSummaries() {
     }),
   )
 
-  return { modelsRoot, runs }
+  return { modelsRoot: 'models', runs }
 }
 
 function sendError(
@@ -608,6 +608,14 @@ function readRequestBody(request: IncomingMessage): Promise<string> {
 function runSummaryApiPlugin(): Plugin {
   return {
     name: 'run-summary-api',
+    async generateBundle() {
+      const payload = await loadRunSummaries()
+      this.emitFile({
+        type: 'asset',
+        fileName: 'run-summaries.json',
+        source: JSON.stringify(payload),
+      })
+    },
     configureServer(server) {
       server.middlewares.use('/api/run-summaries', async (_request, response) => {
         try {
