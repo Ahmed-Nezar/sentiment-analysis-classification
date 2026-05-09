@@ -639,10 +639,7 @@ function runSummaryApiPlugin(): Plugin {
   }
 }
 
-function textClassificationProxyPlugin(
-  textClassificationUrl: string,
-  textClassificationApiKey: string,
-): Plugin {
+function textClassificationProxyPlugin(textClassificationUrl: string): Plugin {
   async function handleProxy(request: IncomingMessage, response: ServerResponse) {
     if (request.method !== 'POST') {
       response.statusCode = 405
@@ -658,16 +655,10 @@ function textClassificationProxyPlugin(
 
     try {
       const body = await readRequestBody(request)
-      const authorizationHeader = textClassificationApiKey
-        ? textClassificationApiKey.toLowerCase().startsWith('bearer ')
-          ? textClassificationApiKey
-          : `Bearer ${textClassificationApiKey}`
-        : ''
       const upstreamResponse = await fetch(textClassificationUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          ...(authorizationHeader ? { Authorization: authorizationHeader } : {}),
         },
         body,
       })
@@ -705,23 +696,17 @@ export default defineConfig(({ mode }) => {
     env.VITE_TEXT_CLASSIFICATION_URL ??
     env['TEXT-CLASSIFICATION-URL'] ??
     ''
-  const textClassificationApiKey =
-    env.TEXT_CLASSIFICATION_API_KEY ?? env.VITE_TEXT_CLASSIFICATION_API_KEY ?? ''
 
   return {
     base: inferBasePath(env),
     envDir: envRoot,
     define: {
       __TEXT_CLASSIFICATION_URL__: JSON.stringify(textClassificationUrl),
-      __TEXT_CLASSIFICATION_API_KEY__: JSON.stringify(textClassificationApiKey),
-      __TEXT_CLASSIFICATION_DEV_PROXY_URL__: JSON.stringify(
-        '/api/text-classification/predict',
-      ),
     },
     plugins: [
       react(),
       runSummaryApiPlugin(),
-      textClassificationProxyPlugin(textClassificationUrl, textClassificationApiKey),
+      textClassificationProxyPlugin(textClassificationUrl),
     ],
   }
 })

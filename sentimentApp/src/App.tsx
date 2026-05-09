@@ -44,8 +44,6 @@ type InferenceResult = {
 }
 
 const TEXT_CLASSIFICATION_URL = __TEXT_CLASSIFICATION_URL__
-const TEXT_CLASSIFICATION_API_KEY = __TEXT_CLASSIFICATION_API_KEY__
-const TEXT_CLASSIFICATION_DEV_PROXY_URL = __TEXT_CLASSIFICATION_DEV_PROXY_URL__
 const SENTIMENT_LABELS: Record<number, SentimentLabel> = {
   0: 'negative',
   1: 'neutral',
@@ -67,17 +65,6 @@ const INFERENCE_MODELS: InferenceModel[] = [
     isAvailable: false,
   },
 ]
-
-function getAuthorizationHeader(apiKey: string): string {
-  if (!apiKey) {
-    return ''
-  }
-  return apiKey.toLowerCase().startsWith('bearer ') ? apiKey : `Bearer ${apiKey}`
-}
-
-function isLocalDevelopmentHost(): boolean {
-  return ['localhost', '127.0.0.1'].includes(window.location.hostname)
-}
 
 function LandingPage({ onNavigate }: { onNavigate: (view: AppView) => void }) {
   return (
@@ -167,17 +154,10 @@ function InferencePage({ onBack }: { onBack: () => void }) {
     setError(null)
 
     try {
-      const endpoint = isLocalDevelopmentHost()
-        ? TEXT_CLASSIFICATION_DEV_PROXY_URL
-        : selectedModel.endpoint
-      const useBrowserAuthorization = endpoint === selectedModel.endpoint
-      const response = await fetch(endpoint, {
+      const response = await fetch(selectedModel.endpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          ...(useBrowserAuthorization && TEXT_CLASSIFICATION_API_KEY
-            ? { Authorization: getAuthorizationHeader(TEXT_CLASSIFICATION_API_KEY) }
-            : {}),
         },
         body: JSON.stringify({ text: trimmedText }),
       })
