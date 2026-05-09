@@ -55,6 +55,20 @@ function compactPath(value: string): string {
   return value.replaceAll('\\', '/').split('/').slice(-2).join('/')
 }
 
+function inferBasePath(env: Record<string, string>): string {
+  if (env.VITE_BASE_PATH) {
+    return env.VITE_BASE_PATH
+  }
+
+  const repository = process.env.GITHUB_REPOSITORY
+  if (!process.env.GITHUB_ACTIONS || !repository) {
+    return '/'
+  }
+
+  const repositoryName = repository.split('/').at(-1) ?? ''
+  return repositoryName.endsWith('.github.io') ? '/' : `/${repositoryName}/`
+}
+
 function baseName(value: string | undefined): string | undefined {
   if (!value) {
     return undefined
@@ -684,6 +698,7 @@ export default defineConfig(({ mode }) => {
     env.TEXT_CLASSIFICATION_API_KEY ?? env.VITE_TEXT_CLASSIFICATION_API_KEY ?? ''
 
   return {
+    base: inferBasePath(env),
     envDir: envRoot,
     define: {
       __TEXT_CLASSIFICATION_URL__: JSON.stringify(textClassificationUrl),
