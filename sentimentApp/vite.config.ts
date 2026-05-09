@@ -1,8 +1,9 @@
 import { promises as fs } from 'node:fs'
+import type { IncomingMessage, ServerResponse } from 'node:http'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import react from '@vitejs/plugin-react'
-import { defineConfig, type Plugin } from 'vite'
+import { defineConfig, loadEnv, type Plugin } from 'vite'
 
 type JsonValue =
   | string
@@ -18,6 +19,7 @@ type DetailItem = { label: string; value: string }
 
 const appDir = path.dirname(fileURLToPath(import.meta.url))
 const modelsRoot = path.resolve(appDir, '../models')
+const envRoot = path.resolve(appDir, '..')
 const OMITTED_KEYS = new Set([
   'metadata_path',
   'model_path',
@@ -575,6 +577,20 @@ function sendError(
   )
 }
 
+function readRequestBody(request: IncomingMessage): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const chunks: Buffer[] = []
+
+    request.on('data', (chunk: Buffer) => {
+      chunks.push(chunk)
+    })
+    request.on('end', () => {
+      resolve(Buffer.concat(chunks).toString('utf-8'))
+    })
+    request.on('error', reject)
+  })
+}
+
 function runSummaryApiPlugin(): Plugin {
   return {
     name: 'run-summary-api',
@@ -601,6 +617,85 @@ function runSummaryApiPlugin(): Plugin {
   }
 }
 
-export default defineConfig({
-  plugins: [react(), runSummaryApiPlugin()],
+function textClassificationProxyPlugin(
+  textClassificationUrl: string,
+  textClassificationApiKey: string,
+): Plugin {
+  async function handleProxy(request: IncomingMessage, response: ServerResponse) {
+    if (request.method !== 'POST') {
+      response.statusCode = 405
+      sendJson(response, { error: 'Method not allowed' })
+      return
+    }
+
+    if (!textClassificationUrl) {
+      response.statusCode = 500
+      sendJson(response, { error: 'TEXT_CLASSIFICATION_URL is not configured.' })
+      return
+    }
+
+    try {
+      const body = await readRequestBody(request)
+      const authorizationHeader = textClassificationApiKey
+        ? textClassificationApiKey.toLowerCase().startsWith('bearer ')
+          ? textClassificationApiKey
+          : `Bearer ${textClassificationApiKey}`
+        : ''
+      const upstreamResponse = await fetch(textClassificationUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          ...(authorizationHeader ? { Authorization: authorizationHeader } : {}),
+        },
+        body,
+      })
+      const payload = await upstreamResponse.text()
+
+      response.statusCode = upstreamResponse.status
+      response.setHeader(
+        'Content-Type',
+        upstreamResponse.headers.get('content-type') ?? 'application/json',
+      )
+      response.end(payload)
+    } catch (error) {
+      sendError(response, error)
+    }
+  }
+
+  return {
+    name: 'text-classification-proxy',
+    configureServer(server) {
+      server.middlewares.use('/api/text-classification/predict', handleProxy)
+    },
+    configurePreviewServer(server) {
+      server.middlewares.use('/api/text-classification/predict', handleProxy)
+    },
+  }
+}
+
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, envRoot, '')
+  const textClassificationUrl =
+    env.TEXT_CLASSIFICATION_URL ??
+    env.VITE_TEXT_CLASSIFICATION_URL ??
+    env['TEXT-CLASSIFICATION-URL'] ??
+    ''
+  const textClassificationApiKey =
+    env.TEXT_CLASSIFICATION_API_KEY ?? env.VITE_TEXT_CLASSIFICATION_API_KEY ?? ''
+
+  return {
+    envDir: envRoot,
+    define: {
+      __TEXT_CLASSIFICATION_URL__: JSON.stringify(textClassificationUrl),
+      __TEXT_CLASSIFICATION_API_KEY__: JSON.stringify(textClassificationApiKey),
+      __TEXT_CLASSIFICATION_DEV_PROXY_URL__: JSON.stringify(
+        '/api/text-classification/predict',
+      ),
+    },
+    plugins: [
+      react(),
+      runSummaryApiPlugin(),
+      textClassificationProxyPlugin(textClassificationUrl, textClassificationApiKey),
+    ],
+  }
 })
