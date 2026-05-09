@@ -18,6 +18,8 @@ concurrency:
 
 jobs:
   build:
+    environment:
+      name: github-pages
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -42,7 +44,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          TEXT_CLASSIFICATION_URL: ${{ vars.TEXT_CLASSIFICATION_URL }}
+          TEXT_CLASSIFICATION_URL: ${{ vars.TEXT_CLASSIFICATION_URL || secrets.TEXT_CLASSIFICATION_URL }}
           TEXT_CLASSIFICATION_API_KEY: ${{ secrets.TEXT_CLASSIFICATION_API_KEY || vars.TEXT_CLASSIFICATION_API_KEY }}
           VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH }}
 

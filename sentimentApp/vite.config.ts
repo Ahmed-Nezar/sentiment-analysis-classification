@@ -55,7 +55,7 @@ function compactPath(value: string): string {
   return value.replaceAll('\\', '/').split('/').slice(-2).join('/')
 }
 
-function inferBasePath(env: Record<string, string>): string {
+function inferBasePath(env: Record<string, string | undefined>): string {
   if (env.VITE_BASE_PATH) {
     return env.VITE_BASE_PATH
   }
@@ -696,7 +696,10 @@ function textClassificationProxyPlugin(
 }
 
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, envRoot, '')
+  const env = {
+    ...loadEnv(mode, envRoot, ''),
+    ...process.env,
+  }
   const textClassificationUrl =
     env.TEXT_CLASSIFICATION_URL ??
     env.VITE_TEXT_CLASSIFICATION_URL ??
