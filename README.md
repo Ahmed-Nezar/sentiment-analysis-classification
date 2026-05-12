@@ -203,6 +203,20 @@ The Qwen3-4B Instruct model produced the strongest final decoder result and was 
 
 - https://huggingface.co/Nezar1/Qwen3-4B-Instruct-2507-sentiment-classifier
 
+The decoder inference server template is also published as a Docker Hub image:
+
+- https://hub.docker.com/repository/docker/nezar1/hf-decoder-text-classifier-api/general
+
+The image can be used to host a Hugging Face decoder text classifier behind the Cloudflare Worker:
+
+```bash
+docker run --gpus all -p 8000:8000 \
+  -e MODEL_ID=Nezar1/Qwen3-4B-Instruct-2507-sentiment-classifier \
+  -e HF_TOKEN=<HF_TOKEN> \
+  -e LABELS=negative,neutral,positive \
+  nezar1/hf-decoder-text-classifier-api:latest
+```
+
 ## Kaggle Usage
 
 Kaggle was used for GPU-backed experimentation, especially for larger fine-tuning runs that were too heavy or slow for a local environment. The notebooks under `notebooks/` were used as working notebooks for:
@@ -223,6 +237,42 @@ Lightning.ai was used as a training and deployment environment for GPU-backed mo
 - Hosting or exposing the best inference service so the deployed frontend could call it through a stable HTTP endpoint.
 
 The frontend does not require the training notebooks or model tensors to be present. It only needs the deployed inference URL and the static run-summary data generated from metadata.
+
+## Docker Decoder API
+
+The `docker-setup/` folder contains the Dockerized FastAPI decoder inference template used for Qwen-style text classification endpoints.
+
+Docker Hub image:
+
+```text
+nezar1/hf-decoder-text-classifier-api:latest
+```
+
+Repository page:
+
+```text
+https://hub.docker.com/repository/docker/nezar1/hf-decoder-text-classifier-api/general
+```
+
+The service exposes `POST /predict` with this request body:
+
+```json
+{
+  "text": "I love this product"
+}
+```
+
+And returns decoder-style output:
+
+```json
+{
+  "text": "I love this product",
+  "label": "positive",
+  "raw_output": "positive"
+}
+```
+
+This response format is what the React app expects for the Worker `api2` route.
 
 ## Cloudflare Worker Proxy
 

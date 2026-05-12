@@ -4,6 +4,18 @@
 
 A generic Dockerized FastAPI inference server for Hugging Face decoder-based text classification models.
 
+Docker Hub image:
+
+```text
+nezar1/hf-decoder-text-classifier-api:latest
+```
+
+Docker Hub page:
+
+```text
+https://hub.docker.com/repository/docker/nezar1/hf-decoder-text-classifier-api/general
+```
+
 ## Features
 
 - Hugging Face decoder model support
@@ -16,6 +28,22 @@ A generic Dockerized FastAPI inference server for Hugging Face decoder-based tex
 - Lightning.ai compatible
 - CORS enabled
 
+## Run From Docker Hub
+
+```bash
+docker run --gpus all -p 8000:8000 \
+  -e MODEL_ID=Nezar1/Qwen3-4B-Instruct-2507-sentiment-classifier \
+  -e HF_TOKEN=<HF_TOKEN> \
+  -e LABELS=negative,neutral,positive \
+  nezar1/hf-decoder-text-classifier-api:latest
+```
+
+The API is then available at:
+
+```text
+http://localhost:8000/predict
+```
+
 ## API Endpoint
 
 ### POST `/predict`
@@ -26,7 +54,7 @@ Request:
 {
   "text": "I love this product"
 }
-````
+```
 
 Response:
 
