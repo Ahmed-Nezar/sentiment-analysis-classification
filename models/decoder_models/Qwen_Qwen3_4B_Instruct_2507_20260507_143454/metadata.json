@@ -66,8 +66,116 @@
   "final_validation_loss": 1.9915961337586716,
   "final_metrics": {
     "accuracy": 0.6185368977109013,
-    "precision_macro": 0.4832200270266829,
-    "recall_macro": 0.48135547985815935,
-    "f1_macro": 0.4389723199978088
+    "precision_macro": 0.6442933693689105,
+    "recall_macro": 0.6418073064775458,
+    "f1_macro": 0.585296426663745,
+    "precision_weighted": 0.6495910736490399,
+    "recall_weighted": 0.6185368977109013,
+    "f1_weighted": 0.5717873677542202,
+    "labels": [
+      "0",
+      "1",
+      "2"
+    ],
+    "confusion_matrix": [
+      [
+        1486,
+        97,
+        237
+      ],
+      [
+        880,
+        525,
+        923
+      ],
+      [
+        141,
+        102,
+        1853
+      ]
+    ],
+    "support_by_label": {
+      "0": 1821,
+      "1": 2330,
+      "2": 2096
+    },
+    "class_scores": [
+      {
+        "label": "0",
+        "precision": 0.5927403270841644,
+        "recall": 0.8160351455244371,
+        "f1": 0.6866913123844732,
+        "support": 1821
+      },
+      {
+        "label": "1",
+        "precision": 0.7251381215469613,
+        "recall": 0.22532188841201717,
+        "f1": 0.343811394891945,
+        "support": 2330
+      },
+      {
+        "label": "2",
+        "precision": 0.6150016594756057,
+        "recall": 0.8840648854961832,
+        "f1": 0.725386572714817,
+        "support": 2096
+      }
+    ]
+  },
+  "evaluation_details": {
+    "generated_at_utc": "2026-05-12T20:28:53.240197+00:00",
+    "source_predictions_path": null,
+    "source_targets_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\Qwen_Qwen3_4B_Instruct_2507_20260507_143454\\y_true.joblib",
+    "labels": [
+      "0",
+      "1",
+      "2"
+    ],
+    "confusion_matrix": [
+      [
+        1486,
+        97,
+        237
+      ],
+      [
+        880,
+        525,
+        923
+      ],
+      [
+        141,
+        102,
+        1853
+      ]
+    ],
+    "class_scores": [
+      {
+        "label": "0",
+        "precision": 0.5927403270841644,
+        "recall": 0.8160351455244371,
+        "f1": 0.6866913123844732,
+        "support": 1821
+      },
+      {
+        "label": "1",
+        "precision": 0.7251381215469613,
+        "recall": 0.22532188841201717,
+        "f1": 0.343811394891945,
+        "support": 2330
+      },
+      {
+        "label": "2",
+        "precision": 0.6150016594756057,
+        "recall": 0.8840648854961832,
+        "f1": 0.725386572714817,
+        "support": 2096
+      }
+    ],
+    "support_by_label": {
+      "0": 1821,
+      "1": 2330,
+      "2": 2096
+    }
   }
 }

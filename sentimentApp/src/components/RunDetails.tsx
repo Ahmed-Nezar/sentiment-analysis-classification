@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import type {
   DetailItem,
+  EvaluationDetails,
   EvaluationMetricSet,
   RunSummary,
 } from '../types/runSummary'
@@ -7,6 +9,7 @@ import { exportRunConfiguration } from '../utils/exportRunConfiguration'
 import {
   formatLabel,
   formatMetric,
+  getRunEvaluationDetails,
   getRunMetrics,
   hasNoiseRemovedEvaluation,
 } from '../utils/runSummary'
@@ -42,7 +45,94 @@ function DetailSection({
   )
 }
 
+function formatPercent(value: number): string {
+  return `${(value * 100).toFixed(2)}%`
+}
+
+function EvaluationDiagnostics({
+  details,
+}: {
+  details: EvaluationDetails
+}) {
+  const maxCell = Math.max(...details.confusionMatrix.flat(), 1)
+
+  return (
+    <section className="detail-card diagnostics-card">
+      <h3>Confusion Matrix</h3>
+      <div className="confusion-shell">
+        <table className="confusion-matrix">
+          <thead>
+            <tr>
+              <th scope="col">True Class</th>
+              {details.labels.map((label) => (
+                <th key={label} scope="col">
+                  Predicted Class {formatLabel(label)}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {details.confusionMatrix.map((row, rowIndex) => (
+              <tr key={details.labels[rowIndex] ?? rowIndex}>
+                <th scope="row">{formatLabel(details.labels[rowIndex] ?? `class ${rowIndex}`)}</th>
+                {row.map((value, columnIndex) => {
+                  const intensity = value / maxCell
+
+                  return (
+                    <td
+                      key={`${rowIndex}-${columnIndex}`}
+                      style={{
+                        backgroundColor: `rgba(49, 104, 142, ${0.08 + intensity * 0.72})`,
+                        color: intensity > 0.56 ? '#fff' : undefined,
+                      }}
+                    >
+                      {value}
+                    </td>
+                  )
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Scores Per Class</h3>
+      <div className="class-score-list">
+        {details.classScores.map((score) => (
+          <article key={score.label} className="class-score-card">
+            <div>
+              <span>{formatLabel(score.label)}</span>
+              <strong>{formatPercent(score.f1)}</strong>
+            </div>
+            <dl>
+              <div>
+                <dt>Precision</dt>
+                <dd>{formatPercent(score.precision)}</dd>
+              </div>
+              <div>
+                <dt>Recall</dt>
+                <dd>{formatPercent(score.recall)}</dd>
+              </div>
+              <div>
+                <dt>F1</dt>
+                <dd>{formatPercent(score.f1)}</dd>
+              </div>
+              <div>
+                <dt>Support</dt>
+                <dd>{score.support}</dd>
+              </div>
+            </dl>
+            <meter min="0" max="1" value={score.f1} />
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 export function RunDetails({ run, evaluationMetricSet }: RunDetailsProps) {
+  const [isDiagnosticsOpen, setIsDiagnosticsOpen] = useState(false)
+
   if (!run) {
     return (
       <aside className="details-panel">
@@ -51,6 +141,7 @@ export function RunDetails({ run, evaluationMetricSet }: RunDetailsProps) {
     )
   }
   const activeMetrics = getRunMetrics(run, evaluationMetricSet)
+  const evaluationDetails = getRunEvaluationDetails(run, evaluationMetricSet)
   const isNoiseRemovedEvaluation =
     evaluationMetricSet === 'without_noise' && hasNoiseRemovedEvaluation(run)
 
@@ -72,6 +163,51 @@ export function RunDetails({ run, evaluationMetricSet }: RunDetailsProps) {
           </button>
         </div>
       </div>
+
+      {evaluationDetails && (
+        <div className="detail-view-toggle">
+          <button
+            type="button"
+            className="is-active"
+            onClick={() => setIsDiagnosticsOpen(true)}
+          >
+            Open Diagnostics
+          </button>
+        </div>
+      )}
+
+      {isDiagnosticsOpen && evaluationDetails && (
+        <div
+          className="diagnostics-modal-backdrop"
+          role="presentation"
+          onClick={() => setIsDiagnosticsOpen(false)}
+        >
+          <section
+            className="diagnostics-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="diagnostics-title"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="diagnostics-modal-header">
+              <div>
+                <p className="eyebrow">{formatLabel(run.family)}</p>
+                <h2 id="diagnostics-title">Diagnostics</h2>
+                <p>{run.displayName}</p>
+              </div>
+              <button
+                type="button"
+                className="modal-close-button"
+                aria-label="Close diagnostics"
+                onClick={() => setIsDiagnosticsOpen(false)}
+              >
+                Close
+              </button>
+            </div>
+            <EvaluationDiagnostics details={evaluationDetails} />
+          </section>
+        </div>
+      )}
 
       {Object.keys(activeMetrics).length > 0 && (
         <section className="detail-card">

@@ -13,7 +13,60 @@
     "accuracy": 0.6089150546677881,
     "f1_macro": 0.6107694751890579,
     "precision_macro": 0.6137399189274526,
-    "recall_macro": 0.6086997109708561
+    "recall_macro": 0.6086997109708561,
+    "precision_weighted": 0.6111681962071525,
+    "recall_weighted": 0.6089150546677881,
+    "f1_weighted": 0.609592234249819,
+    "labels": [
+      "0",
+      "1",
+      "2"
+    ],
+    "confusion_matrix": [
+      [
+        1015,
+        576,
+        177
+      ],
+      [
+        485,
+        1276,
+        436
+      ],
+      [
+        154,
+        497,
+        1329
+      ]
+    ],
+    "support_by_label": {
+      "0": 1768,
+      "1": 2197,
+      "2": 1980
+    },
+    "class_scores": [
+      {
+        "label": "0",
+        "precision": 0.6136638452237001,
+        "recall": 0.5740950226244343,
+        "f1": 0.5932203389830508,
+        "support": 1768
+      },
+      {
+        "label": "1",
+        "precision": 0.5432098765432098,
+        "recall": 0.5807919890760127,
+        "f1": 0.5613726352837659,
+        "support": 2197
+      },
+      {
+        "label": "2",
+        "precision": 0.684346035015448,
+        "recall": 0.6712121212121213,
+        "f1": 0.6777154513003569,
+        "support": 1980
+      }
+    ]
   },
   "parameters": {
     "colsample_bytree": 1.0,
@@ -50,5 +103,60 @@
     5945,
     100
   ],
-  "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l12_v2\\xgboost\\metadata.json"
+  "metadata_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l12_v2\\xgboost\\metadata.json",
+  "evaluation_details": {
+    "generated_at_utc": "2026-05-12T20:29:44.561650+00:00",
+    "source_predictions_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\ml_models\\c63028fbbd858f3c\\all_minilm_l12_v2\\xgboost\\y_pred.joblib",
+    "source_targets_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\embeddings_runs\\c63028fbbd858f3c\\all_minilm_l12_v2\\y_test.joblib",
+    "labels": [
+      "0",
+      "1",
+      "2"
+    ],
+    "confusion_matrix": [
+      [
+        1015,
+        576,
+        177
+      ],
+      [
+        485,
+        1276,
+        436
+      ],
+      [
+        154,
+        497,
+        1329
+      ]
+    ],
+    "class_scores": [
+      {
+        "label": "0",
+        "precision": 0.6136638452237001,
+        "recall": 0.5740950226244343,
+        "f1": 0.5932203389830508,
+        "support": 1768
+      },
+      {
+        "label": "1",
+        "precision": 0.5432098765432098,
+        "recall": 0.5807919890760127,
+        "f1": 0.5613726352837659,
+        "support": 2197
+      },
+      {
+        "label": "2",
+        "precision": 0.684346035015448,
+        "recall": 0.6712121212121213,
+        "f1": 0.6777154513003569,
+        "support": 1980
+      }
+    ],
+    "support_by_label": {
+      "0": 1768,
+      "1": 2197,
+      "2": 1980
+    }
+  }
 }

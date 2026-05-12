@@ -390,6 +390,26 @@ tbody tr:last-child td {
   color: var(--accent-strong);
 }
 
+.detail-view-toggle {
+  margin-bottom: 12px;
+}
+
+.detail-view-toggle button {
+  width: 100%;
+  min-height: 38px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--surface);
+  color: var(--text-h);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.detail-view-toggle button:hover {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+
 .details-panel {
   position: sticky;
   top: 20px;
@@ -498,6 +518,171 @@ tbody tr:last-child td {
   margin-top: 4px;
   color: var(--text-h);
   font-size: 18px;
+}
+
+.diagnostics-card {
+  display: grid;
+  gap: 16px;
+  margin-top: 0;
+}
+
+.diagnostics-card h3 {
+  margin-bottom: 0;
+}
+
+.confusion-shell {
+  overflow-x: auto;
+}
+
+.confusion-matrix {
+  width: 100%;
+  min-width: 420px;
+  border-collapse: separate;
+  border-spacing: 4px;
+}
+
+.confusion-matrix th,
+.confusion-matrix td {
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.confusion-matrix th {
+  background: var(--surface-soft);
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.confusion-matrix td {
+  color: var(--text-h);
+  font-size: 14px;
+  font-weight: 850;
+}
+
+.class-score-list {
+  display: grid;
+  gap: 10px;
+}
+
+.class-score-card {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--surface);
+}
+
+.class-score-card > div:first-child,
+.class-score-card dl {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  align-items: center;
+}
+
+.class-score-card > div:first-child span {
+  grid-column: span 3;
+  color: var(--text-h);
+  font-weight: 850;
+  text-transform: capitalize;
+}
+
+.class-score-card > div:first-child strong {
+  text-align: right;
+  color: var(--accent-strong);
+  font-size: 16px;
+}
+
+.class-score-card dl {
+  margin: 0;
+}
+
+.class-score-card dt {
+  color: var(--text-muted);
+  font-size: 10px;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.class-score-card dd {
+  margin: 3px 0 0;
+  color: var(--text-h);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.class-score-card meter {
+  width: 100%;
+  height: 10px;
+}
+
+.diagnostics-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(15, 23, 42, 0.48);
+}
+
+.diagnostics-modal {
+  width: min(980px, 100%);
+  max-height: min(860px, calc(100svh - 48px));
+  overflow: auto;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.28);
+}
+
+.diagnostics-modal-header {
+  position: sticky;
+  top: -20px;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin: -20px -20px 16px;
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.diagnostics-modal-header h2 {
+  margin: 0;
+  color: var(--text-h);
+  font-size: 26px;
+  line-height: 1.1;
+}
+
+.diagnostics-modal-header p:not(.eyebrow) {
+  margin: 6px 0 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.modal-close-button {
+  flex: 0 0 auto;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--surface-soft);
+  color: var(--text-h);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.modal-close-button:hover {
+  border-color: var(--accent);
+  color: var(--accent-strong);
 }
 
 .empty-state,

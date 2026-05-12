@@ -52,10 +52,118 @@
     "accuracy": 0.7182506307821699,
     "precision_macro": 0.721670997018788,
     "recall_macro": 0.7220596799521269,
-    "f1_macro": 0.7215495757994548
+    "f1_macro": 0.7215495757994548,
+    "precision_weighted": 0.7195201044303728,
+    "recall_weighted": 0.7182506307821699,
+    "f1_weighted": 0.7185898001584523,
+    "labels": [
+      "0",
+      "1",
+      "2"
+    ],
+    "confusion_matrix": [
+      [
+        1321,
+        396,
+        51
+      ],
+      [
+        478,
+        1411,
+        308
+      ],
+      [
+        71,
+        371,
+        1538
+      ]
+    ],
+    "support_by_label": {
+      "0": 1768,
+      "1": 2197,
+      "2": 1980
+    },
+    "class_scores": [
+      {
+        "label": "0",
+        "precision": 0.7064171122994652,
+        "recall": 0.7471719457013575,
+        "f1": 0.7262231995601979,
+        "support": 1768
+      },
+      {
+        "label": "1",
+        "precision": 0.647842056932966,
+        "recall": 0.6422394173873464,
+        "f1": 0.6450285714285714,
+        "support": 2197
+      },
+      {
+        "label": "2",
+        "precision": 0.8107538218239325,
+        "recall": 0.7767676767676768,
+        "f1": 0.7933969564095951,
+        "support": 1980
+      }
+    ]
   },
   "model_dir": "models/fine_tuned_encoder_models/Qwen_Qwen3-Embedding-4B_auto_seq_cls_full_classifier_lr0.0001_len64_bs32_ep1_lr1e-05_wd0.01_warmup0.1_20260506_183542/model",
   "tokenizer_dir": "models/fine_tuned_encoder_models/Qwen_Qwen3-Embedding-4B_auto_seq_cls_full_classifier_lr0.0001_len64_bs32_ep1_lr1e-05_wd0.01_warmup0.1_20260506_183542/tokenizer",
   "predictions_path": "models/fine_tuned_encoder_models/Qwen_Qwen3-Embedding-4B_auto_seq_cls_full_classifier_lr0.0001_len64_bs32_ep1_lr1e-05_wd0.01_warmup0.1_20260506_183542/y_pred.joblib",
-  "targets_path": "models/fine_tuned_encoder_models/Qwen_Qwen3-Embedding-4B_auto_seq_cls_full_classifier_lr0.0001_len64_bs32_ep1_lr1e-05_wd0.01_warmup0.1_20260506_183542/y_true.joblib"
+  "targets_path": "models/fine_tuned_encoder_models/Qwen_Qwen3-Embedding-4B_auto_seq_cls_full_classifier_lr0.0001_len64_bs32_ep1_lr1e-05_wd0.01_warmup0.1_20260506_183542/y_true.joblib",
+  "evaluation_details": {
+    "generated_at_utc": "2026-05-12T20:29:41.333381+00:00",
+    "source_predictions_path": "models/fine_tuned_encoder_models/Qwen_Qwen3-Embedding-4B_auto_seq_cls_full_classifier_lr0.0001_len64_bs32_ep1_lr1e-05_wd0.01_warmup0.1_20260506_183542/y_pred.joblib",
+    "source_targets_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\encoder_models\\Qwen_Qwen3_Embedding_4B_1\\y_true.joblib",
+    "labels": [
+      "0",
+      "1",
+      "2"
+    ],
+    "confusion_matrix": [
+      [
+        1321,
+        396,
+        51
+      ],
+      [
+        478,
+        1411,
+        308
+      ],
+      [
+        71,
+        371,
+        1538
+      ]
+    ],
+    "class_scores": [
+      {
+        "label": "0",
+        "precision": 0.7064171122994652,
+        "recall": 0.7471719457013575,
+        "f1": 0.7262231995601979,
+        "support": 1768
+      },
+      {
+        "label": "1",
+        "precision": 0.647842056932966,
+        "recall": 0.6422394173873464,
+        "f1": 0.6450285714285714,
+        "support": 2197
+      },
+      {
+        "label": "2",
+        "precision": 0.8107538218239325,
+        "recall": 0.7767676767676768,
+        "f1": 0.7933969564095951,
+        "support": 1980
+      }
+    ],
+    "support_by_label": {
+      "0": 1768,
+      "1": 2197,
+      "2": 1980
+    }
+  }
 }

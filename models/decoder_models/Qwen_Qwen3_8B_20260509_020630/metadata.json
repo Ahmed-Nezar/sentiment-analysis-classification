@@ -68,6 +68,114 @@
     "accuracy": 0.8670435510887772,
     "precision_macro": 0.8612088655419988,
     "recall_macro": 0.8608148959086278,
-    "f1_macro": 0.860977706577795
+    "f1_macro": 0.860977706577795,
+    "precision_weighted": 0.8664834115866581,
+    "recall_weighted": 0.8670435510887772,
+    "f1_weighted": 0.8667306008553861,
+    "labels": [
+      "0",
+      "1",
+      "2"
+    ],
+    "confusion_matrix": [
+      [
+        1287,
+        173,
+        25
+      ],
+      [
+        175,
+        1124,
+        128
+      ],
+      [
+        31,
+        103,
+        1730
+      ]
+    ],
+    "support_by_label": {
+      "0": 1485,
+      "1": 1427,
+      "2": 1864
+    },
+    "class_scores": [
+      {
+        "label": "0",
+        "precision": 0.8620227729403884,
+        "recall": 0.8666666666666667,
+        "f1": 0.8643384822028207,
+        "support": 1485
+      },
+      {
+        "label": "1",
+        "precision": 0.8028571428571428,
+        "recall": 0.7876664330763841,
+        "f1": 0.7951892465511142,
+        "support": 1427
+      },
+      {
+        "label": "2",
+        "precision": 0.9187466808284652,
+        "recall": 0.9281115879828327,
+        "f1": 0.9234053909794502,
+        "support": 1864
+      }
+    ]
+  },
+  "evaluation_details": {
+    "generated_at_utc": "2026-05-12T20:28:53.360737+00:00",
+    "source_predictions_path": null,
+    "source_targets_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\Qwen_Qwen3_8B_20260509_020630\\y_true.joblib",
+    "labels": [
+      "0",
+      "1",
+      "2"
+    ],
+    "confusion_matrix": [
+      [
+        1287,
+        173,
+        25
+      ],
+      [
+        175,
+        1124,
+        128
+      ],
+      [
+        31,
+        103,
+        1730
+      ]
+    ],
+    "class_scores": [
+      {
+        "label": "0",
+        "precision": 0.8620227729403884,
+        "recall": 0.8666666666666667,
+        "f1": 0.8643384822028207,
+        "support": 1485
+      },
+      {
+        "label": "1",
+        "precision": 0.8028571428571428,
+        "recall": 0.7876664330763841,
+        "f1": 0.7951892465511142,
+        "support": 1427
+      },
+      {
+        "label": "2",
+        "precision": 0.9187466808284652,
+        "recall": 0.9281115879828327,
+        "f1": 0.9234053909794502,
+        "support": 1864
+      }
+    ],
+    "support_by_label": {
+      "0": 1485,
+      "1": 1427,
+      "2": 1864
+    }
   }
 }

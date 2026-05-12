@@ -13,6 +13,20 @@ export type DetailItem = {
   value: string
 }
 
+export type ClassScore = {
+  label: string
+  precision: number
+  recall: number
+  f1: number
+  support: number
+}
+
+export type EvaluationDetails = {
+  labels: string[]
+  confusionMatrix: number[][]
+  classScores: ClassScore[]
+}
+
 export type DashboardSection = 'models' | 'embeddings'
 export type RunSortKey = 'newest' | 'name' | 'accuracy_desc' | 'accuracy_asc'
 export type EvaluationMetricSet = 'original' | 'without_noise'
@@ -27,6 +41,8 @@ export type RunSummary = {
   status?: string
   metrics: MetricMap
   metricsWithoutNoise: MetricMap
+  evaluationDetails?: EvaluationDetails
+  evaluationDetailsWithoutNoise?: EvaluationDetails
   datasetName?: string
   trainedOnNoisyData?: boolean
   modelConfiguration: DetailItem[]

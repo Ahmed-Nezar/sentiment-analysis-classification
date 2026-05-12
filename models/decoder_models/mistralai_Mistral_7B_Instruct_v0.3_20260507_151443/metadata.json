@@ -66,8 +66,116 @@
   "final_validation_loss": 0.5500022169588393,
   "final_metrics": {
     "accuracy": 0.3585721146150152,
-    "precision_macro": 0.1795872754600506,
-    "recall_macro": 0.25359175867378697,
-    "f1_macro": 0.20996610449735448
+    "precision_macro": 0.2394497006134008,
+    "recall_macro": 0.3381223448983826,
+    "f1_macro": 0.27995480599647266,
+    "precision_weighted": 0.2549665336077912,
+    "recall_weighted": 0.3585721146150152,
+    "f1_weighted": 0.2975947767097519,
+    "labels": [
+      "0",
+      "1",
+      "2"
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        922,
+        896
+      ],
+      [
+        0,
+        1134,
+        1194
+      ],
+      [
+        0,
+        990,
+        1106
+      ]
+    ],
+    "support_by_label": {
+      "0": 1821,
+      "1": 2330,
+      "2": 2096
+    },
+    "class_scores": [
+      {
+        "label": "0",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 1821
+      },
+      {
+        "label": "1",
+        "precision": 0.3722915298752462,
+        "recall": 0.48669527896995707,
+        "f1": 0.421875,
+        "support": 2330
+      },
+      {
+        "label": "2",
+        "precision": 0.3460575719649562,
+        "recall": 0.5276717557251909,
+        "f1": 0.41798941798941797,
+        "support": 2096
+      }
+    ]
+  },
+  "evaluation_details": {
+    "generated_at_utc": "2026-05-12T20:28:52.803764+00:00",
+    "source_predictions_path": null,
+    "source_targets_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\decoder_models\\mistralai_Mistral_7B_Instruct_v0.3_20260507_151443\\y_true.joblib",
+    "labels": [
+      "0",
+      "1",
+      "2"
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        922,
+        896
+      ],
+      [
+        0,
+        1134,
+        1194
+      ],
+      [
+        0,
+        990,
+        1106
+      ]
+    ],
+    "class_scores": [
+      {
+        "label": "0",
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 1821
+      },
+      {
+        "label": "1",
+        "precision": 0.3722915298752462,
+        "recall": 0.48669527896995707,
+        "f1": 0.421875,
+        "support": 2330
+      },
+      {
+        "label": "2",
+        "precision": 0.3460575719649562,
+        "recall": 0.5276717557251909,
+        "f1": 0.41798941798941797,
+        "support": 2096
+      }
+    ],
+    "support_by_label": {
+      "0": 1821,
+      "1": 2330,
+      "2": 2096
+    }
   }
 }

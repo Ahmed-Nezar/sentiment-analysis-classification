@@ -16,6 +16,17 @@ type JsonValue =
 type JsonObject = { [key: string]: JsonValue }
 type DetailSource = { [key: string]: JsonValue | undefined }
 type DetailItem = { label: string; value: string }
+type EvaluationDetails = {
+  labels: string[]
+  confusionMatrix: number[][]
+  classScores: {
+    label: string
+    precision: number
+    recall: number
+    f1: number
+    support: number
+  }[]
+}
 
 const appDir = path.dirname(fileURLToPath(import.meta.url))
 const modelsRoot = path.resolve(appDir, '../models')
@@ -135,6 +146,171 @@ function readMetrics(
       typeof entry[1] === 'number' || typeof entry[1] === 'string',
   )
   return Object.fromEntries(entries)
+}
+
+function readNumberMatrix(value: JsonValue | undefined): number[][] | undefined {
+  if (
+    !Array.isArray(value) ||
+    value.length === 0 ||
+    !value.every(
+      (row) =>
+        Array.isArray(row) &&
+        row.length > 0 &&
+        row.every((cell) => typeof cell === 'number'),
+    )
+  ) {
+    return undefined
+  }
+
+  return value as number[][]
+}
+
+function normalizeLabel(label: string): string {
+  if (label === '0') {
+    return 'negative'
+  }
+  if (label === '1') {
+    return 'neutral'
+  }
+  if (label === '2') {
+    return 'positive'
+  }
+  return label
+}
+
+function readLabels(data: JsonObject, matrixSize: number): string[] {
+  const labels = Array.isArray(data.labels) ? data.labels : []
+  const normalizedLabels = labels
+    .filter((label): label is string | number => typeof label === 'string' || typeof label === 'number')
+    .map((label) => String(label))
+
+  if (normalizedLabels.length === matrixSize) {
+    return normalizedLabels.map(normalizeLabel)
+  }
+
+  return Array.from({ length: matrixSize }, (_item, index) => {
+    if (index === 0) {
+      return 'negative'
+    }
+    if (index === 1) {
+      return 'neutral'
+    }
+    if (index === 2) {
+      return 'positive'
+    }
+    return `class ${index}`
+  })
+}
+
+function readSupport(
+  source: JsonObject,
+  labels: string[],
+  matrix: number[][],
+): number[] {
+  const supportByLabel = isJsonObject(source.support_by_label)
+    ? source.support_by_label
+    : {}
+
+  return labels.map((label, index) => {
+    const labelValue = supportByLabel[label] ?? supportByLabel[String(index)]
+    if (typeof labelValue === 'number') {
+      return labelValue
+    }
+    return matrix[index]?.reduce((total, value) => total + value, 0) ?? 0
+  })
+}
+
+function displayIndexesForMatrix(labels: string[], support: number[]): number[] {
+  const indexes = labels
+    .map((label, index) => ({ index, label: label.trim().toLowerCase() }))
+    .filter((item) => item.label !== '-1' && item.label !== 'invalid')
+    .map((item) => item.index)
+
+  return indexes.length > 0 ? indexes : support
+    .map((value, index) => ({ value, index }))
+    .filter((item) => item.value > 0)
+    .map((item) => item.index)
+}
+
+function evaluationDetailsFromMetrics(
+  source: JsonObject | undefined,
+  labelsSource: JsonObject | undefined,
+): EvaluationDetails | undefined {
+  if (!source) {
+    return undefined
+  }
+
+  const confusionMatrix = readNumberMatrix(source.confusion_matrix)
+  if (!confusionMatrix) {
+    return undefined
+  }
+
+  const labels = readLabels(labelsSource ?? source, confusionMatrix.length)
+  const support = readSupport(source, labels, confusionMatrix)
+  const displayIndexes = displayIndexesForMatrix(labels, support)
+  const displayLabels = displayIndexes.map((index) => labels[index])
+  const displayMatrix = displayIndexes.map((rowIndex) =>
+    displayIndexes.map((columnIndex) => confusionMatrix[rowIndex]?.[columnIndex] ?? 0),
+  )
+  const classScores = displayIndexes.map((index) => {
+    const label = labels[index]
+    const truePositive = confusionMatrix[index]?.[index] ?? 0
+    const predictedTotal = confusionMatrix.reduce(
+      (total, row) => total + (row[index] ?? 0),
+      0,
+    )
+    const actualTotal = support[index] ?? 0
+    const precision = predictedTotal > 0 ? truePositive / predictedTotal : 0
+    const recall = actualTotal > 0 ? truePositive / actualTotal : 0
+    const f1 =
+      precision + recall > 0
+        ? (2 * precision * recall) / (precision + recall)
+        : 0
+
+    return {
+      label,
+      precision,
+      recall,
+      f1,
+      support: actualTotal,
+    }
+  })
+
+  return {
+    labels: displayLabels,
+    confusionMatrix: displayMatrix,
+    classScores,
+  }
+}
+
+function readEvaluationDetails(
+  data: JsonObject,
+  sidecarData: JsonObject | undefined,
+  key: 'original' | 'without_noise',
+): EvaluationDetails | undefined {
+  if (key === 'without_noise') {
+    const sidecarMetrics = sidecarData?.metrics_without_noise
+    const metadataMetrics = data.metrics_without_noise
+    return evaluationDetailsFromMetrics(
+      isJsonObject(sidecarMetrics)
+        ? sidecarMetrics
+        : isJsonObject(metadataMetrics)
+          ? metadataMetrics
+          : undefined,
+      sidecarData ?? data,
+    )
+  }
+
+  const recomputedMetrics = sidecarData?.recomputed_original_metrics
+  const metadataMetrics = data.metrics ?? data.final_metrics
+  return evaluationDetailsFromMetrics(
+    isJsonObject(recomputedMetrics)
+      ? recomputedMetrics
+      : isJsonObject(metadataMetrics)
+        ? metadataMetrics
+        : undefined,
+    sidecarData ?? data,
+  )
 }
 
 function inferFamily(parts: string[]): string {
@@ -544,6 +720,16 @@ async function loadRunSummaries() {
         metricsWithoutNoise: metricsWithoutNoiseData
           ? readMetrics(metricsWithoutNoiseData, ['metrics_without_noise'])
           : {},
+        evaluationDetails: readEvaluationDetails(
+          data,
+          metricsWithoutNoiseData,
+          'original',
+        ),
+        evaluationDetailsWithoutNoise: readEvaluationDetails(
+          data,
+          metricsWithoutNoiseData,
+          'without_noise',
+        ),
         datasetName,
         trainedOnNoisyData: trainedOnNoisyData(datasetName),
         modelConfiguration:

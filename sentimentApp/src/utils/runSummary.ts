@@ -1,5 +1,6 @@
 import type {
   DashboardSection,
+  EvaluationDetails,
   EvaluationMetricSet,
   MetricMap,
   RunFiltersState,
@@ -65,6 +66,19 @@ export function getRunMetrics(
     return run.metricsWithoutNoise
   }
   return run.metrics
+}
+
+export function getRunEvaluationDetails(
+  run: RunSummary,
+  evaluationMetricSet: EvaluationMetricSet,
+): EvaluationDetails | undefined {
+  if (
+    evaluationMetricSet === 'without_noise' &&
+    run.evaluationDetailsWithoutNoise
+  ) {
+    return run.evaluationDetailsWithoutNoise
+  }
+  return run.evaluationDetails
 }
 
 export function hasNoiseRemovedEvaluation(run: RunSummary): boolean {

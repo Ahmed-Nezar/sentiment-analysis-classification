@@ -39,10 +39,118 @@
     "accuracy": 0.775946173254836,
     "precision_macro": 0.7768157615708757,
     "recall_macro": 0.7794447076817422,
-    "f1_macro": 0.7779769475443677
+    "f1_macro": 0.7779769475443677,
+    "precision_weighted": 0.7751783968084788,
+    "recall_weighted": 0.775946173254836,
+    "f1_weighted": 0.7754086262730713,
+    "labels": [
+      "0",
+      "1",
+      "2"
+    ],
+    "confusion_matrix": [
+      [
+        1407,
+        310,
+        51
+      ],
+      [
+        383,
+        1537,
+        277
+      ],
+      [
+        38,
+        273,
+        1669
+      ]
+    ],
+    "support_by_label": {
+      "0": 1768,
+      "1": 2197,
+      "2": 1980
+    },
+    "class_scores": [
+      {
+        "label": "0",
+        "precision": 0.7696936542669585,
+        "recall": 0.795814479638009,
+        "f1": 0.7825361512791991,
+        "support": 1768
+      },
+      {
+        "label": "1",
+        "precision": 0.725,
+        "recall": 0.6995903504779244,
+        "f1": 0.7120685661338892,
+        "support": 2197
+      },
+      {
+        "label": "2",
+        "precision": 0.8357536304456685,
+        "recall": 0.842929292929293,
+        "f1": 0.839326125220015,
+        "support": 1980
+      }
+    ]
   },
   "model_dir": "/kaggle/working/models/fine_tuned_bert/bert_base_uncased_20260506_170339/model",
   "tokenizer_dir": "/kaggle/working/models/fine_tuned_bert/bert_base_uncased_20260506_170339/tokenizer",
   "predictions_path": "/kaggle/working/models/fine_tuned_bert/bert_base_uncased_20260506_170339/y_pred.joblib",
-  "targets_path": "/kaggle/working/models/fine_tuned_bert/bert_base_uncased_20260506_170339/y_true.joblib"
+  "targets_path": "/kaggle/working/models/fine_tuned_bert/bert_base_uncased_20260506_170339/y_true.joblib",
+  "evaluation_details": {
+    "generated_at_utc": "2026-05-12T20:29:41.015898+00:00",
+    "source_predictions_path": "/kaggle/working/models/fine_tuned_bert/bert_base_uncased_20260506_170339/y_pred.joblib",
+    "source_targets_path": "D:\\Faculty of Engineering - All Semesters\\Semester 10\\CSE489_Selected_Topics_in_Data_Science\\Projects\\sentiment-analysis-classification\\models\\encoder_models\\baai_bge_m3_20260506_170339\\y_true.joblib",
+    "labels": [
+      "0",
+      "1",
+      "2"
+    ],
+    "confusion_matrix": [
+      [
+        1407,
+        310,
+        51
+      ],
+      [
+        383,
+        1537,
+        277
+      ],
+      [
+        38,
+        273,
+        1669
+      ]
+    ],
+    "class_scores": [
+      {
+        "label": "0",
+        "precision": 0.7696936542669585,
+        "recall": 0.795814479638009,
+        "f1": 0.7825361512791991,
+        "support": 1768
+      },
+      {
+        "label": "1",
+        "precision": 0.725,
+        "recall": 0.6995903504779244,
+        "f1": 0.7120685661338892,
+        "support": 2197
+      },
+      {
+        "label": "2",
+        "precision": 0.8357536304456685,
+        "recall": 0.842929292929293,
+        "f1": 0.839326125220015,
+        "support": 1980
+      }
+    ],
+    "support_by_label": {
+      "0": 1768,
+      "1": 2197,
+      "2": 1980
+    }
+  }
 }
