@@ -24,45 +24,64 @@ import {
 
 type AppView = 'landing' | 'dashboard' | 'inference'
 type SentimentLabel = 'negative' | 'neutral' | 'positive'
-type TextClassificationResponse = {
+type EncoderClassificationResponse = {
   predicted_class_id: number
   probability?: number[]
   probablity?: number[]
+}
+type DecoderClassificationResponse = {
+  text: string
+  label: SentimentLabel
+  raw_output: string
 }
 type InferenceModelId = 'bge-m3' | 'qwen-4b'
 type InferenceModel = {
   id: InferenceModelId
   name: string
   runId: string
-  endpoint: string
+  apiTarget: 'api1' | 'api2'
   isAvailable: boolean
 }
 type InferenceResult = {
+  modelId: InferenceModelId
   label: SentimentLabel
-  classId: number
-  probability: number[]
+  text?: string
+  classId?: number
+  probability?: number[]
+  rawOutput?: string
 }
 
 const TEXT_CLASSIFICATION_URL = __TEXT_CLASSIFICATION_URL__
+function buildTextClassificationUrl(apiTarget: InferenceModel['apiTarget']) {
+  if (!TEXT_CLASSIFICATION_URL) {
+    return ''
+  }
+
+  const url = new URL(TEXT_CLASSIFICATION_URL, window.location.origin)
+  url.searchParams.set('api', apiTarget)
+  return url.toString()
+}
+
 const SENTIMENT_LABELS: Record<number, SentimentLabel> = {
   0: 'negative',
   1: 'neutral',
   2: 'positive',
 }
+const SENTIMENT_LABELS_LIST = Object.values(SENTIMENT_LABELS)
 const INFERENCE_MODELS: InferenceModel[] = [
   {
     id: 'bge-m3',
     name: 'BAAI/bge-m3',
     runId: 'baai_bge_m3_20260509_002022',
-    endpoint: TEXT_CLASSIFICATION_URL,
+    apiTarget: 'api1',
     isAvailable: true,
   },
   {
     id: 'qwen-4b',
     name: 'Qwen/Qwen3-4B-Instruct-2507',
     runId: 'Qwen_Qwen3-4B-Instruct-2507_20260509_161431',
-    endpoint: '',
-    isAvailable: false,
+    apiTarget: 'api2',
+    isAvailable: true,
   },
 ]
 
@@ -138,7 +157,9 @@ function InferencePage({ onBack }: { onBack: () => void }) {
       return
     }
 
-    if (!selectedModel.endpoint) {
+    const endpoint = buildTextClassificationUrl(selectedModel.apiTarget)
+
+    if (!endpoint) {
       setResult(null)
       setError('TEXT_CLASSIFICATION_URL is not configured for this build.')
       return
@@ -154,7 +175,7 @@ function InferencePage({ onBack }: { onBack: () => void }) {
     setError(null)
 
     try {
-      const response = await fetch(selectedModel.endpoint, {
+      const response = await fetch(endpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -166,15 +187,32 @@ function InferencePage({ onBack }: { onBack: () => void }) {
         throw new Error(`Request failed with status ${response.status}.`)
       }
 
-      const payload = (await response.json()) as TextClassificationResponse
+      if (selectedModel.id === 'qwen-4b') {
+        const payload = (await response.json()) as DecoderClassificationResponse
+
+        if (!SENTIMENT_LABELS_LIST.includes(payload.label) || !payload.raw_output) {
+          throw new Error('The Qwen model returned an unexpected response.')
+        }
+
+        setResult({
+          modelId: selectedModel.id,
+          label: payload.label,
+          text: payload.text,
+          rawOutput: payload.raw_output,
+        })
+        return
+      }
+
+      const payload = (await response.json()) as EncoderClassificationResponse
       const label = SENTIMENT_LABELS[payload.predicted_class_id]
       const probability = payload.probability ?? payload.probablity
 
       if (!label || !Array.isArray(probability)) {
-        throw new Error('The model returned an unexpected response.')
+        throw new Error('The BGE-m3 model returned an unexpected response.')
       }
 
       setResult({
+        modelId: selectedModel.id,
         label,
         classId: payload.predicted_class_id,
         probability,
@@ -227,7 +265,6 @@ function InferencePage({ onBack }: { onBack: () => void }) {
                 <span>
                   <strong>{model.name}</strong>
                   <small>{model.runId}</small>
-                  {!model.isAvailable && <em>Coming next</em>}
                 </span>
               </label>
             ))}
@@ -254,20 +291,35 @@ function InferencePage({ onBack }: { onBack: () => void }) {
           </div>
           {result ? (
             <>
-              <p className="muted">Predicted class ID: {result.classId}</p>
-              <div className="probability-list">
-                {result.probability.map((score, index) => {
-                  const label = SENTIMENT_LABELS[index] ?? `class ${index}`
+              {result.modelId === 'qwen-4b' ? (
+                <div className="decoder-output">
+                  <div>
+                    <span>Input text</span>
+                    <p>{result.text}</p>
+                  </div>
+                  <div>
+                    <span>Raw output</span>
+                    <pre>{result.rawOutput}</pre>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <p className="muted">Predicted class ID: {result.classId}</p>
+                  <div className="probability-list">
+                    {result.probability?.map((score, index) => {
+                      const label = SENTIMENT_LABELS[index] ?? `class ${index}`
 
-                  return (
-                    <div key={label}>
-                      <span>{label}</span>
-                      <strong>{(score * 100).toFixed(2)}%</strong>
-                      <meter min="0" max="1" value={score} />
-                    </div>
-                  )
-                })}
-              </div>
+                      return (
+                        <div key={label}>
+                          <span>{label}</span>
+                          <strong>{(score * 100).toFixed(2)}%</strong>
+                          <meter min="0" max="1" value={score} />
+                        </div>
+                      )
+                    })}
+                  </div>
+                </>
+              )}
             </>
           ) : (
             <p className="muted">
