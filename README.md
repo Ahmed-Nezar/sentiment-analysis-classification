@@ -49,6 +49,8 @@ The GloVe embedding source used for the GloVe experiments is:
 |       |-- usage/              # Script-style entry points
 |       `-- utils/              # Configuration loading helpers
 |-- sentimentApp/               # React + Vite dashboard and inference UI
+|-- cloudflare/                 # Cloudflare Worker proxy for public inference routing
+|-- docker-setup/               # Dockerized FastAPI decoder inference template
 |-- models/                     # Lightweight metadata and evaluation summaries kept for the dashboard
 |-- config.yaml                 # Shared dataset path configuration
 |-- embedding_config.yaml       # Embedding run configuration
@@ -224,7 +226,21 @@ The frontend does not require the training notebooks or model tensors to be pres
 
 ## Cloudflare Worker Proxy
 
-The deployed frontend uses a Cloudflare Worker proxy in front of the model inference service. This keeps the public React app from depending directly on a raw training or hosting endpoint and gives the project a stable prediction URL.
+The deployed frontend uses a Cloudflare Worker proxy in front of the model inference services. This keeps the public React app from depending directly on raw training or hosting endpoints, keeps the private API key out of the browser bundle, and gives the project a stable prediction URL.
+
+The Worker is implemented in:
+
+```text
+cloudflare/main.js
+```
+
+Detailed Worker setup and deployment instructions are documented in:
+
+```text
+cloudflare/README.md
+```
+
+The React app sends the same request body for both models:
 
 The expected request shape is:
 
@@ -234,7 +250,14 @@ The expected request shape is:
 }
 ```
 
-The expected response shape is:
+The model is selected through the Worker query parameter:
+
+```text
+POST https://<worker-domain>/?api=api1  # BAAI/bge-m3
+POST https://<worker-domain>/?api=api2  # Qwen/Qwen3-4B-Instruct-2507
+```
+
+`api1` is routed to the BGE-M3 encoder classifier. Its expected response shape is:
 
 ```json
 {
@@ -251,13 +274,25 @@ The frontend maps class IDs as:
 2 -> positive
 ```
 
-For local Vite development, `sentimentApp/vite.config.ts` also provides a dev/preview proxy route at:
+`api2` is routed to the Qwen decoder/instruction model. Since it is a decoder endpoint, it does not return class probabilities. Its expected response shape is:
 
-```text
-/api/text-classification/predict
+```json
+{
+  "text": "this is a good movie!",
+  "label": "positive",
+  "raw_output": "positive"
+}
 ```
 
-For the production GitHub Pages build, the app uses `TEXT_CLASSIFICATION_URL`, which should point to the public Cloudflare Worker URL or another compatible inference endpoint.
+The Worker uses these environment variables:
+
+```text
+BGE_M3_API_URL
+QWEN_API_URL
+TEXT_CLASSIFICATION_API_KEY
+```
+
+For the production GitHub Pages build, the app uses `TEXT_CLASSIFICATION_URL`, which should point to the public Cloudflare Worker URL. The React app appends `?api=api1` or `?api=api2` based on the selected model.
 
 ## Frontend Dashboard and Inference App
 
@@ -265,7 +300,7 @@ The `sentimentApp/` app has three main views:
 
 - Landing page: entry point for the dashboard and inference workspace.
 - Run dashboard: compares embedding, ML, DL, encoder, and decoder run metadata.
-- Inference workspace: sends text to the configured sentiment classifier endpoint.
+- Inference workspace: sends text to BGE-M3 or Qwen through the Cloudflare Worker.
 
 During development, Vite reads metadata from the local `models/` folder through a dev server route. During production build, the Vite plugin emits a static `run-summaries.json` asset, so GitHub Pages can serve the dashboard without a backend.
 
@@ -309,7 +344,7 @@ TEXT_CLASSIFICATION_URL
 VITE_BASE_PATH
 ```
 
-`TEXT_CLASSIFICATION_URL` should point to the Cloudflare Worker proxy or another endpoint compatible with the inference response format. `VITE_BASE_PATH` can be used when GitHub Pages needs a repository-specific base path.
+`TEXT_CLASSIFICATION_URL` should point to the Cloudflare Worker proxy. `VITE_BASE_PATH` can be used when GitHub Pages needs a repository-specific base path.
 
 ## Environment Variables
 
@@ -318,10 +353,16 @@ Create `.env` from `.env.example` when running locally:
 ```text
 HF_TOKEN="<HF_TOKEN>"
 HF_HOME="<HF_HOME_DIR>"
-TEXT_CLASSIFICATION_URL="<BGE_M3_OR_WORKER_URL>"
+TEXT_CLASSIFICATION_URL="<WORKER_URL>"
 ```
 
-`HF_TOKEN` is used for Hugging Face access and publishing workflows. `HF_HOME` can be used to control model cache location. `TEXT_CLASSIFICATION_URL` is used by the frontend and local proxy path for inference.
+`HF_TOKEN` is used for Hugging Face access and publishing workflows. `HF_HOME` can be used to control model cache location. `TEXT_CLASSIFICATION_URL` is used by the frontend for inference and should point to the Worker base URL, for example:
+
+```text
+https://sentiment-analysis-classification.<your-subdomain>.workers.dev/
+```
+
+The Worker itself needs `BGE_M3_API_URL`, `QWEN_API_URL`, and the `TEXT_CLASSIFICATION_API_KEY` secret in Cloudflare.
 
 ## Python Setup
 
@@ -376,7 +417,6 @@ The strongest observed model families were the fine-tuned transformer models, es
 
 ## Notes for Future Work
 
-- Wire the second published Qwen3-4B inference endpoint into the frontend once the deployment endpoint is finalized.
 - Keep heavy tensors and generated datasets out of Git; publish final deployable artifacts to Hugging Face instead.
 - Regenerate `run-summaries.json` through the Vite build whenever model metadata changes.
 - Keep Cloudflare Worker responses aligned with the frontend inference contract.
